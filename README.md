@@ -14,9 +14,10 @@ This xform-qa project contains 2 subprojects one for JMeter API testing and the 
 * The field "keywords" separated by semi-colons ";" will indicate which "Simple Controller" will be executed". 
 
 <br>
+
 ## Web Driver Local Deployment
 
 ### IntelliJ Installation
 
 * Download IntelliJ Community Edition from https://www.jetbrains.com/idea/download/#section=windows (https://www.jetbrains.com/idea/download/download-thanks.html?platform=windows&code=IIC)
-* 
+ 
