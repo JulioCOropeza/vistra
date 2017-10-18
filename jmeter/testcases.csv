@@ -1,0 +1,4 @@
+testcaseid,description,keywords,param,status
+TC001,First TC,Create User;Delete User,1,0
+TC002,Get an User by ID,Get User Detail,3,1
+TC003,get all,Get All Users,1,0
