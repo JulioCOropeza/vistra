@@ -1,0 +1,4 @@
+rootProject.name = 'Xform_Functional_Automation'
+include 'Controllers'
+include 'ObjectRepository'
+

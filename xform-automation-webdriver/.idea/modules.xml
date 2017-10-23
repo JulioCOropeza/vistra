@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/ObjectRepository.iml" filepath="$PROJECT_DIR$/.idea/modules/ObjectRepository.iml" group="ObjectRepository" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/ObjectRepository/ObjectRepository_main.iml" filepath="$PROJECT_DIR$/.idea/modules/ObjectRepository/ObjectRepository_main.iml" group="ObjectRepository" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/ObjectRepository/ObjectRepository_test.iml" filepath="$PROJECT_DIR$/.idea/modules/ObjectRepository/ObjectRepository_test.iml" group="ObjectRepository" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/controllers.iml" filepath="$PROJECT_DIR$/.idea/modules/controllers.iml" group="controllers" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/controllers/controllers_main.iml" filepath="$PROJECT_DIR$/.idea/modules/controllers/controllers_main.iml" group="controllers" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/controllers/controllers_test.iml" filepath="$PROJECT_DIR$/.idea/modules/controllers/controllers_test.iml" group="controllers" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/scripts.iml" filepath="$PROJECT_DIR$/.idea/modules/scripts.iml" group="scripts" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/scripts/scripts_main.iml" filepath="$PROJECT_DIR$/.idea/modules/scripts/scripts_main.iml" group="scripts" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/scripts/scripts_test.iml" filepath="$PROJECT_DIR$/.idea/modules/scripts/scripts_test.iml" group="scripts" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/xform-automation-webdriver.iml" filepath="$PROJECT_DIR$/.idea/modules/xform-automation-webdriver.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/xform-automation-webdriver_main.iml" filepath="$PROJECT_DIR$/.idea/modules/xform-automation-webdriver_main.iml" group="xform-automation-webdriver" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/xform-automation-webdriver_test.iml" filepath="$PROJECT_DIR$/.idea/modules/xform-automation-webdriver_test.iml" group="xform-automation-webdriver" />
+    </modules>
+  </component>
+</project>
