@@ -1,12 +1,18 @@
 package common;
 
 import enums.XmlEnum;
+import org.openqa.selenium.Dimension;
 import org.openqa.selenium.WebDriver;
+
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.chrome.ChromeOptions;
 import org.openqa.selenium.edge.EdgeDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
 import org.openqa.selenium.firefox.FirefoxOptions;
+import org.openqa.selenium.htmlunit.HtmlUnitDriver;
+import org.openqa.selenium.phantomjs.PhantomJSDriver;
+
+import org.openqa.selenium.phantomjs.PhantomJSDriverService;
 import org.openqa.selenium.remote.DesiredCapabilities;
 import org.w3c.dom.Document;
 import org.w3c.dom.Element;
@@ -40,6 +46,18 @@ public class Initial {
 
 				driver = new ChromeDriver(options);
 
+			}else if (browser.equals("ChromeHeadLess")) {
+				ChromeOptions options = new ChromeOptions();
+
+				options.setBinary(getValueFromConfig(XmlEnum.GoogleExe));
+
+				options.addArguments("headless");
+				options.addArguments("window-size=1280x1024");
+
+				System.setProperty("webdriver.chrome.driver", getValueFromConfig(XmlEnum.GoogleBinary));
+
+				driver = new ChromeDriver(options);
+
 			}else if (browser.equals("Firefox")) {
 				//System.setProperty("webdriver.firefox.marionette", getValueFromConfig(XmlEnum.FireFoxBinary));
 				DesiredCapabilities capabilities = DesiredCapabilities.firefox();
@@ -59,10 +77,23 @@ public class Initial {
 				System.setProperty("webdriver.edge.driver", getValueFromConfig(XmlEnum.IEBinary));
 
 				driver = new EdgeDriver();
+
+			}else if (browser.equals("HeadLess")) {
+				driver = new HtmlUnitDriver();
+
+			}else if (browser.equals("PhantomJS")) {
+
+				System.setProperty("phantomjs.binary.path", getValueFromConfig(XmlEnum.PhantomJS));
+				driver = new PhantomJSDriver();
+
+				driver.manage().window().setSize(new Dimension(1280, 1024));
+
+
+				//browser.driver.manage().window().setSize(1280, 1024);
 			}
 
 			driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
-				return driver;
+			return driver;
 
 		} catch (Exception e) {
 

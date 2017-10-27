@@ -16,6 +16,8 @@ subprojects {
     compile project(':ObjectRepository')
     compile project(':scripts')
 */
+        // https://mvnrepository.com/artifact/com.codeborne/phantomjsdriver
+        compile group: 'com.codeborne', name: 'phantomjsdriver', version: '1.4.3'
 
         // https://mvnrepository.com/artifact/org.seleniumhq.selenium/selenium-support
         compile group: 'org.seleniumhq.selenium', name: 'selenium-support', version: '3.5.3'

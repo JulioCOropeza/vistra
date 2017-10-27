@@ -14,6 +14,12 @@ public class CommonEnum {
 				return "https://xform-stage.janeirodigital.com/dashboard";
 			}
 		},
+		FoundersDashBoardUrl {
+			public String toString() {
+				return "https://svb-founders-dev.janeirodigital.com/dashboard";
+			}
+		},
+
 	}
 	public enum bodyTitles {
 		XFormDashBoardTitle {

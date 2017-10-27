@@ -23,6 +23,9 @@ public class Scripts {
     }
 
     @Parameters("browser")
+    //public Scripts(@Optional("HeadLess") String browser) {
+    //public Scripts(@Optional("Chrome") String browser) {
+    //ChromeHeadLess PhantomJS
     public Scripts(@Optional("Chrome") String browser) {
 
         try {
