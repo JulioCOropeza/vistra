@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="TryTestNG" tests="1" skipped="0" failures="0" errors="0" timestamp="2017-11-01T22:42:48" hostname="DESKTOP-ECGUOTO" time="0.001">
+  <properties/>
+  <testcase name="mytest" classname="TryTestNG" time="0.001"/>
+  <system-out><![CDATA[ROOT---I am in Test
+]]></system-out>
+  <system-err><![CDATA[]]></system-err>
+</testsuite>

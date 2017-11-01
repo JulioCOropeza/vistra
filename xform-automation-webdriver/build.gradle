@@ -3,19 +3,26 @@ version '1.0-SNAPSHOT'
 apply plugin: 'java'
 
 sourceCompatibility = 1.8
+//targetCompatibility = 1.8
 
 repositories {
     mavenCentral()
 }
 
+/*test {
+    useTestNG(){
+        outputs.upToDateWhen { false }
+        println '--running unit tests ROOT'
+        //suites 'scripts/src/main/resources/testng.xml'
+        suites 'src/test/resources/testng.xml'
+
+    }
+}*/
+
 subprojects {
     apply plugin: 'java'
     dependencies {
-/*
-    compile project(':controllers')
-    compile project(':ObjectRepository')
-    compile project(':scripts')
-*/
+
         // https://mvnrepository.com/artifact/com.codeborne/phantomjsdriver
         compile group: 'com.codeborne', name: 'phantomjsdriver', version: '1.4.3'
 
@@ -40,54 +47,12 @@ subprojects {
 
     }
 }
-/*
-project(':controllers'){
-    dependencies {
-        compile project(':ObjectRepository')
 
-    }
-}
-project(':ObjectRepository'){
-    dependencies {
-        compile project(':controllers')
-    }
-}
-project(':scripts'){
-    dependencies {
-        compile project(':controllers')
-    }
-}
-*/
-
-
-dependencies {
-/*
-    compile project(':controllers')
-    compile project(':ObjectRepository')
-    compile project(':scripts')
-
-
-    // https://mvnrepository.com/artifact/org.seleniumhq.selenium/selenium-support
-    compile group: 'org.seleniumhq.selenium', name: 'selenium-support', version: '3.5.3'
-    compile group: 'org.seleniumhq.selenium', name: 'selenium-java', version: '3.5.3'
-    // https://mvnrepository.com/artifact/org.apache.poi/poi
-    compile group: 'org.apache.poi', name: 'poi', version: '3.9'
-    // https://mvnrepository.com/artifact/org.apache.poi/poi-ooxml
-    compile group: 'org.apache.poi', name: 'poi-ooxml', version: '3.15'
-
-
+/*dependencies {
+    testCompile group: 'org.testng', name: 'testng', version: '6.10'
     testCompile 'org.testng:testng:6.10'
-    //testCompile group: 'org.testng', name: 'testng', version: '6.10'
-    //testCompile group: 'junit', name: 'junit', version: '4.12'
-// https://mvnrepository.com/artifact/org.seleniumhq.selenium/lift
-    compile group: 'org.seleniumhq.selenium', name: 'lift', version: '3.5.3'
-*/
+}*/
 
-    test {
-        // useTestNG()
-        useTestNG {
-            suites 'src/script/testng.xml'
-        }
-    }
 
-}
+
+

@@ -5,7 +5,6 @@ import actions.LogActions;
 import common.Common;
 import common.Initial;
 import enums.XmlEnum;
-import org.junit.runners.Parameterized;
 import org.openqa.selenium.WebDriver;
 import org.testng.Assert;
 import org.testng.annotations.*;
@@ -22,11 +21,13 @@ public class Scripts {
 
     }
 
+
+    @Test
     @Parameters("browser")
-    //public Scripts(@Optional("HeadLess") String browser) {
-    //public Scripts(@Optional("Chrome") String browser) {
-    //ChromeHeadLess PhantomJS
-    public Scripts(@Optional("Chrome") String browser) {
+    public Scripts(@Optional("PhantomJS") String browser) {
+        //public Scripts(@Optional("HeadLess") String browser) {
+        //public Scripts(@Optional("Chrome") String browser) {
+        //ChromeHeadLess PhantomJS
 
         try {
 
@@ -36,6 +37,7 @@ public class Scripts {
             actions = new LogActions(driver);
 
         }catch (Exception e){
+            Assert.fail("==============  FAILED LOGIN =============");
             Assert.fail(e.getMessage());
         }
     }

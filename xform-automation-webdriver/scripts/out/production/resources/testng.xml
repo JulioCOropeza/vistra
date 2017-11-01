@@ -4,8 +4,25 @@
 
 <suite name="TestSuite" thread-count="3" parallel="tests" >
     <listeners>
-        <listener class-name="common.TestListener"/>
+        <listener class-name="listeners.TestListener"/>
     </listeners>
+
+
+    <!--<test name="ChromeHeadLessTest">
+        <parameter name="browser" value="ChromeHeadLess" />
+        <classes>
+            <class name="scripts.Scripts">
+            </class>
+        </classes>
+    </test>-->
+    <test name="PhantomJSTest">
+        <parameter name="browser" value="PhantomJS" />
+        <classes>
+            <class name="scripts.Scripts">
+            </class>
+        </classes>
+    </test>
+    <!--
     <test name="ChromeTest">
         <parameter name="browser" value="Chrome" />
         <classes>
@@ -29,5 +46,5 @@
             </class>
         </classes>
     </test>
-
+-->
 </suite>
