@@ -1,6 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <config>
-
 	<URL>https://svb-founders-dev.janeirodigital.com/login</URL>
 	<GoogleExe>C:\\Program Files (x86)\\Google\\Chrome\\Application\\chrome.exe</GoogleExe>
 	<GoogleBinary>../controllers/src/main/resources/chromedriver.exe</GoogleBinary>
