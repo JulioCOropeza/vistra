@@ -32,7 +32,10 @@ public class Scripts {
         try {
 
             init = new Initial();
+            System.out.print("==============  Scripts before init.getDriver(browser) =============");
             driver = init.getDriver(browser);
+            System.out.print(driver.toString());
+            System.out.print("==============  Scripts after init.getDriver(browser) =============");
             common = new Common(driver);
             actions = new LogActions(driver);
 
