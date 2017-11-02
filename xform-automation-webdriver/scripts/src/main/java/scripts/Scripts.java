@@ -37,7 +37,6 @@ public class Scripts {
             actions = new LogActions(driver);
 
         }catch (Exception e){
-            Assert.fail("==============  FAILED LOGIN =============");
             Assert.fail(e.getMessage());
         }
     }
@@ -60,6 +59,7 @@ public class Scripts {
             actions.login(initParameters);
 
         } catch (Exception e) {
+            Assert.fail("==============  FAILED LOGIN =============");
             Assert.fail(e.getMessage());
         }
     }

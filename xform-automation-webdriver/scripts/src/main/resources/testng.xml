@@ -7,21 +7,22 @@
         <listener class-name="listeners.TestListener"/>
     </listeners>
 
-
-    <test name="ChromeHeadLessTest">
-        <parameter name="browser" value="ChromeHeadLess" />
-        <classes>
-            <class name="scripts.Scripts">
-            </class>
-        </classes>
-    </test>
-   <!-- <test name="PhantomJSTest">
-        <parameter name="browser" value="PhantomJS" />
-        <classes>
-            <class name="scripts.Scripts">
-            </class>
-        </classes>
-    </test>-->
+    <!--
+        <test name="ChromeHeadLessTest">
+            <parameter name="browser" value="ChromeHeadLess" />
+            <classes>
+                <class name="scripts.Scripts">
+                </class>
+            </classes>
+        </test>
+        -->
+       <test name="PhantomJSTest">
+            <parameter name="browser" value="PhantomJS" />
+            <classes>
+                <class name="scripts.Scripts">
+                </class>
+            </classes>
+        </test>
     <!--
     <test name="ChromeTest">
         <parameter name="browser" value="Chrome" />

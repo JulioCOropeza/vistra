@@ -2,31 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="90043554-2f6b-4563-988a-f9248a5eb780" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/controllers/src/main/resources/MicrosoftWebDriver.exe" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/controllers/src/main/resources/chromedriver.exe" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/controllers/src/main/resources/geckodriver.exe" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/controllers/src/main/resources/phantomjs.exe" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.gradle/3.5-rc-2/fileContent/annotation-processors.bin" afterPath="$PROJECT_DIR$/.gradle/3.5-rc-2/fileContent/annotation-processors.bin" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.gradle/3.5-rc-2/fileContent/fileContent.lock" afterPath="$PROJECT_DIR$/.gradle/3.5-rc-2/fileContent/fileContent.lock" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.gradle/3.5-rc-2/taskHistory/fileHashes.bin" afterPath="$PROJECT_DIR$/.gradle/3.5-rc-2/taskHistory/fileHashes.bin" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.gradle/3.5-rc-2/taskHistory/fileSnapshots.bin" afterPath="$PROJECT_DIR$/.gradle/3.5-rc-2/taskHistory/fileSnapshots.bin" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.gradle/3.5-rc-2/taskHistory/jvmClassSignatures.bin" afterPath="$PROJECT_DIR$/.gradle/3.5-rc-2/taskHistory/jvmClassSignatures.bin" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.gradle/3.5-rc-2/taskHistory/taskHistory.bin" afterPath="$PROJECT_DIR$/.gradle/3.5-rc-2/taskHistory/taskHistory.bin" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.gradle/3.5-rc-2/taskHistory/taskHistory.lock" afterPath="$PROJECT_DIR$/.gradle/3.5-rc-2/taskHistory/taskHistory.lock" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/controllers/build/libs/controllers-1.0-SNAPSHOT.jar" afterPath="$PROJECT_DIR$/controllers/build/libs/controllers-1.0-SNAPSHOT.jar" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/scripts/build/classes/main/scripts/Scripts.class" afterPath="$PROJECT_DIR$/scripts/build/classes/main/scripts/Scripts.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/scripts/build/test-results/test/binary/results.bin" afterPath="$PROJECT_DIR$/scripts/build/test-results/test/binary/results.bin" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/scripts/out/production/classes/scripts/Scripts.class" afterPath="$PROJECT_DIR$/scripts/out/production/classes/scripts/Scripts.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/controllers/build/resources/main/Config.xml" afterPath="$PROJECT_DIR$/controllers/build/resources/main/Config.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/controllers/out/production/resources/Config.xml" afterPath="$PROJECT_DIR$/controllers/out/production/resources/Config.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/controllers/src/main/resources/Config.xml" afterPath="$PROJECT_DIR$/controllers/src/main/resources/Config.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/scripts/build/reports/tests/test/classes/scripts.Scripts.html" afterPath="$PROJECT_DIR$/scripts/build/reports/tests/test/classes/scripts.Scripts.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/scripts/build/reports/tests/test/index.html" afterPath="$PROJECT_DIR$/scripts/build/reports/tests/test/index.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/scripts/build/reports/tests/test/packages/scripts.html" afterPath="$PROJECT_DIR$/scripts/build/reports/tests/test/packages/scripts.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/scripts/build/test-results/test/TEST-scripts.Scripts.xml" afterPath="$PROJECT_DIR$/scripts/build/test-results/test/TEST-scripts.Scripts.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/scripts/out/production/resources/testng.xml" afterPath="$PROJECT_DIR$/scripts/out/production/resources/testng.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/scripts/src/main/java/scripts/Scripts.java" afterPath="$PROJECT_DIR$/scripts/src/main/java/scripts/Scripts.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/scripts/src/main/resources/testng.xml" afterPath="$PROJECT_DIR$/scripts/src/main/resources/testng.xml" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <ignored path="$PROJECT_DIR$/.gradle/" />
@@ -99,14 +76,34 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="Scripts.java" pinned="false" current-in-tab="true">
+      <file leaf-file-name="Scripts.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/scripts/src/main/java/scripts/Scripts.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="391">
-              <caret line="28" column="62" lean-forward="true" selection-start-line="28" selection-start-column="62" selection-end-line="28" selection-end-column="62" />
+            <state relative-caret-position="169">
+              <caret line="26" column="36" lean-forward="false" selection-start-line="26" selection-start-column="30" selection-end-line="26" selection-end-column="36" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="LogActions.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/controllers/src/main/java/actions/LogActions.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="438">
+              <caret line="38" column="42" lean-forward="false" selection-start-line="38" selection-start-column="42" selection-end-line="38" selection-end-column="42" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="Common.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/controllers/src/main/java/common/Common.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="192">
+              <caret line="30" column="20" lean-forward="false" selection-start-line="30" selection-start-column="20" selection-end-line="30" selection-end-column="20" />
+              <folding />
             </state>
           </provider>
         </entry>
@@ -123,11 +120,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="testng.xml" pinned="false" current-in-tab="false">
+      <file leaf-file-name="testng.xml" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/scripts/src/main/resources/testng.xml">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="376">
-              <caret line="26" column="47" lean-forward="false" selection-start-line="26" selection-start-column="41" selection-end-line="26" selection-end-column="47" />
+            <state relative-caret-position="425">
+              <caret line="25" column="8" lean-forward="true" selection-start-line="25" selection-start-column="8" selection-end-line="25" selection-end-column="8" />
               <folding />
             </state>
           </provider>
@@ -1018,14 +1015,14 @@
         <option value="$PROJECT_DIR$/scripts/src/test/java/TryTestNG.java" />
         <option value="$PROJECT_DIR$/src/test/java/TryTestNG.java" />
         <option value="$PROJECT_DIR$/scripts/build.gradle" />
-        <option value="$PROJECT_DIR$/scripts/src/main/resources/testng.xml" />
         <option value="$PROJECT_DIR$/build.gradle" />
         <option value="$PROJECT_DIR$/controllers/src/main/resources/Config.xml" />
         <option value="$PROJECT_DIR$/scripts/src/main/java/scripts/Scripts.java" />
+        <option value="$PROJECT_DIR$/scripts/src/main/resources/testng.xml" />
       </list>
     </option>
   </component>
-  <component name="ProjectFrameBounds" extendedState="7">
+  <component name="ProjectFrameBounds" extendedState="6">
     <option name="x" value="-1296" />
     <option name="y" value="3" />
     <option name="width" value="1191" />
@@ -1458,7 +1455,7 @@
     </history-entry>
   </component>
   <component name="ToolWindowManager">
-    <frame x="-1928" y="-319" width="1936" height="1056" extended-state="7" />
+    <frame x="-1928" y="-319" width="1936" height="1056" extended-state="6" />
     <editor active="true" />
     <layout>
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
@@ -1503,13 +1500,6 @@
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/controllers/build.gradle">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="221">
-          <caret line="13" column="29" lean-forward="false" selection-start-line="13" selection-start-column="29" selection-end-line="13" selection-end-column="29" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/controllers/src/main/java/common/Initial.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="391">
@@ -1637,6 +1627,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="102">
           <caret line="11" column="14" lean-forward="false" selection-start-line="11" selection-start-column="14" selection-end-line="11" selection-end-column="14" />
+          <folding />
         </state>
       </provider>
     </entry>
@@ -1661,6 +1652,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
         </state>
       </provider>
     </entry>
@@ -1695,23 +1687,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/controllers/src/main/java/common/Common.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="220">
-          <caret line="22" column="45" lean-forward="false" selection-start-line="22" selection-start-column="38" selection-end-line="22" selection-end-column="45" />
-          <folding>
-            <element signature="imports" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/controllers/src/main/java/actions/LogActions.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="153">
-          <caret line="9" column="2" lean-forward="false" selection-start-line="9" selection-start-column="2" selection-end-line="9" selection-end-column="2" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/ObjectRepository/src/main/java/objectRepository/XFormDashBoard.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="68">
@@ -1723,6 +1698,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="136">
           <caret line="8" column="6" lean-forward="false" selection-start-line="8" selection-start-column="6" selection-end-line="8" selection-end-column="6" />
+          <folding />
         </state>
       </provider>
     </entry>
@@ -1793,16 +1769,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/controllers/src/main/java/common/Initial.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="85">
-          <caret line="82" column="47" lean-forward="false" selection-start-line="82" selection-start-column="38" selection-end-line="82" selection-end-column="47" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/settings.gradle">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="85">
@@ -1847,6 +1813,14 @@
         </state>
       </provider>
     </entry>
+    <entry file="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.seleniumhq.selenium/selenium-support/3.5.3/1de45742a1a472910ad2391f4c24c0c4d4ffecc/selenium-support-3.5.3-sources.jar!/org/openqa/selenium/support/ui/ExpectedConditions.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="200">
+          <caret line="639" column="46" lean-forward="false" selection-start-line="639" selection-start-column="46" selection-end-line="639" selection-end-column="46" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/scripts/build.gradle">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="238">
@@ -1855,21 +1829,47 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/scripts/src/main/resources/testng.xml">
+    <entry file="file://$PROJECT_DIR$/controllers/src/main/java/common/Initial.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="376">
-          <caret line="26" column="47" lean-forward="false" selection-start-line="26" selection-start-column="41" selection-end-line="26" selection-end-column="47" />
+        <state relative-caret-position="85">
+          <caret line="82" column="47" lean-forward="false" selection-start-line="82" selection-start-column="38" selection-end-line="82" selection-end-column="47" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/controllers/src/main/java/common/Common.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="192">
+          <caret line="30" column="20" lean-forward="false" selection-start-line="30" selection-start-column="20" selection-end-line="30" selection-end-column="20" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/controllers/src/main/java/actions/LogActions.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="438">
+          <caret line="38" column="42" lean-forward="false" selection-start-line="38" selection-start-column="42" selection-end-line="38" selection-end-column="42" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/scripts/src/main/java/scripts/Scripts.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="391">
-          <caret line="28" column="62" lean-forward="true" selection-start-line="28" selection-start-column="62" selection-end-line="28" selection-end-column="62" />
+        <state relative-caret-position="169">
+          <caret line="26" column="36" lean-forward="false" selection-start-line="26" selection-start-column="30" selection-end-line="26" selection-end-column="36" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/scripts/src/main/resources/testng.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="425">
+          <caret line="25" column="8" lean-forward="true" selection-start-line="25" selection-start-column="8" selection-end-line="25" selection-end-column="8" />
+          <folding />
         </state>
       </provider>
     </entry>
