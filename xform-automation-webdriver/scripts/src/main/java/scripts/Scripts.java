@@ -36,7 +36,10 @@ public class Scripts {
             System.out.print("==============  browser  =============\n");
             System.out.print(browser);
             driver = init.getDriver(browser);
-            System.out.print(driver.toString());
+            if (driver == null)
+                System.out.print("==============  DRIVER IS NULL  =============\n");
+            else
+                System.out.print(driver.toString());
             System.out.print("==============  Scripts after init.getDriver(browser) =============\n");
             common = new Common(driver);
             actions = new LogActions(driver);
