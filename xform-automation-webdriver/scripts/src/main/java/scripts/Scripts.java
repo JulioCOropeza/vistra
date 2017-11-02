@@ -59,7 +59,7 @@ public class Scripts {
             actions.login(initParameters);
 
         } catch (Exception e) {
-            Assert.fail("==============  FAILED LOGIN =============");
+            System.out.print("==============  FAILED LOGIN =============");
             Assert.fail(e.getMessage());
         }
     }

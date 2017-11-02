@@ -29,7 +29,7 @@ public class LogActions {
 
 		//assertTrue(driver.findElement(By.id("q")).isDisplayed());
 
-		driver.findElement(login.loginCheck).click();
+	/*	driver.findElement(login.loginCheck).click();
 
 		driver.findElement(login.username).sendKeys(sEmail);
 		driver.findElement(login.password).sendKeys(sPassword);
@@ -39,17 +39,17 @@ public class LogActions {
 		wait.until(ExpectedConditions.elementToBeClickable(login.signIn));
 			   
 		driver.findElement(login.signIn).click();
-		/*
+		*//*
 		WebElement element = driver.findElement(By.xpath("//*[@id='cred_sign_in_button']"));
 		JavascriptExecutor executor = (JavascriptExecutor)driver;
-		executor.executeScript("arguments[0].click();", element);*/
+		executor.executeScript("arguments[0].click();", element);*//*
 
 
 		boolean rightURL = wait.until(ExpectedConditions.urlContains(CommonEnum.pagesURLs.FoundersDashBoardUrl.toString()));
 
 		if(!rightURL)
 			throw new Exception("Page was not loaded");
-
+*/
 	}
-	//public void addUser
+
 }
