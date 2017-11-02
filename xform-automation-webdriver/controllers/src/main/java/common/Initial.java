@@ -97,7 +97,7 @@ public class Initial {
 
 		} catch (Exception e) {
 
-			Assert.fail(e.getMessage()); // need to change for a exception
+			return null; // need to change for a exception
 
 		}
 
