@@ -2,56 +2,31 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="90043554-2f6b-4563-988a-f9248a5eb780" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/scripts/src/test/java/TryTestNG.java" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/controllers/out/production/classes/common/TestListener.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/controllers/out/production/classes/enums/CommonEnum$1.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/controllers/out/production/classes/enums/CommonEnum$bodyTitles$1.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/controllers/out/production/classes/enums/CommonEnum$bodyTitles.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/controllers/out/production/classes/enums/CommonEnum$pageTitles$1.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/controllers/out/production/classes/enums/CommonEnum$pageTitles.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/controllers/out/production/classes/enums/CommonEnum$pagesURLs$1.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/controllers/out/production/classes/enums/CommonEnum$pagesURLs$2.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/controllers/out/production/classes/enums/CommonEnum$pagesURLs.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/controllers/out/production/classes/enums/CommonEnum$xFormDataProviders$1.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/controllers/out/production/classes/enums/CommonEnum$xFormDataProviders$2.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/controllers/out/production/classes/enums/CommonEnum$xFormDataProviders$3.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/controllers/out/production/classes/enums/CommonEnum$xFormDataProviders.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/controllers/out/production/classes/enums/CommonEnum$xFormMenuTitles$1.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/controllers/out/production/classes/enums/CommonEnum$xFormMenuTitles$2.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/controllers/out/production/classes/enums/CommonEnum$xFormMenuTitles$3.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/controllers/out/production/classes/enums/CommonEnum$xFormMenuTitles.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/controllers/out/production/classes/enums/CommonEnum.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/controllers/out/production/classes/enums/XmlEnum.class" afterPath="" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/controllers/src/main/java/common/TestListener.java" afterPath="$PROJECT_DIR$/scripts/src/main/java/listeners/TestListener.java" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/controllers/src/main/java/enums/CommonEnum.java" afterPath="$PROJECT_DIR$/ObjectRepository/src/main/java/enums/CommonEnum.java" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/controllers/src/main/java/enums/XmlEnum.java" afterPath="$PROJECT_DIR$/ObjectRepository/src/main/java/enums/XmlEnum.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/controllers/src/main/resources/MicrosoftWebDriver.exe" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/controllers/src/main/resources/chromedriver.exe" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/controllers/src/main/resources/geckodriver.exe" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/controllers/src/main/resources/phantomjs.exe" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.gradle/3.5-rc-2/fileContent/annotation-processors.bin" afterPath="$PROJECT_DIR$/.gradle/3.5-rc-2/fileContent/annotation-processors.bin" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.gradle/3.5-rc-2/fileContent/fileContent.lock" afterPath="$PROJECT_DIR$/.gradle/3.5-rc-2/fileContent/fileContent.lock" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.gradle/3.5-rc-2/taskHistory/fileHashes.bin" afterPath="$PROJECT_DIR$/.gradle/3.5-rc-2/taskHistory/fileHashes.bin" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.gradle/3.5-rc-2/taskHistory/fileSnapshots.bin" afterPath="$PROJECT_DIR$/.gradle/3.5-rc-2/taskHistory/fileSnapshots.bin" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.gradle/3.5-rc-2/taskHistory/jvmClassSignatures.bin" afterPath="$PROJECT_DIR$/.gradle/3.5-rc-2/taskHistory/jvmClassSignatures.bin" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.gradle/3.5-rc-2/taskHistory/taskHistory.bin" afterPath="$PROJECT_DIR$/.gradle/3.5-rc-2/taskHistory/taskHistory.bin" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.gradle/3.5-rc-2/taskHistory/taskHistory.lock" afterPath="$PROJECT_DIR$/.gradle/3.5-rc-2/taskHistory/taskHistory.lock" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/controllers/out/production/classes/actions/LogActions.class" afterPath="$PROJECT_DIR$/controllers/out/production/classes/actions/LogActions.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/controllers/out/production/classes/common/Initial.class" afterPath="$PROJECT_DIR$/controllers/out/production/classes/common/Initial.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/controllers/out/production/resources/ParameterFile.xlsx" afterPath="$PROJECT_DIR$/controllers/out/production/resources/ParameterFile.xlsx" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/controllers/src/main/resources/ParameterFile.xlsx" afterPath="$PROJECT_DIR$/controllers/src/main/resources/ParameterFile.xlsx" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/controllers/build/libs/controllers-1.0-SNAPSHOT.jar" afterPath="$PROJECT_DIR$/controllers/build/libs/controllers-1.0-SNAPSHOT.jar" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/scripts/build/classes/main/scripts/Scripts.class" afterPath="$PROJECT_DIR$/scripts/build/classes/main/scripts/Scripts.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/scripts/build/test-results/test/binary/results.bin" afterPath="$PROJECT_DIR$/scripts/build/test-results/test/binary/results.bin" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/scripts/out/production/classes/scripts/Scripts.class" afterPath="$PROJECT_DIR$/scripts/out/production/classes/scripts/Scripts.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.gradle/buildOutputCleanup/cache.properties" afterPath="$PROJECT_DIR$/.gradle/buildOutputCleanup/cache.properties" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/gradle.xml" afterPath="$PROJECT_DIR$/.idea/gradle.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/modules/ObjectRepository/ObjectRepository_main.iml" afterPath="$PROJECT_DIR$/.idea/modules/ObjectRepository/ObjectRepository_main.iml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/modules/ObjectRepository/ObjectRepository_test.iml" afterPath="$PROJECT_DIR$/.idea/modules/ObjectRepository/ObjectRepository_test.iml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/modules/controllers/controllers_main.iml" afterPath="$PROJECT_DIR$/.idea/modules/controllers/controllers_main.iml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/modules/controllers/controllers_test.iml" afterPath="$PROJECT_DIR$/.idea/modules/controllers/controllers_test.iml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/modules/scripts/scripts_main.iml" afterPath="$PROJECT_DIR$/.idea/modules/scripts/scripts_main.iml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/modules/scripts/scripts_test.iml" afterPath="$PROJECT_DIR$/.idea/modules/scripts/scripts_test.iml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/ObjectRepository/build.gradle" afterPath="$PROJECT_DIR$/ObjectRepository/build.gradle" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build.gradle" afterPath="$PROJECT_DIR$/build.gradle" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/controllers/build.gradle" afterPath="$PROJECT_DIR$/controllers/build.gradle" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/controllers/src/main/java/actions/LogActions.java" afterPath="$PROJECT_DIR$/controllers/src/main/java/actions/LogActions.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/controllers/src/main/java/common/Initial.java" afterPath="$PROJECT_DIR$/controllers/src/main/java/common/Initial.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/scripts/build.gradle" afterPath="$PROJECT_DIR$/scripts/build.gradle" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/controllers/build/resources/main/Config.xml" afterPath="$PROJECT_DIR$/controllers/build/resources/main/Config.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/controllers/out/production/resources/Config.xml" afterPath="$PROJECT_DIR$/controllers/out/production/resources/Config.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/controllers/src/main/resources/Config.xml" afterPath="$PROJECT_DIR$/controllers/src/main/resources/Config.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/scripts/build/reports/tests/test/classes/scripts.Scripts.html" afterPath="$PROJECT_DIR$/scripts/build/reports/tests/test/classes/scripts.Scripts.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/scripts/build/reports/tests/test/index.html" afterPath="$PROJECT_DIR$/scripts/build/reports/tests/test/index.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/scripts/build/reports/tests/test/packages/scripts.html" afterPath="$PROJECT_DIR$/scripts/build/reports/tests/test/packages/scripts.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/scripts/build/test-results/test/TEST-scripts.Scripts.xml" afterPath="$PROJECT_DIR$/scripts/build/test-results/test/TEST-scripts.Scripts.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/scripts/out/production/resources/testng.xml" afterPath="$PROJECT_DIR$/scripts/out/production/resources/testng.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/scripts/src/main/java/scripts/Scripts.java" afterPath="$PROJECT_DIR$/scripts/src/main/java/scripts/Scripts.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/scripts/src/main/resources/testng.xml" afterPath="$PROJECT_DIR$/scripts/src/main/resources/testng.xml" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <ignored path="$PROJECT_DIR$/.gradle/" />
@@ -124,11 +99,11 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="Scripts.java" pinned="false" current-in-tab="false">
+      <file leaf-file-name="Scripts.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/scripts/src/main/java/scripts/Scripts.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="238">
-              <caret line="81" column="19" lean-forward="false" selection-start-line="81" selection-start-column="19" selection-end-line="81" selection-end-column="19" />
+            <state relative-caret-position="391">
+              <caret line="28" column="62" lean-forward="true" selection-start-line="28" selection-start-column="62" selection-end-line="28" selection-end-column="62" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -151,14 +126,34 @@
       <file leaf-file-name="testng.xml" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/scripts/src/main/resources/testng.xml">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="53">
-              <caret line="10" column="0" lean-forward="false" selection-start-line="10" selection-start-column="0" selection-end-line="16" selection-end-column="11" />
+            <state relative-caret-position="376">
+              <caret line="26" column="47" lean-forward="false" selection-start-line="26" selection-start-column="41" selection-end-line="26" selection-end-column="47" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="TryTestNG.java" pinned="false" current-in-tab="true">
+      <file leaf-file-name="build.gradle" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/scripts/build.gradle">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="238">
+              <caret line="14" column="43" lean-forward="false" selection-start-line="10" selection-start-column="3" selection-end-line="14" selection-end-column="43" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="Config.xml" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/controllers/src/main/resources/Config.xml">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="85">
+              <caret line="5" column="22" lean-forward="true" selection-start-line="5" selection-start-column="22" selection-end-line="5" selection-end-column="22" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="TryTestNG.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/scripts/src/test/java/TryTestNG.java">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="102">
@@ -175,7 +170,7 @@
       <file leaf-file-name="build.gradle" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/build.gradle">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="238">
+            <state relative-caret-position="484">
               <caret line="56" column="0" lean-forward="false" selection-start-line="56" selection-start-column="0" selection-end-line="56" selection-end-column="0" />
               <folding />
             </state>
@@ -197,6 +192,7 @@
       <find>XFormDashBoardUrl</find>
       <find>https://xform-stage.janeirodigital.com/dashboard</find>
       <find>windo</find>
+      <find>GoogleExe</find>
     </findStrings>
     <replaceStrings>
       <replace />
@@ -1013,7 +1009,6 @@
         <option value="$PROJECT_DIR$/controllers/src/main/java/enums/CommonEnum.java" />
         <option value="$PROJECT_DIR$/controllers/src/main/java/enums/XmlEnum.java" />
         <option value="$PROJECT_DIR$/controllers/src/main/java/common/Initial.java" />
-        <option value="$PROJECT_DIR$/controllers/src/main/resources/Config.xml" />
         <option value="$PROJECT_DIR$/ObjectRepository/src/main/java/objectRepository/LoginPage.java" />
         <option value="$PROJECT_DIR$/controllers/build.gradle" />
         <option value="$PROJECT_DIR$/controllers/src/main/java/actions/LogActions.java" />
@@ -1025,11 +1020,12 @@
         <option value="$PROJECT_DIR$/scripts/build.gradle" />
         <option value="$PROJECT_DIR$/scripts/src/main/resources/testng.xml" />
         <option value="$PROJECT_DIR$/build.gradle" />
+        <option value="$PROJECT_DIR$/controllers/src/main/resources/Config.xml" />
         <option value="$PROJECT_DIR$/scripts/src/main/java/scripts/Scripts.java" />
       </list>
     </option>
   </component>
-  <component name="ProjectFrameBounds" extendedState="6">
+  <component name="ProjectFrameBounds" extendedState="7">
     <option name="x" value="-1296" />
     <option name="y" value="3" />
     <option name="width" value="1191" />
@@ -1060,6 +1056,32 @@
             <path>
               <item name="xform-automation-webdriver" type="b2602c69:ProjectViewProjectNode" />
               <item name="xform-automation-webdriver" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
+            </path>
+            <path>
+              <item name="xform-automation-webdriver" type="b2602c69:ProjectViewProjectNode" />
+              <item name="xform-automation-webdriver" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
+              <item name="controllers" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
+            </path>
+            <path>
+              <item name="xform-automation-webdriver" type="b2602c69:ProjectViewProjectNode" />
+              <item name="xform-automation-webdriver" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
+              <item name="controllers" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="xform-automation-webdriver" type="b2602c69:ProjectViewProjectNode" />
+              <item name="xform-automation-webdriver" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
+              <item name="controllers" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
+            </path>
+            <path>
+              <item name="xform-automation-webdriver" type="b2602c69:ProjectViewProjectNode" />
+              <item name="xform-automation-webdriver" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
+              <item name="controllers" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
+              <item name="resources" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="xform-automation-webdriver" type="b2602c69:ProjectViewProjectNode" />
@@ -1135,11 +1157,11 @@
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\uti\GitHub\xform-qa\xform-automation-webdriver\controllers\src\main\resources" />
       <recent name="C:\uti\GitHub\xform-qa\xform-automation-webdriver\scripts\src\test\resources" />
       <recent name="C:\uti\GitHub\xform-qa\xform-automation-webdriver\src\test\resources" />
       <recent name="C:\uti\GitHub\xform-qa\xform-automation-webdriver\scripts\src\main" />
       <recent name="C:\uti\JetBrains\IdeaProjects\xform-automation-webdriver\scripts\src" />
-      <recent name="C:\uti\JetBrains\IdeaProjects\xform-automation-webdriver\ObjectRepository" />
     </key>
     <key name="CopyClassDialog.RECENTS_KEY">
       <recent name="" />
@@ -1164,7 +1186,7 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="Gradle.xform-automation-webdriver [test]">
+  <component name="RunManager" selected="TestNG.Scripts">
     <configuration name="Scripts" type="TestNG" factoryName="TestNG" nameIsGenerated="true">
       <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea">
         <pattern>
@@ -1410,14 +1432,11 @@
     <history-entry file="Scripts - 2017.11.01 at 17h 32m 39s.xml">
       <configuration name="Scripts" configurationId="TestNG" />
     </history-entry>
-    <history-entry file="xform-automation-webdriver_[test] - 2017.11.01 at 17h 21m 43s.xml">
-      <configuration name="xform-automation-webdriver [test]" configurationId="GradleRunConfiguration" />
+    <history-entry file="Scripts - 2017.11.02 at 08h 29m 09s.xml">
+      <configuration name="Scripts" configurationId="TestNG" />
     </history-entry>
-    <history-entry file="xform-automation-webdriver_[test] - 2017.11.01 at 17h 22m 12s.xml">
-      <configuration name="xform-automation-webdriver [test]" configurationId="GradleRunConfiguration" />
-    </history-entry>
-    <history-entry file="xform-automation-webdriver_[test] - 2017.11.01 at 17h 24m 58s.xml">
-      <configuration name="xform-automation-webdriver [test]" configurationId="GradleRunConfiguration" />
+    <history-entry file="Scripts - 2017.11.02 at 08h 29m 58s.xml">
+      <configuration name="Scripts" configurationId="TestNG" />
     </history-entry>
     <history-entry file="xform-automation-webdriver_[test] - 2017.11.01 at 17h 28m 45s.xml">
       <configuration name="xform-automation-webdriver [test]" configurationId="GradleRunConfiguration" />
@@ -1434,9 +1453,12 @@
     <history-entry file="xform-automation-webdriver_[test] - 2017.11.01 at 17h 41m 20s.xml">
       <configuration name="xform-automation-webdriver [test]" configurationId="GradleRunConfiguration" />
     </history-entry>
+    <history-entry file="xform-automation-webdriver_[test] - 2017.11.02 at 08h 27m 22s.xml">
+      <configuration name="xform-automation-webdriver [test]" configurationId="GradleRunConfiguration" />
+    </history-entry>
   </component>
   <component name="ToolWindowManager">
-    <frame x="-1374" y="-8" width="1382" height="744" extended-state="6" />
+    <frame x="-1928" y="-319" width="1936" height="1056" extended-state="7" />
     <editor active="true" />
     <layout>
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
@@ -1445,16 +1467,16 @@
       <window_info id="Palette&#9;" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
       <window_info id="Image Layers" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Analysis" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
-      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.3894558" sideWeight="0.15128593" order="7" side_tool="true" content_ui="tabs" />
+      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.30222222" sideWeight="0.15351813" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.3894558" sideWeight="0.84871405" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.30222222" sideWeight="0.84648186" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Tool" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.17246597" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
-      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3282313" sideWeight="0.48487142" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Gradle" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.19818456" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.12153518" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32777777" sideWeight="0.48294243" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Gradle" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.13965885" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="UI Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
@@ -1747,14 +1769,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/controllers/src/main/resources/Config.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="153">
-          <caret line="9" column="70" lean-forward="false" selection-start-line="9" selection-start-column="19" selection-end-line="9" selection-end-column="70" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/test/resources/testng.xml">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
@@ -1779,14 +1793,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/scripts/build.gradle">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="153">
-          <caret line="12" column="46" lean-forward="false" selection-start-line="12" selection-start-column="46" selection-end-line="12" selection-end-column="46" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/controllers/src/main/java/common/Initial.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="85">
@@ -1797,26 +1803,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/scripts/src/main/resources/testng.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="53">
-          <caret line="10" column="0" lean-forward="false" selection-start-line="10" selection-start-column="0" selection-end-line="16" selection-end-column="11" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/settings.gradle">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="85">
           <caret line="5" column="0" lean-forward="false" selection-start-line="5" selection-start-column="0" selection-end-line="5" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/build.gradle">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="238">
-          <caret line="56" column="0" lean-forward="false" selection-start-line="56" selection-start-column="0" selection-end-line="56" selection-end-column="0" />
           <folding />
         </state>
       </provider>
@@ -1829,16 +1819,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/scripts/src/main/java/scripts/Scripts.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="238">
-          <caret line="81" column="19" lean-forward="false" selection-start-line="81" selection-start-column="19" selection-end-line="81" selection-end-column="19" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/scripts/src/test/java/TryTestNG.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="102">
@@ -1847,6 +1827,48 @@
             <element signature="imports" expanded="true" />
             <element signature="e#283#284#0" expanded="true" />
             <element signature="e#333#334#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/build.gradle">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="484">
+          <caret line="56" column="0" lean-forward="false" selection-start-line="56" selection-start-column="0" selection-end-line="56" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/controllers/src/main/resources/Config.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="85">
+          <caret line="5" column="22" lean-forward="true" selection-start-line="5" selection-start-column="22" selection-end-line="5" selection-end-column="22" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/scripts/build.gradle">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="238">
+          <caret line="14" column="43" lean-forward="false" selection-start-line="10" selection-start-column="3" selection-end-line="14" selection-end-column="43" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/scripts/src/main/resources/testng.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="376">
+          <caret line="26" column="47" lean-forward="false" selection-start-line="26" selection-start-column="41" selection-end-line="26" selection-end-column="47" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/scripts/src/main/java/scripts/Scripts.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="391">
+          <caret line="28" column="62" lean-forward="true" selection-start-line="28" selection-start-column="62" selection-end-line="28" selection-end-column="62" />
+          <folding>
+            <element signature="imports" expanded="true" />
           </folding>
         </state>
       </provider>

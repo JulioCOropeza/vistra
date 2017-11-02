@@ -3,9 +3,9 @@
 
 	<URL>https://svb-founders-dev.janeirodigital.com/login</URL>
 	<GoogleExe>C:\\Program Files (x86)\\Google\\Chrome\\Application\\chrome.exe</GoogleExe>
-	<GoogleBinary>C:\\uti\\AutomationLibs\\Browsers\\chromedriver.exe</GoogleBinary>
-	<FireFoxBinary>C:\\uti\\AutomationLibs\\Browsers\\geckodriver.exe</FireFoxBinary>
-	<IEBinary>C:\\uti\\AutomationLibs\\Browsers\\MicrosoftWebDriver.exe</IEBinary>
-	<PhantomJS>C:\\uti\\AutomationLibs\\Browsers\\phantomjs.exe</PhantomJS>
+	<GoogleBinary>../controllers/src/main/resources/chromedriver.exe</GoogleBinary>
+	<FireFoxBinary>../controllers/src/main/resources/geckodriver.exe</FireFoxBinary>
+	<IEBinary>../controllers/src/main/resources/MicrosoftWebDriver.exe</IEBinary>
+	<PhantomJS>../controllers/src/main/resources/phantomjs.exe</PhantomJS>
 	<ParameterFile>../controllers/src/main/resources/ParameterFile.xlsx</ParameterFile>
 </config>

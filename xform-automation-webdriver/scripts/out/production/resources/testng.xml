@@ -8,20 +8,20 @@
     </listeners>
 
 
-    <!--<test name="ChromeHeadLessTest">
+    <test name="ChromeHeadLessTest">
         <parameter name="browser" value="ChromeHeadLess" />
         <classes>
             <class name="scripts.Scripts">
             </class>
         </classes>
-    </test>-->
-    <test name="PhantomJSTest">
+    </test>
+   <!-- <test name="PhantomJSTest">
         <parameter name="browser" value="PhantomJS" />
         <classes>
             <class name="scripts.Scripts">
             </class>
         </classes>
-    </test>
+    </test>-->
     <!--
     <test name="ChromeTest">
         <parameter name="browser" value="Chrome" />
