@@ -96,7 +96,7 @@ public class Initial {
 			return driver;
 
 		} catch (Exception e) {
-
+			e.printStackTrace();
 			return null; // need to change for a exception
 
 		}
