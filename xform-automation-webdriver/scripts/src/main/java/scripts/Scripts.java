@@ -51,12 +51,19 @@ public class Scripts {
     @BeforeClass
     public void BeforeClass() {
         try {
-
+            System.out.print("==============  BeforeClass before openBaseURL =============");
             common.OpenBaseURL();
+            System.out.print("==============  BeforeClass after openBaseURL =============");
 
             String userFlag = "1"; // flag to look for into the .xls file
+
+            System.out.print("==============  BeforeClass before readParameterFile =============");
             Object[] initParameters = common.readParameterFile(userFlag, "Parameters");//login info is get from xls file
+            System.out.print("==============  BeforeClass after readParameterFile =============");
+
+            System.out.print("==============  BeforeClass before actions.login(initParameters) =============");
             actions.login(initParameters);
+            System.out.print("==============  BeforeClass after actions.login(initParameters) =============");
 
         } catch (Exception e) {
             System.out.print("==============  FAILED LOGIN =============");

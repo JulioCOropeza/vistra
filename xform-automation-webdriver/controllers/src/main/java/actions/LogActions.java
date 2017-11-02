@@ -26,7 +26,7 @@ public class LogActions {
 
 		String sPassword = initParameters[0].toString();
 		String sEmail = initParameters[1].toString();
-
+		System.out.print("==============  LOGIN in =============");
 		//assertTrue(driver.findElement(By.id("q")).isDisplayed());
 
 	/*	driver.findElement(login.loginCheck).click();
