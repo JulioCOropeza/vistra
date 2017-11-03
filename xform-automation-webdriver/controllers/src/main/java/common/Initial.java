@@ -69,6 +69,18 @@ public class Initial {
 					System.setProperty("webdriver.chrome.driver", getValueFromConfig(XmlEnum.ChromeLinux32));
 
 					driver = new ChromeDriver(options);
+			}else if (browser.equals("ChromeLinux64")) {
+				ChromeOptions options = new ChromeOptions();
+
+				options.setBinary(getValueFromConfig(XmlEnum.ChromeLinux64));
+
+				options.addArguments("headless");
+				options.addArguments("window-size=1280x1024");
+
+				System.setProperty("webdriver.chrome.driver", getValueFromConfig(XmlEnum.ChromeLinux64));
+
+				driver = new ChromeDriver(options);
+
 
 			}else if (browser.equals("Firefox")) {
 				//System.setProperty("webdriver.firefox.marionette", getValueFromConfig(XmlEnum.FireFoxBinary));
@@ -96,6 +108,15 @@ public class Initial {
 			}else if (browser.equals("PhantomJS")) {
 
 				System.setProperty("phantomjs.binary.path", getValueFromConfig(XmlEnum.PhantomJS));
+				driver = new PhantomJSDriver();
+
+				driver.manage().window().setSize(new Dimension(1280, 1024));
+
+
+				//browser.driver.manage().window().setSize(1280, 1024);
+			}else if (browser.equals("PhantomJSLinux64")) {
+
+				System.setProperty("phantomjs.binary.path", getValueFromConfig(XmlEnum.PhantomJSLinux64));
 				driver = new PhantomJSDriver();
 
 				driver.manage().window().setSize(new Dimension(1280, 1024));

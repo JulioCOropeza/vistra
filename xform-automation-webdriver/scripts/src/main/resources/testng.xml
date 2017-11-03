@@ -16,14 +16,21 @@
             </classes>
         </test>
 -->
-
-    <test name="ChromeLinux32Test">
-        <parameter name="browser" value="ChromeLinux32" />
+<!--
+    <test name="ChromeLinux64Test">
+        <parameter name="browser" value="ChromeLinux64" />
         <classes>
             <class name="scripts.Scripts">
             </class>
         </classes>
-    </test>
+    </test>-->
+      <test name="PhantomJSLinux64Test">
+           <parameter name="browser" value="PhantomJSLinux64" />
+           <classes>
+               <class name="scripts.Scripts">
+               </class>
+           </classes>
+       </test>
      <!--  <test name="PhantomJSTest">
             <parameter name="browser" value="PhantomJS" />
             <classes>

@@ -8,5 +8,6 @@
 	<FireFoxBinary>../controllers/src/main/resources/geckodriver.exe</FireFoxBinary>
 	<IEBinary>../controllers/src/main/resources/MicrosoftWebDriver.exe</IEBinary>
 	<PhantomJS>../controllers/src/main/resources/phantomjs.exe</PhantomJS>
+	<PhantomJSLinux64>../controllers/src/main/resources/phantomjs</PhantomJSLinux64>
 	<ParameterFile>../controllers/src/main/resources/ParameterFile.xlsx</ParameterFile>
 </config>
