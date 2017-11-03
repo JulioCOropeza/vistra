@@ -7,6 +7,7 @@ public enum XmlEnum {
 	FireFoxBinary,
 	IEBinary,
 	PhantomJS,
+	ChromeLinux32,
 	ChromeExtensionModHead, 
 	ChromeLoadExtensionModHead,
 	ParameterFile

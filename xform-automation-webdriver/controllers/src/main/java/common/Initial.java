@@ -58,19 +58,19 @@ public class Initial {
 
 				driver = new ChromeDriver(options);
 
-			}	else if (browser.equals("ChromeLinux32")) {
-			ChromeOptions options = new ChromeOptions();
+			}else if (browser.equals("ChromeLinux32")) {
+					ChromeOptions options = new ChromeOptions();
 
-			options.setBinary(getValueFromConfig(XmlEnum.GoogleExe));
+					options.setBinary(getValueFromConfig(XmlEnum.ChromeLinux32));
 
-			options.addArguments("headless");
-			options.addArguments("window-size=1280x1024");
+					options.addArguments("headless");
+					options.addArguments("window-size=1280x1024");
 
-			System.setProperty("webdriver.chrome.driver", getValueFromConfig(XmlEnum.GoogleBinary));
+					System.setProperty("webdriver.chrome.driver", getValueFromConfig(XmlEnum.ChromeLinux32));
 
-			driver = new ChromeDriver(options);
+					driver = new ChromeDriver(options);
 
-		}else if (browser.equals("Firefox")) {
+			}else if (browser.equals("Firefox")) {
 				//System.setProperty("webdriver.firefox.marionette", getValueFromConfig(XmlEnum.FireFoxBinary));
 				DesiredCapabilities capabilities = DesiredCapabilities.firefox();
 				FirefoxOptions options = new FirefoxOptions();
