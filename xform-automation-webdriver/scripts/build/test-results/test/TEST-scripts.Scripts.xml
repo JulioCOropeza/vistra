@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite name="scripts.Scripts" tests="2" skipped="0" failures="0" errors="0" timestamp="2017-11-02T17:48:50" hostname="DESKTOP-ECGUOTO" time="0.002">
+<testsuite name="scripts.Scripts" tests="2" skipped="0" failures="0" errors="0" timestamp="2017-11-03T17:16:48" hostname="DESKTOP-ECGUOTO" time="0.002">
   <properties/>
   <testcase name="testXFormUserManagement[0](Tenant 1 Desc, Admin, none, Julio, Oropeza, Qa Tester, julio.oropeza@janeirodigital.com, julio.oropeza@janeirodigital.com, unchecked, Tenant 1 Desc, Admin, unchecked, null)" classname="scripts.Scripts" time="0.0"/>
   <testcase name="testXFormUserManagement[1](Tenant 2 Desc, Admin, none, Cesar, Gonzalez, Qa Tester, julio.oropeza@janeirodigital.com, julio.oropeza@janeirodigital.com, unchecked, Tenant 1 Desc, Admin, unchecked, null)" classname="scripts.Scripts" time="0.001"/>

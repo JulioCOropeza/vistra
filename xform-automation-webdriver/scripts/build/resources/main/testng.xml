@@ -7,7 +7,7 @@
         <listener class-name="listeners.TestListener"/>
     </listeners>
 
-    <!--
+<!--
         <test name="ChromeHeadLessTest">
             <parameter name="browser" value="ChromeHeadLess" />
             <classes>
@@ -15,7 +15,7 @@
                 </class>
             </classes>
         </test>
-        -->
+-->
        <test name="PhantomJSTest">
             <parameter name="browser" value="PhantomJS" />
             <classes>

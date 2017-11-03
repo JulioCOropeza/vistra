@@ -2,7 +2,28 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="90043554-2f6b-4563-988a-f9248a5eb780" name="Default" comment="">
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/controllers/src/main/resources/chromedriver_linux32" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/controllers/src/main/resources/chromedriver_linux64" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.gradle/3.5-rc-2/fileContent/annotation-processors.bin" afterPath="$PROJECT_DIR$/.gradle/3.5-rc-2/fileContent/annotation-processors.bin" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.gradle/3.5-rc-2/fileContent/fileContent.lock" afterPath="$PROJECT_DIR$/.gradle/3.5-rc-2/fileContent/fileContent.lock" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.gradle/3.5-rc-2/taskHistory/fileHashes.bin" afterPath="$PROJECT_DIR$/.gradle/3.5-rc-2/taskHistory/fileHashes.bin" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.gradle/3.5-rc-2/taskHistory/fileSnapshots.bin" afterPath="$PROJECT_DIR$/.gradle/3.5-rc-2/taskHistory/fileSnapshots.bin" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.gradle/3.5-rc-2/taskHistory/jvmClassSignatures.bin" afterPath="$PROJECT_DIR$/.gradle/3.5-rc-2/taskHistory/jvmClassSignatures.bin" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.gradle/3.5-rc-2/taskHistory/taskHistory.bin" afterPath="$PROJECT_DIR$/.gradle/3.5-rc-2/taskHistory/taskHistory.bin" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.gradle/3.5-rc-2/taskHistory/taskHistory.lock" afterPath="$PROJECT_DIR$/.gradle/3.5-rc-2/taskHistory/taskHistory.lock" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/controllers/build/classes/main/common/Initial.class" afterPath="$PROJECT_DIR$/controllers/build/classes/main/common/Initial.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/controllers/build/libs/controllers-1.0-SNAPSHOT.jar" afterPath="$PROJECT_DIR$/controllers/build/libs/controllers-1.0-SNAPSHOT.jar" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/scripts/build/classes/main/scripts/Scripts.class" afterPath="$PROJECT_DIR$/scripts/build/classes/main/scripts/Scripts.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/scripts/build/test-results/test/binary/results.bin" afterPath="$PROJECT_DIR$/scripts/build/test-results/test/binary/results.bin" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/controllers/src/main/java/common/Initial.java" afterPath="$PROJECT_DIR$/controllers/src/main/java/common/Initial.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/controllers/src/main/resources/Config.xml" afterPath="$PROJECT_DIR$/controllers/src/main/resources/Config.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/scripts/build/reports/tests/test/classes/scripts.Scripts.html" afterPath="$PROJECT_DIR$/scripts/build/reports/tests/test/classes/scripts.Scripts.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/scripts/build/reports/tests/test/index.html" afterPath="$PROJECT_DIR$/scripts/build/reports/tests/test/index.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/scripts/build/reports/tests/test/packages/scripts.html" afterPath="$PROJECT_DIR$/scripts/build/reports/tests/test/packages/scripts.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/scripts/build/resources/main/testng.xml" afterPath="$PROJECT_DIR$/scripts/build/resources/main/testng.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/scripts/build/test-results/test/TEST-scripts.Scripts.xml" afterPath="$PROJECT_DIR$/scripts/build/test-results/test/TEST-scripts.Scripts.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/scripts/src/main/resources/testng.xml" afterPath="$PROJECT_DIR$/scripts/src/main/resources/testng.xml" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <ignored path="$PROJECT_DIR$/.gradle/" />
@@ -99,7 +120,7 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="Common.java" pinned="false" current-in-tab="true">
+      <file leaf-file-name="Common.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/controllers/src/main/java/common/Common.java">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="221">
@@ -114,8 +135,8 @@
       <file leaf-file-name="Initial.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/controllers/src/main/java/common/Initial.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="289">
-              <caret line="97" column="31" lean-forward="true" selection-start-line="97" selection-start-column="31" selection-end-line="97" selection-end-column="31" />
+            <state relative-caret-position="69">
+              <caret line="60" column="54" lean-forward="false" selection-start-line="60" selection-start-column="41" selection-end-line="60" selection-end-column="54" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -133,12 +154,14 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="testng.xml" pinned="false" current-in-tab="false">
+      <file leaf-file-name="testng.xml" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/scripts/src/main/resources/testng.xml">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="102">
-              <caret line="9" column="0" lean-forward="false" selection-start-line="9" selection-start-column="0" selection-end-line="16" selection-end-column="0" />
-              <folding />
+            <state relative-caret-position="292">
+              <caret line="32" column="18" lean-forward="true" selection-start-line="26" selection-start-column="5" selection-end-line="32" selection-end-column="18" />
+              <folding>
+                <marker date="1509731906146" expanded="false" signature="871:896" ph="..." />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -156,23 +179,9 @@
       <file leaf-file-name="Config.xml" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/controllers/src/main/resources/Config.xml">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="51">
-              <caret line="3" column="12" lean-forward="false" selection-start-line="3" selection-start-column="12" selection-end-line="3" selection-end-column="12" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="TryTestNG.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/scripts/src/test/java/TryTestNG.java">
-          <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="102">
-              <caret line="6" column="16" lean-forward="false" selection-start-line="6" selection-start-column="16" selection-end-line="6" selection-end-column="16" />
-              <folding>
-                <element signature="imports" expanded="true" />
-                <element signature="e#283#284#0" expanded="true" />
-                <element signature="e#333#334#0" expanded="true" />
-              </folding>
+              <caret line="6" column="18" lean-forward="false" selection-start-line="6" selection-start-column="5" selection-end-line="6" selection-end-column="18" />
+              <folding />
             </state>
           </provider>
         </entry>
@@ -1027,19 +1036,19 @@
         <option value="$PROJECT_DIR$/scripts/build.gradle" />
         <option value="$PROJECT_DIR$/build.gradle" />
         <option value="$PROJECT_DIR$/controllers/src/main/java/actions/LogActions.java" />
-        <option value="$PROJECT_DIR$/controllers/src/main/resources/Config.xml" />
         <option value="$PROJECT_DIR$/controllers/src/main/java/common/Common.java" />
         <option value="$PROJECT_DIR$/scripts/src/main/java/scripts/Scripts.java" />
-        <option value="$PROJECT_DIR$/scripts/src/main/resources/testng.xml" />
+        <option value="$PROJECT_DIR$/controllers/src/main/resources/Config.xml" />
         <option value="$PROJECT_DIR$/controllers/src/main/java/common/Initial.java" />
+        <option value="$PROJECT_DIR$/scripts/src/main/resources/testng.xml" />
       </list>
     </option>
   </component>
   <component name="ProjectFrameBounds" extendedState="6">
-    <option name="x" value="-8" />
-    <option name="y" value="-8" />
-    <option name="width" value="1382" />
-    <option name="height" value="784" />
+    <option name="x" value="-1295" />
+    <option name="y" value="7" />
+    <option name="width" value="1191" />
+    <option name="height" value="728" />
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectView">
@@ -1194,11 +1203,11 @@
       <recent name="" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\uti\GitHub\xform-qa\xform-automation-webdriver\controllers\src\main\resources" />
       <recent name="C:\uti\GitHub\xform-qa\xform-automation-webdriver\scripts\src" />
       <recent name="C:\uti\JetBrains\IdeaProjects\xform-automation-webdriver\ObjectRepository\src\main\java" />
       <recent name="C:\uti\JetBrains\IdeaProjects\xform-automation-webdriver\controllers\src\main\resources" />
       <recent name="C:\uti\JetBrains\IdeaProjects\xform-automation-webdriver\controllers\src\main\java" />
-      <recent name="C:\uti\JetBrains\IdeaProjects\xform-automation-webdriver\scripts\src\main\resources" />
     </key>
   </component>
   <component name="RunDashboard">
@@ -1453,9 +1462,6 @@
     <servers />
   </component>
   <component name="TestHistory">
-    <history-entry file="Scripts - 2017.11.01 at 17h 32m 39s.xml">
-      <configuration name="Scripts" configurationId="TestNG" />
-    </history-entry>
     <history-entry file="Scripts - 2017.11.02 at 08h 29m 09s.xml">
       <configuration name="Scripts" configurationId="TestNG" />
     </history-entry>
@@ -1483,9 +1489,12 @@
     <history-entry file="xform-automation-webdriver_[test] - 2017.11.02 at 11h 48m 52s.xml">
       <configuration name="xform-automation-webdriver [test]" configurationId="GradleRunConfiguration" />
     </history-entry>
+    <history-entry file="xform-automation-webdriver_[test] - 2017.11.03 at 11h 16m 50s.xml">
+      <configuration name="xform-automation-webdriver [test]" configurationId="GradleRunConfiguration" />
+    </history-entry>
   </component>
   <component name="ToolWindowManager">
-    <frame x="-8" y="-8" width="1382" height="744" extended-state="6" />
+    <frame x="-1374" y="-8" width="1382" height="744" extended-state="6" />
     <editor active="true" />
     <layout>
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
@@ -1501,7 +1510,7 @@
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Tool" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.17246597" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.20801815" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3265306" sideWeight="0.48033282" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Gradle" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.19818456" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
@@ -1694,7 +1703,9 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="238">
           <caret line="14" column="11" lean-forward="false" selection-start-line="14" selection-start-column="11" selection-end-line="14" selection-end-column="11" />
-          <folding />
+          <folding>
+            <marker date="1509731906146" expanded="false" signature="871:896" ph="..." />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -1877,27 +1888,9 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/controllers/src/main/resources/Config.xml">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="51">
-          <caret line="3" column="12" lean-forward="false" selection-start-line="3" selection-start-column="12" selection-end-line="3" selection-end-column="12" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/scripts/src/main/resources/testng.xml">
-      <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="102">
-          <caret line="9" column="0" lean-forward="false" selection-start-line="9" selection-start-column="0" selection-end-line="16" selection-end-column="0" />
+          <caret line="6" column="18" lean-forward="false" selection-start-line="6" selection-start-column="5" selection-end-line="6" selection-end-column="18" />
           <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/controllers/src/main/java/common/Initial.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="289">
-          <caret line="97" column="31" lean-forward="true" selection-start-line="97" selection-start-column="31" selection-end-line="97" selection-end-column="31" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -1907,6 +1900,26 @@
           <caret line="43" column="32" lean-forward="true" selection-start-line="43" selection-start-column="12" selection-end-line="43" selection-end-column="32" />
           <folding>
             <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/controllers/src/main/java/common/Initial.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="69">
+          <caret line="60" column="54" lean-forward="false" selection-start-line="60" selection-start-column="41" selection-end-line="60" selection-end-column="54" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/scripts/src/main/resources/testng.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="292">
+          <caret line="32" column="18" lean-forward="true" selection-start-line="26" selection-start-column="5" selection-end-line="32" selection-end-column="18" />
+          <folding>
+            <marker date="1509731906146" expanded="false" signature="871:896" ph="..." />
           </folding>
         </state>
       </provider>
