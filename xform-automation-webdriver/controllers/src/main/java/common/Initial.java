@@ -12,6 +12,7 @@ import org.openqa.selenium.firefox.FirefoxOptions;
 import org.openqa.selenium.htmlunit.HtmlUnitDriver;
 import org.openqa.selenium.phantomjs.PhantomJSDriver;
 
+import org.openqa.selenium.phantomjs.PhantomJSDriverService;
 import org.openqa.selenium.remote.DesiredCapabilities;
 
 import org.w3c.dom.Document;
@@ -107,19 +108,38 @@ public class Initial {
 					driver = new HtmlUnitDriver();
 					break;
 				case "PhantomJS":
+					/*
 					System.setProperty("phantomjs.binary.path", getValueFromConfig(XmlEnum.PhantomJS));
 					driver = new PhantomJSDriver();
-
 					driver.manage().window().setSize(new Dimension(1280, 1024));
-
-
 					//browser.driver.manage().window().setSize(1280, 1024);
+					*/
+
+					DesiredCapabilities caps = new DesiredCapabilities();
+					caps.setJavascriptEnabled(true);
+					caps.setCapability("takesScreenshot", true);
+					caps.setCapability(
+							PhantomJSDriverService.PHANTOMJS_EXECUTABLE_PATH_PROPERTY,
+							getValueFromConfig(XmlEnum.PhantomJS)
+					);
+					driver = new  PhantomJSDriver(caps);
+
 					break;
 				case "PhantomJSLinux64":
-					System.setProperty("phantomjs.binary.path", getValueFromConfig(XmlEnum.PhantomJSLinux64));
+					/*System.setProperty("phantomjs.binary.path", getValueFromConfig(XmlEnum.PhantomJSLinux64));
 					driver = new PhantomJSDriver();
 					driver.manage().window().setSize(new Dimension(1280, 1024));
-					//browser.driver.manage().window().setSize(1280, 1024);
+					//browser.driver.manage().window().setSize(1280, 1024);*/
+
+					DesiredCapabilities capsPhantomJSLinux64 = new DesiredCapabilities();
+					capsPhantomJSLinux64.setJavascriptEnabled(true);
+					capsPhantomJSLinux64.setCapability("takesScreenshot", true);
+					capsPhantomJSLinux64.setCapability(
+							PhantomJSDriverService.PHANTOMJS_EXECUTABLE_PATH_PROPERTY,
+							getValueFromConfig(XmlEnum.PhantomJSLinux64)
+					);
+					driver = new  PhantomJSDriver(capsPhantomJSLinux64);
+
 					break;
 
 			}
@@ -129,6 +149,7 @@ public class Initial {
 			return driver;
 
 		} catch (Exception e) {
+			System.out.print("\n==============  ERROR CREATING WEBDRIVER =============\n");
 			e.printStackTrace();
 			return null; // need to change for a exception
 

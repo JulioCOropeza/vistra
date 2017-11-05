@@ -29,7 +29,7 @@
                </class>
            </classes>
        </test>
-     <!--  <test name="PhantomJSTest">
+  <!--     <test name="PhantomJSTest">
             <parameter name="browser" value="PhantomJS" />
             <classes>
                 <class name="scripts.Scripts">

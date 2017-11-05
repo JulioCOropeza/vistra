@@ -59,22 +59,22 @@ public class Scripts {
     @BeforeClass
     public void BeforeClass() {
         try {
-            System.out.print("==============  BeforeClass before openBaseURL =============");
+            System.out.print("==============  BeforeClass before openBaseURL =============\n");
             common.OpenBaseURL();
-            System.out.print("==============  BeforeClass after openBaseURL =============");
+            System.out.print("==============  BeforeClass after openBaseURL =============\n");
 
             String userFlag = "1"; // flag to look for into the .xls file
 
-            System.out.print("==============  BeforeClass before readParameterFile =============");
+            System.out.print("==============  BeforeClass before readParameterFile =============\n");
             Object[] initParameters = common.readParameterFile(userFlag, "Parameters");//login info is get from xls file
-            System.out.print("==============  BeforeClass after readParameterFile =============");
+            System.out.print("==============  BeforeClass after readParameterFile =============\n");
 
-            System.out.print("==============  BeforeClass before actions.login(initParameters) =============");
+            System.out.print("==============  BeforeClass before actions.login(initParameters) =============\n");
             actions.login(initParameters);
-            System.out.print("==============  BeforeClass after actions.login(initParameters) =============");
+            System.out.print("==============  BeforeClass after actions.login(initParameters) =============\n");
 
         } catch (Exception e) {
-            System.out.print("==============  FAILED LOGIN =============");
+            System.out.print("==============  FAILED LOGIN =============\n");
             Assert.fail(e.getMessage());
         }
     }
