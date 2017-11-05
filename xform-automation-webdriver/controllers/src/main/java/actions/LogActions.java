@@ -3,7 +3,10 @@ package actions;
 import enums.CommonEnum;
 import objectRepository.LoginPage;
 import objectRepository.XFormDashBoard;
+import org.openqa.selenium.By;
+import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
@@ -29,10 +32,14 @@ public class LogActions {
 		System.out.print("==============  LOGIN in =============\n");
 		//assertTrue(driver.findElement(By.id("q")).isDisplayed());
 
-		driver.findElement(login.loginCheck).click();
+		//driver.findElement(login.loginCheck).click();
+		WebElement element = driver.findElement(By.id("foundersLogin"));
+		JavascriptExecutor executor = (JavascriptExecutor)driver;
+		executor.executeScript("arguments[0].click();", element);
 
 		driver.findElement(login.username).sendKeys(sEmail);
 		driver.findElement(login.password).sendKeys(sPassword);
+
 
 		WebDriverWait wait = new WebDriverWait(driver, 10);
 		//this need to be set in a specific function in commons
