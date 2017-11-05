@@ -24,7 +24,7 @@ public class Scripts {
 
     @Test
     @Parameters("browser")
-    public Scripts(@Optional("Chrome") String browser) {
+    public Scripts(@Optional("PhantomJS") String browser) {
         //public Scripts(@Optional("HeadLess") String browser) {
         //public Scripts(@Optional("Chrome") String browser) {
         //ChromeHeadLess PhantomJS

@@ -45,12 +45,10 @@ public class LogActions {
 		JavascriptExecutor executor = (JavascriptExecutor)driver;
 		executor.executeScript("arguments[0].click();", element);*/
 
-		/*
 		boolean rightURL = wait.until(ExpectedConditions.urlContains(CommonEnum.pagesURLs.FoundersDashBoardUrl.toString()));
 
 		if(!rightURL)
 			throw new Exception("Page was not loaded");
-		*/
 	}
 
 }
