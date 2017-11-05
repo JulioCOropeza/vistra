@@ -39,91 +39,91 @@ public class Initial {
 
 	public WebDriver getDriver(String browser) {
 		try {
-			if (browser.equals("Chrome")) {
-				ChromeOptions options = new ChromeOptions();
-				options.setBinary(getValueFromConfig(XmlEnum.GoogleExe));
-				System.setProperty("webdriver.chrome.driver", getValueFromConfig(XmlEnum.GoogleBinary));
+			switch (browser){
+				case "Chrome":
+					ChromeOptions optionsChrome = new ChromeOptions();
+					optionsChrome.setBinary(getValueFromConfig(XmlEnum.GoogleExe));
+					System.setProperty("webdriver.chrome.driver", getValueFromConfig(XmlEnum.GoogleBinary));
 
-				driver = new ChromeDriver(options);
+					driver = new ChromeDriver(optionsChrome);
+					break;
+				case "ChromeHeadLess":
+					ChromeOptions optionsChromeHeadLess = new ChromeOptions();
 
-			}else if (browser.equals("ChromeHeadLess")) {
-				ChromeOptions options = new ChromeOptions();
+					optionsChromeHeadLess.setBinary(getValueFromConfig(XmlEnum.GoogleExe));
 
-				options.setBinary(getValueFromConfig(XmlEnum.GoogleExe));
+					optionsChromeHeadLess.addArguments("headless");
+					optionsChromeHeadLess.addArguments("window-size=1280x1024");
 
-				options.addArguments("headless");
-				options.addArguments("window-size=1280x1024");
+					System.setProperty("webdriver.chrome.driver", getValueFromConfig(XmlEnum.GoogleBinary));
 
-				System.setProperty("webdriver.chrome.driver", getValueFromConfig(XmlEnum.GoogleBinary));
+					driver = new ChromeDriver(optionsChromeHeadLess);
+					break;
+				case "ChromeLinux32":
+					ChromeOptions optionsChromeLinux32 = new ChromeOptions();
 
-				driver = new ChromeDriver(options);
+					optionsChromeLinux32.setBinary(getValueFromConfig(XmlEnum.ChromeLinux32));
 
-			}else if (browser.equals("ChromeLinux32")) {
-					ChromeOptions options = new ChromeOptions();
-
-					options.setBinary(getValueFromConfig(XmlEnum.ChromeLinux32));
-
-					options.addArguments("headless");
-					options.addArguments("window-size=1280x1024");
+					optionsChromeLinux32.addArguments("headless");
+					optionsChromeLinux32.addArguments("window-size=1280x1024");
 
 					System.setProperty("webdriver.chrome.driver", getValueFromConfig(XmlEnum.ChromeLinux32));
 
-					driver = new ChromeDriver(options);
-			}else if (browser.equals("ChromeLinux64")) {
-				ChromeOptions options = new ChromeOptions();
+					driver = new ChromeDriver(optionsChromeLinux32);
+					break;
+				case "ChromeLinux64":
+					ChromeOptions optionsChromeLinux64 = new ChromeOptions();
 
-				options.setBinary(getValueFromConfig(XmlEnum.ChromeLinux64));
+					optionsChromeLinux64.setBinary(getValueFromConfig(XmlEnum.ChromeLinux64));
 
-				options.addArguments("headless");
-				options.addArguments("window-size=1280x1024");
+					optionsChromeLinux64.addArguments("headless");
+					optionsChromeLinux64.addArguments("window-size=1280x1024");
 
-				System.setProperty("webdriver.chrome.driver", getValueFromConfig(XmlEnum.ChromeLinux64));
+					System.setProperty("webdriver.chrome.driver", getValueFromConfig(XmlEnum.ChromeLinux64));
 
-				driver = new ChromeDriver(options);
+					driver = new ChromeDriver(optionsChromeLinux64);
+					break;
+				case "Firefox":
+					//System.setProperty("webdriver.firefox.marionette", getValueFromConfig(XmlEnum.FireFoxBinary));
+					DesiredCapabilities capabilities = DesiredCapabilities.firefox();
+					FirefoxOptions options = new FirefoxOptions();
 
+					options.addPreference("log", "{level: trace}");
 
-			}else if (browser.equals("Firefox")) {
-				//System.setProperty("webdriver.firefox.marionette", getValueFromConfig(XmlEnum.FireFoxBinary));
-				DesiredCapabilities capabilities = DesiredCapabilities.firefox();
-				FirefoxOptions options = new FirefoxOptions();
+					capabilities.setCapability("marionette", true);
+					capabilities.setCapability("moz:firefoxOptions", options);
 
-				options.addPreference("log", "{level: trace}");
+					System.setProperty("webdriver.gecko.driver", getValueFromConfig(XmlEnum.FireFoxBinary));
 
-				capabilities.setCapability("marionette", true);
-				capabilities.setCapability("moz:firefoxOptions", options);
+					driver = new FirefoxDriver(capabilities);
+					//driver = new FirefoxDriver();
+					break;
+				case "Edge":
+					System.setProperty("webdriver.edge.driver", getValueFromConfig(XmlEnum.IEBinary));
 
-				System.setProperty("webdriver.gecko.driver", getValueFromConfig(XmlEnum.FireFoxBinary));
+					driver = new EdgeDriver();
+					break;
+				case "HeadLess":
+					driver = new HtmlUnitDriver();
+					break;
+				case "PhantomJS":
+					System.setProperty("phantomjs.binary.path", getValueFromConfig(XmlEnum.PhantomJS));
+					driver = new PhantomJSDriver();
 
-				driver = new FirefoxDriver(capabilities);
-				//driver = new FirefoxDriver();
-
-			}else if (browser.equals("Edge")) {
-				System.setProperty("webdriver.edge.driver", getValueFromConfig(XmlEnum.IEBinary));
-
-				driver = new EdgeDriver();
-
-			}else if (browser.equals("HeadLess")) {
-				driver = new HtmlUnitDriver();
-
-			}else if (browser.equals("PhantomJS")) {
-
-				System.setProperty("phantomjs.binary.path", getValueFromConfig(XmlEnum.PhantomJS));
-				driver = new PhantomJSDriver();
-
-				driver.manage().window().setSize(new Dimension(1280, 1024));
-
-
-				//browser.driver.manage().window().setSize(1280, 1024);
-			}else if (browser.equals("PhantomJSLinux64")) {
-
-				System.setProperty("phantomjs.binary.path", getValueFromConfig(XmlEnum.PhantomJSLinux64));
-				driver = new PhantomJSDriver();
-
-				driver.manage().window().setSize(new Dimension(1280, 1024));
+					driver.manage().window().setSize(new Dimension(1280, 1024));
 
 
-				//browser.driver.manage().window().setSize(1280, 1024);
+					//browser.driver.manage().window().setSize(1280, 1024);
+					break;
+				case "PhantomJSLinux64":
+					System.setProperty("phantomjs.binary.path", getValueFromConfig(XmlEnum.PhantomJSLinux64));
+					driver = new PhantomJSDriver();
+					driver.manage().window().setSize(new Dimension(1280, 1024));
+					//browser.driver.manage().window().setSize(1280, 1024);
+					break;
+
 			}
+
 
 			driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
 			return driver;

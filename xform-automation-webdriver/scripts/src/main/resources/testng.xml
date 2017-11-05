@@ -7,15 +7,13 @@
         <listener class-name="listeners.TestListener"/>
     </listeners>
 
-<!--
-        <test name="ChromeHeadLessTest">
+ <!--       <test name="ChromeHeadLessTest">
             <parameter name="browser" value="ChromeHeadLess" />
             <classes>
                 <class name="scripts.Scripts">
                 </class>
             </classes>
-        </test>
--->
+        </test>-->
 <!--
     <test name="ChromeLinux64Test">
         <parameter name="browser" value="ChromeLinux64" />
