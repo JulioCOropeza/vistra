@@ -98,6 +98,7 @@ public class Scripts {
             testDataProvider = new CasesReaderDataProvider();
             tempData = testDataProvider.getDataUserManagement(ParameterFile);
         } catch (Exception ex) {
+            logger.error("Error loading DataProvider excel file");
             Assert.fail(ex.getMessage());
         }
         return tempData;

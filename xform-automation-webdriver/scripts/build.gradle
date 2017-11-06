@@ -9,6 +9,8 @@ repositories {
 }
 test {
     useTestNG(){
+        reports.html.destination = file("$buildDir/reports/tests/test")
+        useDefaultListeners = true
         outputs.upToDateWhen { false }
         testLogging.showStandardStreams = true
         println '--running unit tests SCRIPT'

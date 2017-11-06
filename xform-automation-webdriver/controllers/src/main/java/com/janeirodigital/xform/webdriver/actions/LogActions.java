@@ -7,12 +7,14 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.Assert;
-
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 public class LogActions {
     private LoginPage login;
-    private com.janeirodigital.xform.webdriver.objectRepository.XFormDashBoard XFormDashBoard;
+    private XFormDashBoard XFormDashBoard;
     private WebDriver driver;
+    private static final Logger logger = LoggerFactory.getLogger(LogActions.class);
 
     /**
      * Initialize LoginPage and X_FORM_DASH_BOARD page objects to be tested,
@@ -37,12 +39,11 @@ public class LogActions {
         String sEmail = initParameters[1].toString();
 
         driver.findElement(login.loginCheck).click();
-
         driver.findElement(login.username).sendKeys(sEmail);
         driver.findElement(login.password).sendKeys(sPassword);
 
 
-        WebDriverWait wait = new WebDriverWait(driver, 10);
+        WebDriverWait wait = new WebDriverWait(driver, 30);
         //TODO this need to be set in a specific function in commons
         wait.until(ExpectedConditions.elementToBeClickable(login.signIn));
 

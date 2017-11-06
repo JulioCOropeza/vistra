@@ -42,7 +42,7 @@ public class Initial {
             logger.debug("Driver is starting to be created");
 
             switch (browser) {
-                case CHROME_WIN: //"Chrome"
+                case CHROME_WIN:
                     driver = getDriverChrome(browser.CHROME_WIN);
                     break;
                 case CHROME_HEAD_LESS_WIN:
@@ -71,7 +71,7 @@ public class Initial {
                     break;
             }
 
-            driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
+            driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
             return driver;
 
         } catch (Exception e) {
@@ -206,8 +206,6 @@ public class Initial {
         DocumentBuilder dBuilder = dbFactory.newDocumentBuilder();
         Document doc = dBuilder.parse(fXmlFile);
         doc.getDocumentElement().normalize();
-
-        logger.info("Root element : ", doc.getDocumentElement().getNodeName());
 
         NodeList nList = doc.getElementsByTagName("config");
         Node nNode = nList.item(0);

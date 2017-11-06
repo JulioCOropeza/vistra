@@ -8,7 +8,7 @@ public enum XmlEnum {
 	FIRE_FOX_BINARY("fire_fox_binary"),
 	IE_BINARY("ie_binary"),
 	PHANTOM_JS("phantom_js"),
-	PHANTOM_JS_LINUX_64("phantom_js"),
+	PHANTOM_JS_LINUX_64("phantom_js_linux_64"),
 	CHROME_LINUX_32("chrome_linux_32"),
 	CHROME_LINUX_64("chrome_linux_64"),
 	CHROME_EXTENSION_MOD_HEAD("chrome_extension_mod_head"),

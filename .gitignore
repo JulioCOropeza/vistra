@@ -11,8 +11,9 @@ target/
 # Directories #
 out/
 build/
-bin/
-target/
+**/tmp
+test-output/
+.gradle/
 .factorypath
 
 # OS Files #
@@ -23,6 +24,7 @@ target/
  
 # Package Files #
 *.jar
+!gradle-wrapper.jar	
 *.war
 *.ear
 *.db
@@ -40,8 +42,6 @@ Desktop.ini
 ######################
 # OSX
 ######################
- 
-.DS_Store
 .svn
  
 # Thumbnails
