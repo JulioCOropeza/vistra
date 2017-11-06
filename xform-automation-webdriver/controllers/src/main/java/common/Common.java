@@ -20,9 +20,6 @@ public class Common extends Initial {
 	}
 
 	public void OpenBaseURL() throws Exception {
-		System.out.print("==============  getValueFromConfig(XmlEnum.URL) =============\n");
-		System.out.print(getValueFromConfig(XmlEnum.URL));
-
 		driver.get(getValueFromConfig(XmlEnum.URL));
 	}
 

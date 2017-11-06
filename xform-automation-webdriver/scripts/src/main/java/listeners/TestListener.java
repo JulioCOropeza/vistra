@@ -17,7 +17,8 @@ import java.text.SimpleDateFormat;
 
 public class TestListener extends scripts.Scripts implements ITestListener {
     WebDriver Listener_driver = null;
-    String filePath = "C:\\SCREENSHOTS\\";
+    //String filePath = "C:\\SCREENSHOTS\\";
+    String filePath = "../SCREENSHOTS/";
 
     @Override
     public void onTestFailure(ITestResult result) {

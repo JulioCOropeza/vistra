@@ -9,10 +9,8 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
-
 import java.util.concurrent.TimeUnit;
 
-//import static org.testng.AssertJUnit.assertTrue;
 
 
 public class LogActions {
@@ -31,19 +29,16 @@ public class LogActions {
 
 		String sPassword = initParameters[0].toString();
 		String sEmail = initParameters[1].toString();
+		/*
 		System.out.print("==============  LOGIN in =============\n");
 		System.out.print(driver.getPageSource());
 		//assertTrue(driver.findElement(By.id("q")).isDisplayed());
 
-		/*WebDriverWait wait = new WebDriverWait(driver, 20);
+		WebDriverWait wait = new WebDriverWait(driver, 20);
 		wait.until(ExpectedConditions.elementToBeClickable(login.loginCheck));
 		*/
 		driver.findElement(login.loginCheck).click();
-		/*
-		WebElement element = driver.findElement(By.xpath("//*[@id=\"Wrapper\"]/div/xform-login/xform-page/section/div[2]/section/div/form/div/div/label"));
-		JavascriptExecutor executor = (JavascriptExecutor)driver;
-		executor.executeScript("arguments[0].click();", element);
-*/
+
 		driver.findElement(login.username).sendKeys(sEmail);
 		driver.findElement(login.password).sendKeys(sPassword);
 
