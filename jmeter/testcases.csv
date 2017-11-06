@@ -1,4 +1,0 @@
-testcaseid,description,keywords,param,status
-TC001,Create and Delete the same user,Create User; Delete User,2,1
-TC002,Get an User by ID,Get User Detail,3,1
-TC003,Get all the availables users,Get All Users,1,0
