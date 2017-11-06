@@ -32,16 +32,19 @@ public class LogActions {
 		System.out.print("==============  LOGIN in =============\n");
 		//assertTrue(driver.findElement(By.id("q")).isDisplayed());
 
-		//driver.findElement(login.loginCheck).click();
-		WebElement element = driver.findElement(By.id("foundersLogin"));
+		WebDriverWait wait = new WebDriverWait(driver, 20);
+		wait.until(ExpectedConditions.elementToBeClickable(login.loginCheck));
+		driver.findElement(login.loginCheck).click();
+		/*
+		WebElement element = driver.findElement(By.xpath("//*[@id=\"Wrapper\"]/div/xform-login/xform-page/section/div[2]/section/div/form/div/div/label"));
 		JavascriptExecutor executor = (JavascriptExecutor)driver;
 		executor.executeScript("arguments[0].click();", element);
-
+*/
 		driver.findElement(login.username).sendKeys(sEmail);
 		driver.findElement(login.password).sendKeys(sPassword);
 
 
-		WebDriverWait wait = new WebDriverWait(driver, 10);
+		wait = new WebDriverWait(driver, 10);
 		//this need to be set in a specific function in commons
 		wait.until(ExpectedConditions.elementToBeClickable(login.signIn));
 

@@ -34,6 +34,8 @@ subprojects {
 
         // https://mvnrepository.com/artifact/org.apache.poi/poi-ooxml
         compile group: 'org.apache.poi', name: 'poi-ooxml', version: '3.15'
+// https://mvnrepository.com/artifact/commons-io/commons-io
+        compile group: 'commons-io', name: 'commons-io', version: '2.5'
 
         // https://mvnrepository.com/artifact/org.testng/testng
         testCompile group: 'org.testng', name: 'testng', version: '6.10'
@@ -44,6 +46,12 @@ subprojects {
         //testCompile group: 'junit', name: 'junit', version: '4.12'
 // https://mvnrepository.com/artifact/org.seleniumhq.selenium/lift
         compile group: 'org.seleniumhq.selenium', name: 'lift', version: '3.5.3'
+// https://mvnrepository.com/artifact/org.seleniumhq.selenium/selenium-htmlunit-driver
+        compile group: 'org.seleniumhq.selenium', name: 'selenium-htmlunit-driver', version: '2.52.0'
+
+        // https://mvnrepository.com/artifact/com.paulhammant/ngwebdriver
+        compile group: 'com.paulhammant', name: 'ngwebdriver', version: '0.9'
+
 
     }
 }
