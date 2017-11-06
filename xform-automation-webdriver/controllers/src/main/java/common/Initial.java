@@ -139,9 +139,9 @@ public class Initial {
 							PhantomJSDriverService.PHANTOMJS_EXECUTABLE_PATH_PROPERTY,
 							getValueFromConfig(XmlEnum.PhantomJSLinux64)
 					);
-					driver.manage().window().maximize();
+
 					driver = new  PhantomJSDriver(capsPhantomJSLinux64);
-					driver.manage().window().maximize();
+					//driver.manage().window().maximize();
 					//driver.manage().window().setSize(new Dimension(1280, 1024));
 
 					break;
