@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+
+<suite name="TestSuite" thread-count="3" parallel="tests">
+    <listeners>
+        <listener class-name="com.janeirodigital.xform.webdriver.listeners.TestListener"/>
+    </listeners>
+
+    <test name="PhantomJSLinux64Test">
+        <parameter name="browser" value="PHANTOM_JS_LINUX_64"/>
+        <parameter name="environment" value="dev"/> <!--Available values dev, prod-->
+        <classes>
+            <class name="com.janeirodigital.xform.webdriver.scripts.Scripts">
+            </class>
+        </classes>
+    </test>
+
+
+</suite>

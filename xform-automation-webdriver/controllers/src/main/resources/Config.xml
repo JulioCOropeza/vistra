@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<config>
+    <url>/login</url>
+    <screen_shoots>../SCREENSHOTS/</screen_shoots>
+    <google_exe>C:\\Program Files (x86)\\Google\\Chrome\\Application\\chrome.exe</google_exe>
+    <google_binary>../controllers/src/main/resources/chromedriver.exe</google_binary>
+    <chrome_linux_64>../controllers/src/main/resources/chromedriver_linux64</chrome_linux_64>
+    <chrome_linux_32>../controllers/src/main/resources/chromedriver_linux32</chrome_linux_32>
+    <fire_fox_binary>../controllers/src/main/resources/geckodriver.exe</fire_fox_binary>
+    <ie_binary>../controllers/src/main/resources/MicrosoftWebDriver.exe</ie_binary>
+    <phantom_js>../controllers/src/main/resources/phantomjs.exe</phantom_js>
+    <phantom_js_linux_64>/usr/local/share/phantomjs-2.1.1-linux-x86_64/bin/phantomjs</phantom_js_linux_64>
+    <parameter_file>../controllers/src/main/resources/ParameterFile.xlsx</parameter_file>
+</config>
