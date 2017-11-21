@@ -76,4 +76,14 @@ public class CommonEnum {
 		}
 	}
 
+	public enum PageLoadingTimes {
+		SHORT_WAIT_TIME (10),
+		MEDIUM_WAIT_TIME (30),
+		LONG_WAIT_TIME (60);
+		private final int value;
+		PageLoadingTimes(int newValue) {
+			value = newValue;
+		}
+		public int getValue() { return value; }
+	}
 }

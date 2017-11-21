@@ -4,12 +4,15 @@ import com.janeirodigital.xform.webdriver.enums.XmlEnum;
 import org.apache.poi.ss.usermodel.Row;
 import org.apache.poi.ss.usermodel.Workbook;
 import org.apache.poi.xssf.usermodel.XSSFWorkbook;
+import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 
 import java.io.File;
 import java.io.FileInputStream;
 import java.io.IOException;
 
+import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.support.ui.WebDriverWait;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
@@ -17,6 +20,7 @@ import org.slf4j.LoggerFactory;
 public class Common extends Initial {
     private WebDriver driver;
     private static final Logger logger = LoggerFactory.getLogger(Common.class);
+    private WebDriverWait wait;
 
     public Common(WebDriver driver) {
         this.driver = driver;
@@ -29,6 +33,16 @@ public class Common extends Initial {
     public void closeBrowser() {
         driver.close();
         driver.quit();
+    }
+
+    public void waitForElementToBeClickable(int timeOutInSeconds,By selector){
+        wait = new WebDriverWait(driver,timeOutInSeconds);
+        wait.until(ExpectedConditions.elementToBeClickable(selector));
+    }
+
+    public boolean isUrlCorrect(int timeOutInSeconds, String urlExpected){
+        wait = new WebDriverWait(driver,timeOutInSeconds);
+        return wait.until(ExpectedConditions.urlContains(urlExpected));
     }
 
     /**

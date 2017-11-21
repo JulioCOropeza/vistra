@@ -1,16 +1,16 @@
 package com.janeirodigital.xform.webdriver.actions;
 
 import com.janeirodigital.xform.webdriver.enums.CommonEnum;
+import com.janeirodigital.xform.webdriver.common.Common;
 import com.janeirodigital.xform.webdriver.objectRepository.LoginPage;
 import com.janeirodigital.xform.webdriver.objectRepository.XFormDashBoard;
 import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.support.ui.ExpectedConditions;
-import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.Assert;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
-public class LogActions {
+public class  LogActions {
+    private Common common;
     private LoginPage login;
     private XFormDashBoard XFormDashBoard;
     private WebDriver driver;
@@ -22,10 +22,10 @@ public class LogActions {
      * @param driver receive the actual WebDriver
      */
     public LogActions(WebDriver driver) {
+        common = new Common(driver);
         this.driver = driver;
         login = new LoginPage();
         XFormDashBoard = new XFormDashBoard();
-
     }
 
     /**
@@ -42,17 +42,11 @@ public class LogActions {
         driver.findElement(login.username).sendKeys(sEmail);
         driver.findElement(login.password).sendKeys(sPassword);
 
-
-        WebDriverWait wait = new WebDriverWait(driver, 30);
-        //TODO this need to be set in a specific function in commons
-        wait.until(ExpectedConditions.elementToBeClickable(login.signIn));
-
+        common.waitForElementToBeClickable(CommonEnum.PageLoadingTimes.MEDIUM_WAIT_TIME.getValue(),login.signIn);
         driver.findElement(login.signIn).click();
 
-        boolean rightURL = wait.until(ExpectedConditions.urlContains(CommonEnum.PagesURLs.FoundersDashBoardUrl.toString()));
-
+        boolean rightURL = common.isUrlCorrect(CommonEnum.PageLoadingTimes.MEDIUM_WAIT_TIME.getValue(),CommonEnum.PagesURLs.FoundersDashBoardUrl.toString());
         Assert.assertTrue(rightURL,"The page wasn't loaded");
-
-        }
+    }
 
 }
