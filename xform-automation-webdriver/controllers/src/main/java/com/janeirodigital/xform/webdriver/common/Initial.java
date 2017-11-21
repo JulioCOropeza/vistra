@@ -106,11 +106,14 @@ public class Initial {
         ChromeOptions optionsChrome = new ChromeOptions();
 
         try {
-            optionsChrome.setBinary(getValueFromConfig(XmlEnum.GOOGLE_EXE.getTagName()));
-
             if (headLess){
-                optionsChrome.addArguments("headless");
+                optionsChrome.setBinary(getValueFromConfig(XmlEnum.GOOGLE_EXE_LINUX.getTagName()));
+                optionsChrome.addArguments("--headless");
+                optionsChrome.addArguments("--disable-gpu");
+                optionsChrome.addArguments("--no-sandbox");
                 optionsChrome.addArguments("window-size=1280x1024");
+            }else{
+                optionsChrome.setBinary(getValueFromConfig(XmlEnum.GOOGLE_EXE.getTagName()));
             }
             System.setProperty("webdriver.chrome.driver", getValueFromConfig(binaryName));
             logger.debug("Browser instantiated: ", binaryName);

@@ -4,6 +4,7 @@ public enum XmlEnum {
 	URL("url"),
 	SCREEN_SHOOTS("screen_shoots"),
 	GOOGLE_EXE("google_exe"),
+	GOOGLE_EXE_LINUX("google_exe_linux"),
 	GOOGLE_BINARY("google_binary"),
 	FIRE_FOX_BINARY("fire_fox_binary"),
 	IE_BINARY("ie_binary"),

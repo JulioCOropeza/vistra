@@ -3,6 +3,7 @@
     <url>/login</url>
     <screen_shoots>../SCREENSHOTS/</screen_shoots>
     <google_exe>C:\\Program Files (x86)\\Google\\Chrome\\Application\\chrome.exe</google_exe>
+    <google_exe_linux>/opt/google/chrome/google-chrome</google_exe_linux>
     <google_binary>../controllers/src/main/resources/chromedriver.exe</google_binary>
     <chrome_linux_64>../controllers/src/main/resources/chromedriver_linux64</chrome_linux_64>
     <chrome_linux_32>../controllers/src/main/resources/chromedriver_linux32</chrome_linux_32>
