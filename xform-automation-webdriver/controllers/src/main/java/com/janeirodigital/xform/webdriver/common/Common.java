@@ -40,6 +40,11 @@ public class Common extends Initial {
         wait.until(ExpectedConditions.elementToBeClickable(selector));
     }
 
+    public void waitForElementTextToAppear(int timeOutInSeconds,String textToAppear,By selector){
+        wait = new WebDriverWait(driver,timeOutInSeconds);
+        wait.until(ExpectedConditions.textToBe(selector,textToAppear));
+    }
+
     public boolean isUrlCorrect(int timeOutInSeconds, String urlExpected){
         wait = new WebDriverWait(driver,timeOutInSeconds);
         return wait.until(ExpectedConditions.urlContains(urlExpected));

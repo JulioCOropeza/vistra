@@ -3,7 +3,6 @@ package com.janeirodigital.xform.webdriver.actions;
 import com.janeirodigital.xform.webdriver.enums.CommonEnum;
 import com.janeirodigital.xform.webdriver.common.Common;
 import com.janeirodigital.xform.webdriver.objectRepository.LoginPage;
-import com.janeirodigital.xform.webdriver.objectRepository.XFormDashBoard;
 import org.openqa.selenium.WebDriver;
 import org.testng.Assert;
 import org.slf4j.Logger;
@@ -12,7 +11,6 @@ import org.slf4j.LoggerFactory;
 public class  LogActions {
     private Common common;
     private LoginPage login;
-    private XFormDashBoard XFormDashBoard;
     private WebDriver driver;
     private static final Logger logger = LoggerFactory.getLogger(LogActions.class);
 
@@ -25,7 +23,6 @@ public class  LogActions {
         common = new Common(driver);
         this.driver = driver;
         login = new LoginPage();
-        XFormDashBoard = new XFormDashBoard();
     }
 
     /**

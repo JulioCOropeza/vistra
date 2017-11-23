@@ -32,7 +32,9 @@ public class CommonEnum {
 		}
 	}
 	public enum BodyTitles {
-		X_FORM_DASH_BOARD_TITLE("DASHBOARD");
+		X_FORM_DASH_BOARD_TITLE("DASHBOARD"),
+		X_FORM_USER_MANAGEMENT_TITLE("USER MANAGEMENT"),
+		X_FORM_TENANT_MANAGEMENT_TITLE("TENANT MANAGEMENT");
 		private final String name;
 		private BodyTitles(String s) {
 			name = s;
@@ -48,7 +50,7 @@ public class CommonEnum {
 	public enum XFormMenuTitles {
 		X_FORM_DASH_BOARD_MENU_USR_MNGMT_TITLE("User Management"),
 		X_FORM_DASH_BOARD_MENU_TENANT_TITLE("Tenants"),
-		FORM_DASH_BOARD_MENU_SYS_ADM_TITLE("System Administration");
+		X_FORM_DASH_BOARD_MENU_SYS_ADM_TITLE("System Administration");
 		private final String name;
 		private XFormMenuTitles(String s) {
 			name = s;
