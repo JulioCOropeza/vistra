@@ -1,5 +1,6 @@
 package com.janeirodigital.xform.webdriver.listeners;
 
+import com.janeirodigital.xform.webdriver.common.Initial;
 import com.janeirodigital.xform.webdriver.scripts.Scripts;
 import com.janeirodigital.xform.webdriver.enums.XmlEnum;
 import org.apache.commons.io.FileUtils;
@@ -12,6 +13,8 @@ import org.testng.ITestResult;
 
 import java.io.File;
 import java.io.IOException;
+import java.nio.file.Files;
+import java.nio.file.Paths;
 import java.sql.Timestamp;
 import java.text.SimpleDateFormat;
 
@@ -30,31 +33,32 @@ public class TestListener extends Scripts implements ITestListener {
         Object currentClass = result.getInstance();
         Listener_driver = ((Scripts) currentClass).getDriver();
         try {
-            takeScreenShot(methodName);
+            takeScreenShot(methodName, currentClass);
         } catch (Exception e) {
             logger.error("Test has Failed: ", e);
         }
     }
 
-    public void takeScreenShot(String methodName) throws Exception {
+    public void takeScreenShot(String methodName, Object currentClass) throws Exception {
 
         File scrFile = ((TakesScreenshot) Listener_driver).getScreenshotAs(OutputType.FILE);
         //The below method will save the screen shot in the drive with test method name
 
         try {
-            FileUtils.copyFile(scrFile, new File(getFullPath(methodName)));
+            FileUtils.copyFile(scrFile, new File(getFullPath(methodName, currentClass)));
         } catch (IOException e) {
             logger.error("takeScreenShot has Failed: ", e);
         }
     }
 
-    private String getFullPath(String methodName) throws Exception {
-        String filePath = this.init.getValueFromConfig(XmlEnum.SCREEN_SHOOTS.getTagName());
+    private String getFullPath(String methodName, Object currentClass) throws Exception {
+        String filePath =((Scripts) currentClass).common.getValueFromConfig(XmlEnum.SCREEN_SHOOTS.getTagName());
         String sFullPath;
         String sBrowserName;
 
+        filePath +=  getTimeStamp() + "/";
         sBrowserName = Listener_driver.toString().substring(0, Listener_driver.toString().indexOf(":"));
-
+        Files.createDirectories(Paths.get(filePath ));
         sFullPath = filePath + sBrowserName + "_" + methodName + "_" + getTimeStamp() + ".png";
         return sFullPath;
     }

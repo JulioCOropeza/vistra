@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <config>
     <url>/login</url>
-    <screen_shoots>../SCREENSHOTS/</screen_shoots>
+    <screen_shoots>../ScreenShots/</screen_shoots>
     <google_exe>C:\\Program Files (x86)\\Google\\Chrome\\Application\\chrome.exe</google_exe>
     <google_exe_linux>/opt/google/chrome/google-chrome</google_exe_linux>
     <google_binary>../controllers/src/main/resources/chromedriver.exe</google_binary>

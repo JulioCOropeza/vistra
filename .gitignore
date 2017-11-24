@@ -15,6 +15,7 @@ build/
 test-output/
 .gradle/
 .factorypath
+ScreenShots/
 
 # OS Files #
 .DS_Store

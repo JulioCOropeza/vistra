@@ -17,7 +17,7 @@ import org.slf4j.LoggerFactory;
 
 public class Scripts {
 
-    private Common common;
+    public Common common;
     private LogActions actions;
     public Initial init;
     private CasesReaderDataProvider testDataProvider;
@@ -44,6 +44,8 @@ public class Scripts {
             common = new Common(driver);
             actions = new LogActions(driver);
 
+            common.setTestEnvironment(testEnvironment);
+
         } catch (Exception e) {
             Assert.fail(e.getMessage());
         }
@@ -57,10 +59,6 @@ public class Scripts {
     @Parameters({"environment"})
     public void BeforeClass(@Optional("dev") String environment) {
         try {
-            ConfigFactory.setProperty("env", environment);
-            testEnvironment = ConfigFactory.create(Environment.class);
-            init.setTestEnvironment(testEnvironment);
-
             common.OpenBaseURL(testEnvironment.url());
             String activeRowIndicator = "1"; // flag to look for into the .xls file
 
@@ -85,7 +83,7 @@ public class Scripts {
 
         logger.debug("you have provided FilterByTenant as:: ", FilterByTenant);
         logger.debug("you have provided FilterByRole as:: ", FilterByRole);
-
+        Assert.fail("test");
     }
 
     @DataProvider

@@ -86,6 +86,8 @@ public class Initial {
     private WebDriver getDriverChrome(BrowsersEnum browser) {
         String binaryName = null;
         boolean headLess = false;
+        boolean linux = false;
+
         switch (browser) {
             case CHROME_WIN:
                 binaryName = XmlEnum.GOOGLE_BINARY.getTagName();
@@ -97,16 +99,18 @@ public class Initial {
             case CHROME_LINUX_32:
                 binaryName = XmlEnum.CHROME_LINUX_32.getTagName();
                 headLess = true;
+                linux = true;
                 break;
             case CHROME_LINUX_64:
                 binaryName = XmlEnum.CHROME_LINUX_64.getTagName();
                 headLess = true;
+                linux = true;
                 break;
         }
         ChromeOptions optionsChrome = new ChromeOptions();
 
         try {
-            if (headLess){
+            if (linux){
                 optionsChrome.setBinary(getValueFromConfig(XmlEnum.GOOGLE_EXE_LINUX.getTagName()));
                 optionsChrome.addArguments("--headless");
                 optionsChrome.addArguments("--disable-gpu");
@@ -114,6 +118,10 @@ public class Initial {
                 optionsChrome.addArguments("window-size=1280x1024");
             }else{
                 optionsChrome.setBinary(getValueFromConfig(XmlEnum.GOOGLE_EXE.getTagName()));
+                if (headLess){
+                    optionsChrome.addArguments("--headless");
+                    optionsChrome.addArguments("--disable-gpu");
+                }
             }
             System.setProperty("webdriver.chrome.driver", getValueFromConfig(binaryName));
             logger.debug("Browser instantiated: ", binaryName);
@@ -204,7 +212,7 @@ public class Initial {
 
     public String getValueFromConfig(String Value) throws Exception {
 
-        File fXmlFile = new File("../controllers/src/main/resources/Config.xml");
+        File fXmlFile = new File(testEnvironment.config());
         DocumentBuilderFactory dbFactory = DocumentBuilderFactory.newInstance();
         DocumentBuilder dBuilder = dbFactory.newDocumentBuilder();
         Document doc = dBuilder.parse(fXmlFile);
