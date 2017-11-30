@@ -1,12 +1,17 @@
 package com.janeirodigital.xform.webdriver.objectRepository;
 
 import com.janeirodigital.xform.webdriver.enums.CommonEnum;
+import com.poiji.bind.Poiji;
+import com.poiji.option.PoijiOptions;
 import org.apache.poi.ss.usermodel.Row;
 import org.apache.poi.ss.usermodel.Workbook;
 import org.apache.poi.xssf.usermodel.XSSFWorkbook;
 
+import java.io.File;
 import java.io.FileInputStream;
 import java.io.IOException;
+import java.util.List;
+
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
@@ -20,40 +25,34 @@ public class CasesReaderDataProvider {
     public Object[][] getDataUserManagement(String ParameterFile) throws IOException
     {
         Object[][] tempData = null;
-
-        tempData = readExcelSheet(ParameterFile, CommonEnum.XFormDataProviders.X_FORM_DP_USER_MANAGEMENT.toString(),"1");
-
+        tempData = readTestCasesDataFile(ParameterFile, "1", CommonEnum.XFormDataProviders.X_FORM_DP_USER_MANAGEMENT.toString(), UserManagementTCData.class);
         return tempData;
     }
-    // read an excel file looking for all rows with a number defined by idRowGet in
-    // the first cell
-    // return an array
-    public Object[][] readExcelSheet(String fileName, String sheetName, String idRowGetStatus) throws IOException {
-        FileInputStream inputStream = new FileInputStream(fileName);
-        Workbook myWorkbook = new XSSFWorkbook(inputStream);
-        // Read sheet inside the workbook by its name
-        org.apache.poi.ss.usermodel.Sheet mySheet = myWorkbook.getSheet(sheetName);
-        // Find number of rows in excel file
-        int rowCount = mySheet.getLastRowNum() - mySheet.getFirstRowNum();
-        // Find number of columns in excel file
-        Row tempRow = mySheet.getRow(0);
-        int colCount = tempRow.getLastCellNum();
-        Object[][] tempHeader = new Object[rowCount][colCount];
+    /**
+     * read an excel file looking for all rows with a number defined by idRowGet in
+     * the first cell
+     *
+     * @param fileName  path of the file (including file name) to be readed
+     * @param idRowGet  value to look for in the first column into the xlsx file
+     * @param iSheetNumber cero base sheet number from .xlsx file
+     * @param cTestCaseData class structure to read the .xlsx file
+     * @return an array of UserManagementTCData objects
+     */
+    public Object[][] readTestCasesDataFile(String fileName, String idRowGet, String iSheetNumber, Class cTestCaseData) {
+        PoijiOptions options = PoijiOptions.PoijiOptionsBuilder.settings() // settings without any value means to ignore first row of the excel data
+                .sheetIndex(Integer.valueOf(iSheetNumber))
+                .build();
+        List<BaseTCData> lsUsers = Poiji.fromExcel(new File(fileName), cTestCaseData, options);
 
-        // Create a loop over all the rows of excel file to read it
-        for (int i = 1; i < rowCount + 1; i++) {
-
-            Row row = mySheet.getRow(i);
-
-            // Create a loop to print cell values in a row
-            for (int j = 0; j < row.getLastCellNum(); j++) {
-                //start reading at second line avoiding headers
-                if (row.getCell(0).getStringCellValue().compareTo(idRowGetStatus) == 0 && j > 0) {
-                    tempHeader[i-1][j - 1] = row.getCell(j).getStringCellValue();
-                    logger.debug("register read from excel file: {}", row.getCell(j).getStringCellValue());
-                }
+        Object[][] oTCData = new Object[lsUsers.size()][1];
+        int counter = 0;
+        for (BaseTCData tcData : lsUsers ) {
+            if (tcData.getsStatus().compareTo(idRowGet) == 0) {
+                oTCData[counter][0] = tcData;
+                counter++;
             }
         }
-        return tempHeader;
+        return oTCData;
     }
+
 }

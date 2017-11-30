@@ -3,6 +3,7 @@ package com.janeirodigital.xform.webdriver.actions;
 import com.janeirodigital.xform.webdriver.enums.CommonEnum;
 import com.janeirodigital.xform.webdriver.common.Common;
 import com.janeirodigital.xform.webdriver.objectRepository.LoginPage;
+import com.janeirodigital.xform.webdriver.objectRepository.LoginParameterTCData;
 import org.openqa.selenium.WebDriver;
 import org.testng.Assert;
 import org.slf4j.Logger;
@@ -32,8 +33,9 @@ public class  LogActions {
      */
     public void login(Object[] initParameters)  {
 
-        String sPassword = initParameters[0].toString();
-        String sEmail = initParameters[1].toString();
+        LoginParameterTCData params = (LoginParameterTCData) initParameters[0];
+        String sPassword = params.getPassword();
+        String sEmail = params.getUser();
 
         driver.findElement(login.loginCheck).click();
         driver.findElement(login.username).sendKeys(sEmail);

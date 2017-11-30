@@ -63,18 +63,18 @@ public class CommonEnum {
 		}
 	}
 	public enum XFormDataProviders {
-		X_FORM_DP_USER_MANAGEMENT("UserManagement"),
-		X_FORM_DP_TENANTS_MANAGEMENT("TenantsManagement"),
-		X_FORM_DP_SYSTEM_ADMINISTRATION_MANAGEMENT("SystemAdministrationManagement");
-		private final String name;
+		X_FORM_DP_USER_MANAGEMENT("2"),//number of excel sheet
+		X_FORM_DP_TENANTS_MANAGEMENT("3"),
+		X_FORM_DP_SYSTEM_ADMINISTRATION_MANAGEMENT("4");
+		private final String sheetNumber;
 		private XFormDataProviders(String s) {
-			name = s;
+			sheetNumber = s;
 		}
 		public boolean equalsName(String otherName) {
-			return name.equals(otherName);
+			return sheetNumber.equals(otherName);
 		}
 		public String toString() {
-			return this.name;
+			return this.sheetNumber;
 		}
 	}
 

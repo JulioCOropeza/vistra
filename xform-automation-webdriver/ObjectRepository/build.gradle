@@ -9,5 +9,5 @@ repositories {
 }
 
 dependencies {
-
+    compile group: 'com.github.ozlerhakan', name: 'poiji', version: '1.7'
 }

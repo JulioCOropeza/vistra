@@ -8,6 +8,7 @@ import com.janeirodigital.xform.webdriver.enums.BrowsersEnum;
 import com.janeirodigital.xform.webdriver.objectRepository.CasesReaderDataProvider;
 import com.janeirodigital.xform.webdriver.common.Initial;
 import com.janeirodigital.xform.webdriver.enums.XmlEnum;
+import com.janeirodigital.xform.webdriver.objectRepository.UserManagementTCData;
 import org.aeonbits.owner.ConfigFactory;
 import org.openqa.selenium.WebDriver;
 import org.testng.Assert;
@@ -30,7 +31,7 @@ public class Scripts {
 
     @Test
     @Parameters({"browser","environment"})
-    public Scripts(@Optional("PHANTOM_JS_WIN") String browser, @Optional("dev") String environment ) {
+    public Scripts(@Optional("CHROME_HEAD_LESS_WIN") String browser, @Optional("dev") String environment ) {
         try {
             init = new Initial();
 
@@ -76,14 +77,9 @@ public class Scripts {
 
 
     @Test(dataProvider = "populateDataProviders")
-    public void testXFormUserManagement(String Id, String FilterByTenant, String FilterByRole, String QuickSearch,
-                                        String AddFirstName, String LastName, String JobTitle, String Email,
-                                        String ConfirmEmail, String CheckSystemAdministrator,
-                                        String ComboAccountTenant, String Role, String CheckTenantAdministrator) {
-
-        logger.debug("you have provided FilterByTenant as:: ", FilterByTenant);
-        logger.debug("you have provided FilterByRole as:: ", FilterByRole);
-        Assert.fail("test");
+    public void testXFormUserManagement(UserManagementTCData tcData){
+        logger.info("you have provided FilterByTenant as:: {} ", tcData.getFilterByTenant().toString());
+        logger.info("you have provided FilterByRole as:: {} ", tcData.getFilterByRole().toString());
     }
 
     @DataProvider
