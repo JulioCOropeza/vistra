@@ -2,7 +2,12 @@ package com.janeirodigital.xform.webdriver.common;
 
 import com.janeirodigital.xform.webdriver.enums.BrowsersEnum;
 import com.janeirodigital.xform.webdriver.enums.XmlEnum;
-import org.aeonbits.owner.ConfigFactory;
+import net.lingala.zip4j.core.ZipFile;
+import net.lingala.zip4j.exception.ZipException;
+import org.apache.commons.compress.archivers.tar.TarArchiveEntry;
+import org.apache.commons.compress.archivers.tar.TarArchiveInputStream;
+import org.apache.commons.compress.compressors.bzip2.BZip2CompressorInputStream;
+import org.apache.commons.compress.utils.IOUtils;
 import org.openqa.selenium.Dimension;
 import org.openqa.selenium.WebDriver;
 
@@ -23,11 +28,19 @@ import org.w3c.dom.NodeList;
 
 import javax.xml.parsers.DocumentBuilder;
 import javax.xml.parsers.DocumentBuilderFactory;
-import java.io.File;
+import java.io.*;
+import java.nio.file.Files;
+import java.nio.file.Path;
+import java.nio.file.Paths;
+import java.nio.file.StandardCopyOption;
 import java.util.concurrent.TimeUnit;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
+
+import java.net.URL;
+import java.nio.channels.Channels;
+import java.nio.channels.ReadableByteChannel;
 
 public class Initial {
     private WebDriver driver;
@@ -82,62 +95,160 @@ public class Initial {
 
     }
 
+    /**
+     * This Method Is Used To Download a WebDriver File From an specific Url
+     * uncompress the downloaded file and rename it
+     *
+     * @param sUrlStr           url of the file to be downloaded
+     * @param sFilePath         path and name of the file to be stored locally
+     * @param sUnzipPath        path where the file is going to be uncompressed
+     * @param sForced           flag to force download process even a previous driver exist
+     * @param sFileOriginalName original file name after decompression
+     * @param sFileNewName      name to be set after file decompression, if null the file stay original
+     */
+    private void downloadFileFromUrl(String sUrlStr, String sFilePath, String sUnzipPath, Boolean sForced, String sFileOriginalName, String sFileNewName) {
+
+        URL urlObj;
+        ReadableByteChannel rbcObj = null;
+        FileOutputStream fOutStream = null;
+
+        // Checking If The File Exists At The Specified Location Or Not
+        Path filePathObj = Paths.get(sFilePath);
+        boolean fileExists = Files.exists(filePathObj);
+        if (!fileExists || sForced) {
+            try {
+                urlObj = new URL(sUrlStr);
+                rbcObj = Channels.newChannel(urlObj.openStream());
+                fOutStream = new FileOutputStream(sFilePath);
+
+                fOutStream.getChannel().transferFrom(rbcObj, 0, Long.MAX_VALUE);
+                logger.info("WebDriver File Successfully Downloaded!");
+                unzip(sFilePath, sUnzipPath, "", sFileOriginalName, sFileNewName);
+
+            } catch (IOException ex) {
+                logger.error("Problem occured while downloading WebDriver file = {} ", ex.getMessage());
+            } finally {
+                try {
+                    if (fOutStream != null) {
+                        fOutStream.close();
+                    }
+                    if (rbcObj != null) {
+                        rbcObj.close();
+                    }
+                } catch (IOException ex) {
+                    logger.error("Problem occured while Closing the Downloaded WebDriver = {}" + ex.getMessage());
+                }
+            }
+        } else {
+            logger.info("WebDriver File Present!");
+        }
+    }
+
+    public void fileRename(String sOriginalName, String sNewName) {
+        File fExecutableFile = null;
+        Path f = Paths.get(sOriginalName);
+        Path rF = Paths.get(sNewName);
+        try {
+            Files.move(f, rF, StandardCopyOption.REPLACE_EXISTING);
+
+            fExecutableFile = new File(sNewName);
+            fExecutableFile.setExecutable(true);
+
+            logger.info("File was successfully renamed");
+        } catch (IOException e) {
+            logger.error("Error: Unable to rename file: {}", e.getMessage());
+        }
+    }
 
     private WebDriver getDriverChrome(BrowsersEnum browser) {
-        String binaryName = null;
-        boolean headLess = false;
-        boolean linux = false;
-
-        switch (browser) {
-            case CHROME_WIN:
-                binaryName = XmlEnum.GOOGLE_BINARY.getTagName();
-                break;
-            case CHROME_HEAD_LESS_WIN:
-                binaryName = XmlEnum.GOOGLE_BINARY.getTagName();
-                headLess = true;
-                break;
-            case CHROME_LINUX_32:
-                binaryName = XmlEnum.CHROME_LINUX_32.getTagName();
-                headLess = true;
-                linux = true;
-                break;
-            case CHROME_LINUX_64:
-                binaryName = XmlEnum.CHROME_LINUX_64.getTagName();
-                headLess = true;
-                linux = true;
-                break;
-        }
-        ChromeOptions optionsChrome = new ChromeOptions();
+        String sBinaryName = null;
+        boolean bHeadLess = false;
+        boolean bLinux = false;
+        String sUrl = null;
+        String sLocalPath = null;
+        String sUnzipPath = null;
+        Boolean bDownLoadForced = null;
+        String sFileOriginalName = null;
+        String sFileNewName = null;
 
         try {
-            if (linux){
+            switch (browser) {
+                case CHROME_WIN:
+                case CHROME_HEAD_LESS_WIN:
+                    sUrl = getValueFromConfig(XmlEnum.DOWNLOAD_CHROME_WIN32_WD.getTagName());
+                    sLocalPath = getValueFromConfig(XmlEnum.DOWNLOAD_CHROME_WIN32_WD_LOCAL_PATH.getTagName());
+                    sBinaryName = XmlEnum.GOOGLE_BINARY.getTagName();
+                    if (browser.equals(BrowsersEnum.CHROME_HEAD_LESS_WIN)) {
+                        bHeadLess = true;
+                    }
+                    break;
+                case CHROME_LINUX_32:
+                    sUrl = getValueFromConfig(XmlEnum.DOWNLOAD_CHROME_LINUX_32_WD.getTagName());
+                    sLocalPath = getValueFromConfig(XmlEnum.DOWNLOAD_CHROME_LINUX_32_WD_LOCAL_PATH.getTagName());
+                    sFileOriginalName = getValueFromConfig(XmlEnum.CHROME_LINUX_ORIGINAL_BINARY_NAME.getTagName());
+                    sFileNewName = getValueFromConfig(XmlEnum.DOWNLOAD_UNZIP_WD_LOCAL_PATH.getTagName()) + "/" + getValueFromConfig(XmlEnum.CHROME_LINUX_32_BINARY_NAME.getTagName());
+                    sBinaryName = XmlEnum.CHROME_LINUX_32.getTagName();
+                    bHeadLess = true;
+                    bLinux = true;
+                    break;
+                case CHROME_LINUX_64:
+                    sUrl = getValueFromConfig(XmlEnum.DOWNLOAD_CHROME_LINUX_64_WD.getTagName());
+                    sLocalPath = getValueFromConfig(XmlEnum.DOWNLOAD_CHROME_LINUX_64_WD_LOCAL_PATH.getTagName());
+                    sFileNewName = getValueFromConfig(XmlEnum.DOWNLOAD_UNZIP_WD_LOCAL_PATH.getTagName()) + "/" + getValueFromConfig(XmlEnum.CHROME_LINUX_64_BINARY_NAME.getTagName());
+                    sBinaryName = XmlEnum.CHROME_LINUX_64.getTagName();
+                    bHeadLess = true;
+                    bLinux = true;
+                    break;
+            }
+            sFileOriginalName = getValueFromConfig(XmlEnum.DOWNLOAD_UNZIP_WD_LOCAL_PATH.getTagName()) + "/" + getValueFromConfig(XmlEnum.CHROME_LINUX_ORIGINAL_BINARY_NAME.getTagName());
+            sUnzipPath = getValueFromConfig(XmlEnum.DOWNLOAD_UNZIP_WD_LOCAL_PATH.getTagName());
+            bDownLoadForced = Boolean.valueOf(getValueFromConfig(XmlEnum.DOWNLOAD_UNZIP_WD_FORCED.getTagName()));
+            downloadFileFromUrl(sUrl, sLocalPath, sUnzipPath, bDownLoadForced, sFileOriginalName, sFileNewName);
+
+            ChromeOptions optionsChrome = new ChromeOptions();
+
+            if (bLinux) {
                 optionsChrome.setBinary(getValueFromConfig(XmlEnum.GOOGLE_EXE_LINUX.getTagName()));
                 optionsChrome.addArguments("--headless");
                 optionsChrome.addArguments("--disable-gpu");
                 optionsChrome.addArguments("--no-sandbox");
                 optionsChrome.addArguments("window-size=1280x1024");
-            }else{
+            } else {
                 optionsChrome.setBinary(getValueFromConfig(XmlEnum.GOOGLE_EXE.getTagName()));
-                if (headLess){
+                if (bHeadLess) {
                     optionsChrome.addArguments("--headless");
                     optionsChrome.addArguments("--disable-gpu");
                 }
             }
-            System.setProperty("webdriver.chrome.driver", getValueFromConfig(binaryName));
-            logger.debug("Browser instantiated: ", binaryName);
+            System.setProperty("webdriver.chrome.driver", getValueFromConfig(sBinaryName));
+            logger.debug("Browser instantiated: ", sBinaryName);
             return new ChromeDriver(optionsChrome);
 
         } catch (Exception e) {
-            logger.error("getDriverChrome has failed - Version: {} ", binaryName, e);
+            logger.error("getDriverChrome has failed - Version: {} ", sBinaryName, e);
             return null;
         }
 
     }
 
     private WebDriver getDriverFireFox() {
-
         DesiredCapabilities capabilities = DesiredCapabilities.firefox();
+        String sBinaryName = null;
+        String sUrl = null;
+        String sLocalPath = null;
+        String sUnzipPath = null;
+        Boolean bDownLoadForced = null;
+        String sFileOriginalName = null;
+        String sFileNewName = null;
+
         try {
+            sUrl = getValueFromConfig(XmlEnum.DOWNLOAD_FIRE_FOX_WD.getTagName());
+            sLocalPath = getValueFromConfig(XmlEnum.DOWNLOAD_FIRE_FOX_WD_LOCAL_PATH.getTagName());
+            sBinaryName = XmlEnum.FIRE_FOX_BINARY.getTagName();
+            sUnzipPath = getValueFromConfig(XmlEnum.DOWNLOAD_UNZIP_WD_LOCAL_PATH.getTagName());
+            bDownLoadForced = Boolean.valueOf(getValueFromConfig(XmlEnum.DOWNLOAD_UNZIP_WD_FORCED.getTagName()));
+            downloadFileFromUrl(sUrl, sLocalPath, sUnzipPath, bDownLoadForced, sFileOriginalName, sFileNewName);
+
             FirefoxOptions options = new FirefoxOptions();
 
             options.addPreference("log", "{level: trace}");
@@ -145,7 +256,7 @@ public class Initial {
             capabilities.setCapability("marionette", true);
             capabilities.setCapability("moz:firefoxOptions", options);
 
-            System.setProperty("webdriver.gecko.driver", getValueFromConfig(XmlEnum.FIRE_FOX_BINARY.getTagName()));
+            System.setProperty("webdriver.gecko.driver", getValueFromConfig(sBinaryName));
 
             return new FirefoxDriver();
 
@@ -158,8 +269,22 @@ public class Initial {
 
     private WebDriver getDriverEdge() {
 
-        DesiredCapabilities capabilities = DesiredCapabilities.firefox();
+        String sBinaryName = null;
+        String sUrl = null;
+        String sLocalPath = null;
+        String sUnzipPath = null;
+        Boolean bDownLoadForced = null;
+        String sFileOriginalName = null;
+        String sFileNewName = null;
+
         try {
+            sUrl = getValueFromConfig(XmlEnum.DOWNLOAD_IE__WD.getTagName());
+            sLocalPath = getValueFromConfig(XmlEnum.DOWNLOAD_IE__WD_LOCAL_PATH.getTagName());
+            sBinaryName = XmlEnum.IE_BINARY.getTagName();
+            sUnzipPath = getValueFromConfig(XmlEnum.DOWNLOAD_UNZIP_WD_LOCAL_PATH.getTagName());
+            bDownLoadForced = Boolean.valueOf(getValueFromConfig(XmlEnum.DOWNLOAD_UNZIP_WD_FORCED.getTagName()));
+            downloadFileFromUrl(sUrl, sLocalPath, sUnzipPath, bDownLoadForced, sFileOriginalName, sFileNewName);
+
             System.setProperty("webdriver.edge.driver", getValueFromConfig(XmlEnum.IE_BINARY.getTagName()));
             return new EdgeDriver();
         } catch (Exception e) {
@@ -169,10 +294,23 @@ public class Initial {
 
     }
 
-
     private WebDriver getDriverPhantomJS() {
         DesiredCapabilities caps = new DesiredCapabilities();
+        String sBinaryName = null;
+        String sUrl = null;
+        String sLocalPath = null;
+        String sUnzipPath = null;
+        Boolean bDownLoadForced = null;
+        String sFileOriginalName = null;
+        String sFileNewName = null;
         try {
+            sUrl = getValueFromConfig(XmlEnum.DOWNLOAD_PHANTOM_JS_WIN_WD.getTagName());
+            sLocalPath = getValueFromConfig(XmlEnum.DOWNLOAD_PHANTOM_JS_WIN_WD_LOCAL_PATH.getTagName());
+            sBinaryName = XmlEnum.PHANTOM_JS_BINARY_NAME.getTagName();
+            sUnzipPath = getValueFromConfig(XmlEnum.DOWNLOAD_UNZIP_WD_LOCAL_PATH.getTagName());
+            bDownLoadForced = Boolean.valueOf(getValueFromConfig(XmlEnum.DOWNLOAD_UNZIP_WD_FORCED.getTagName()));
+            downloadFileFromUrl(sUrl, sLocalPath, sUnzipPath, bDownLoadForced, sFileOriginalName, sFileNewName);
+
             caps.setJavascriptEnabled(true);
             caps.setCapability("takesScreenshot", true);
             caps.setCapability(
@@ -191,7 +329,21 @@ public class Initial {
 
     private WebDriver getDriverPhantomJSLinux64() {
         DesiredCapabilities capsPhantomJSLinux64 = new DesiredCapabilities();
+        String sBinaryName = null;
+        String sUrl = null;
+        String sLocalPath = null;
+        String sUnzipPath = null;
+        Boolean bDownLoadForced = null;
+        String sFileOriginalName = null;
+        String sFileNewName = null;
         try {
+            sUrl = getValueFromConfig(XmlEnum.DOWNLOAD_PHANTOM_JS_LINUX_WD.getTagName());
+            sLocalPath = getValueFromConfig(XmlEnum.DOWNLOAD_PHANTOM_JS_LINUX_WD_LOCAL_PATH.getTagName());
+            sBinaryName = XmlEnum.PHANTOM_JS_LINUX_64_BINARY_NAME.getTagName();
+            sUnzipPath = getValueFromConfig(XmlEnum.DOWNLOAD_UNZIP_WD_LOCAL_PATH.getTagName());
+            bDownLoadForced = Boolean.valueOf(getValueFromConfig(XmlEnum.DOWNLOAD_UNZIP_WD_FORCED.getTagName()));
+            downloadFileFromUrl(sUrl, sLocalPath, sUnzipPath, bDownLoadForced, sFileOriginalName, sFileNewName);
+
             capsPhantomJSLinux64.setJavascriptEnabled(true);
             capsPhantomJSLinux64.setCapability("takesScreenshot", true);
             capsPhantomJSLinux64.setCapability(
@@ -206,6 +358,7 @@ public class Initial {
             return null;
         }
     }
+
     public void setTestEnvironment(Environment testEnvironment) {
         this.testEnvironment = testEnvironment;
     }
@@ -227,6 +380,86 @@ public class Initial {
 
         return content;
 
+    }
+
+    public void unzip(String sSource, String sDestination, String sPassword, String sFileOriginalName, String sFileNewName) {
+        String sFileExtension = null;
+        sFileExtension = getExtension(sSource);
+        try {
+            if (sFileExtension.equals("bz2")) {
+                unzip_bz2(sSource, sDestination);
+            } else if (sFileExtension.equals("zip")) {
+                ZipFile zipFile = new ZipFile(sSource);
+                if (zipFile.isEncrypted()) {
+                    zipFile.setPassword(sPassword);
+                }
+                zipFile.extractAll(sDestination);
+
+                if (sFileNewName != null) {
+                    fileRename(sFileOriginalName, sFileNewName);
+                }
+            }
+
+        } catch (ZipException e) {
+            logger.error("unzip webdriver process has failed: {} ", e);
+        }
+
+    }
+
+    private void unzip_bz2(String sSource, String sDestination) {
+        try {
+
+            FileInputStream fin = new FileInputStream(sSource);
+            BufferedInputStream in = new BufferedInputStream(fin);
+            FileOutputStream out = new FileOutputStream(sDestination + "/TempDownload.tar");
+            BZip2CompressorInputStream bzIn = new BZip2CompressorInputStream(in);
+
+            int buffersize = 1024;
+            final byte[] buffer = new byte[buffersize];
+            int n = 0;
+            while (-1 != (n = bzIn.read(buffer))) {
+                out.write(buffer, 0, n);
+            }
+            out.close();
+            bzIn.close();
+
+            sSource = sDestination + "/TempDownload.tar";
+            decompress_tar(sSource, new File(sDestination));
+
+        } catch (IOException e) {
+            logger.error("unTAR webdriver process has failed: {} ", e);
+        } catch (Exception e) {
+            logger.error("unBZ2 webdriver process has failed: {} ", e);
+            throw new Error(e.getMessage());
+        }
+    }
+
+    public static void decompress_tar(String in, File out) throws IOException {
+        try (TarArchiveInputStream fin = new TarArchiveInputStream(new FileInputStream(in))) {
+            TarArchiveEntry entry;
+            while ((entry = fin.getNextTarEntry()) != null) {
+                if (entry.isDirectory()) {
+                    continue;
+                }
+                File curfile = new File(out, entry.getName());
+                File parent = curfile.getParentFile();
+                if (!parent.exists()) {
+                    parent.mkdirs();
+                }
+                IOUtils.copy(fin, new FileOutputStream(curfile));
+            }
+        }
+    }
+
+    private String getExtension(String sFileName) {
+        if (sFileName.length() == 3) {
+            return sFileName;
+        } else if (sFileName.length() > 3) {
+            return sFileName.substring(sFileName.length() - 3);
+        } else {
+            logger.error("unzip webdriver process has failed, FileName has less than 3 characters!:");
+            throw new IllegalArgumentException("word has less than 3 characters!");
+        }
     }
 
 }

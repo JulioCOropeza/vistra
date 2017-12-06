@@ -31,7 +31,7 @@ public class Scripts {
 
     @Test
     @Parameters({"browser","environment"})
-    public Scripts(@Optional("CHROME_HEAD_LESS_WIN") String browser, @Optional("dev") String environment ) {
+    public Scripts(@Optional("PHANTOM_JS_LINUX_64") String browser, @Optional("dev") String environment ) {
         try {
             init = new Initial();
 

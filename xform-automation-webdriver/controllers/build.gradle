@@ -9,4 +9,6 @@ repositories {
 dependencies {
     compile project(':ObjectRepository')
     compile group: 'org.testng', name: 'testng', version: '6.9.10'
+    compile group: 'net.lingala.zip4j', name: 'zip4j', version: '1.3.1'
+    compile group: 'org.apache.commons', name: 'commons-compress', version: '1.0'
 }

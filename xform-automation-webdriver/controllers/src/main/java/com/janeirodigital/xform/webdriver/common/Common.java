@@ -5,9 +5,6 @@ import com.janeirodigital.xform.webdriver.objectRepository.LoginParameterTCData;
 import com.janeirodigital.xform.webdriver.objectRepository.UserManagementTCData;
 import com.poiji.bind.Poiji;
 import com.poiji.option.PoijiOptions;
-import org.apache.poi.ss.usermodel.Row;
-import org.apache.poi.ss.usermodel.Workbook;
-import org.apache.poi.xssf.usermodel.XSSFWorkbook;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 
@@ -73,7 +70,7 @@ public class Common extends Initial {
             logger.error("Cannot find the Profile Header Configuration File: ", e);
             throw new IOException("Cannot find the Profile Header Configuration File");
         } catch (Exception e) {
-            logger.error("readParameterFile has failed: ", e);
+            logger.error("readParameterFile has failed: {} ", e);
             throw new IOException();
         }
         return tempHeader;
