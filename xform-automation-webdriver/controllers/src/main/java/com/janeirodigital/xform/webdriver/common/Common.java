@@ -6,6 +6,7 @@ import com.janeirodigital.xform.webdriver.objectRepository.UserManagementTCData;
 import com.poiji.bind.Poiji;
 import com.poiji.option.PoijiOptions;
 import org.openqa.selenium.By;
+import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebDriver;
 
 import java.io.File;
@@ -23,9 +24,11 @@ public class Common extends Initial {
     private WebDriver driver;
     private static final Logger logger = LoggerFactory.getLogger(Common.class);
     private WebDriverWait wait;
+    private JavascriptExecutor javascript;
 
     public Common(WebDriver driver) {
         this.driver = driver;
+        if (driver instanceof JavascriptExecutor) { javascript = (JavascriptExecutor)driver;}
     }
 
     public void OpenBaseURL(String testEnvironment) throws Exception {
@@ -50,6 +53,23 @@ public class Common extends Initial {
     public boolean isUrlCorrect(int timeOutInSeconds, String urlExpected) {
         wait = new WebDriverWait(driver, timeOutInSeconds);
         return wait.until(ExpectedConditions.urlContains(urlExpected));
+    }
+
+    /**
+     * This next method blocks the view of an element that can only be viewed if you hover the mouse over it.
+     * It receives as parameter a string that it's used as the cssSelector and then sets the css
+     * attribute "display:inline-block" with a jquery script
+     *
+     * EXAMPLE:
+     * XformHeader header = new XformHeader();
+     * common.blockHoverOfElement(header.notifications);
+     * **/
+    public void blockHoverOfElement (String cssSelector) {
+        if (javascript !=null) {
+            javascript.executeScript("$('" + cssSelector + "').attr('style','display:inline-block');");
+        } else {
+            throw new IllegalStateException("Javascript it's not properly initialized");
+        }
     }
 
     /**
