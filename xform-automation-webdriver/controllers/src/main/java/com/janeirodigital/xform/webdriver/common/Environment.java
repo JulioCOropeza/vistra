@@ -7,5 +7,6 @@ import org.aeonbits.owner.Config;
 })
 public interface Environment extends Config  {
         String url();
+        String urlMiddleOffice();
         String config();
 }

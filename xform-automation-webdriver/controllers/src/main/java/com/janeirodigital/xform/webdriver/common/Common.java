@@ -31,10 +31,16 @@ public class Common extends Initial {
         if (driver instanceof JavascriptExecutor) { javascript = (JavascriptExecutor)driver;}
     }
 
+    public WebDriver getDriver() {
+        return driver;
+    }
+
     public void OpenBaseURL(String testEnvironment) throws Exception {
         driver.get(testEnvironment + getValueFromConfig(XmlEnum.URL.getTagName()));
     }
-
+    public void OpenURL(String testEnvironment) throws Exception {
+        driver.get(testEnvironment);
+    }
     public void closeBrowser() {
         driver.close();
         driver.quit();

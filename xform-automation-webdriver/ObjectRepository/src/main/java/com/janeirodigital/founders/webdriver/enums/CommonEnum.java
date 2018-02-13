@@ -1,4 +1,4 @@
-package com.janeirodigital.xform.webdriver.enums;
+package com.janeirodigital.founders.webdriver.enums;
 
 public class CommonEnum {
 
@@ -18,7 +18,7 @@ public class CommonEnum {
 	}
 
 	public enum PagesURLs {
-		X_FORM_DASH_BOARD_URL("https://xform-stage.janeirodigital.com/dashboard"),
+		X_FORM_DASH_BOARD_URL("https://svb-middleoffice-dev.janeirodigital.com/dashboard"),
 		FoundersDashBoardUrl ("https://svb-middleoffice-dev.janeirodigital.com/dashboard");
 		private final String name;
 		private PagesURLs(String s) {

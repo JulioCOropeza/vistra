@@ -15,7 +15,6 @@ public class XFormDashBoard {
         leftMenuValues.put(CommonEnum.XFormMenuTitles.X_FORM_DASH_BOARD_MENU_SYS_ADM_TITLE.toString(),3);
     }
 
-
     public By returnMenuOption (int menuValue){
         return By.cssSelector(".main-sidebar li:nth-child("+menuValue+") a");
     }

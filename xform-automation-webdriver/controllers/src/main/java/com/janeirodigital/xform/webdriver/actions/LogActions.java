@@ -37,7 +37,6 @@ public class  LogActions {
         String sPassword = params.getPassword();
         String sEmail = params.getUser();
 
-        driver.findElement(login.loginCheck).click();
         driver.findElement(login.username).sendKeys(sEmail);
         driver.findElement(login.password).sendKeys(sPassword);
 
