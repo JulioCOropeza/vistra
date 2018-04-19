@@ -28,6 +28,12 @@ public class CasesReaderDataProvider {
         tempData = readTestCasesDataFile(ParameterFile, "1", CommonEnum.XFormDataProviders.X_FORM_DP_USER_MANAGEMENT.toString(), UserManagementTCData.class);
         return tempData;
     }
+    public Object[][] getDataRedisHistoriesInjection(String ParameterFile) throws IOException
+    {
+        Object[][] tempData = null;
+        tempData = readTestCasesDataFile(ParameterFile, "1", CommonEnum.XFormDataProviders.X_FORM_DP_REDIS_HISTORIES_INJECTION.toString(), RedisHistoriesTCData.class);
+        return tempData;
+    }
     /**
      * read an excel file looking for all rows with a number defined by idRowGet in
      * the first cell

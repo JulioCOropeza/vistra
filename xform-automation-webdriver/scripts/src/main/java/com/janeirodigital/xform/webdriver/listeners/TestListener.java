@@ -31,7 +31,7 @@ public class TestListener extends Scripts implements ITestListener {
         String methodName = result.getName().toString().trim();
 
         Object currentClass = result.getInstance();
-        Listener_driver = ((Scripts) currentClass).getDriver();
+        Listener_driver = this.getDriver();
         try {
             takeScreenShot(methodName, currentClass);
         } catch (Exception e) {

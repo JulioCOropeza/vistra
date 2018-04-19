@@ -7,8 +7,6 @@ import com.janeirodigital.xform.webdriver.enums.CommonEnum;
 import com.janeirodigital.xform.webdriver.objectRepository.UserManagementTCData;
 import com.janeirodigital.xform.webdriver.objectRepository.XFormDashBoard;
 import com.janeirodigital.founders.webdriver.objectRepository.FoundersUserManagement;
-import org.openqa.selenium.By;
-import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.ui.ExpectedConditions;
@@ -38,12 +36,13 @@ public class UserManagementActions {
     public void addNewUser(UserManagementTCData tcData) {
 
         mainMenuActions.openMenuOption(
-                CommonEnum.PageLoadingTimes.MEDIUM_WAIT_TIME.getValue(),
+                CommonEnum.PageLoadingTimes.SHORT_WAIT_TIME.getValue(),
                 xFormDashboard.returnMenuOption(xFormDashboard.leftMenuValues.get(CommonEnum.XFormMenuTitles.X_FORM_DASH_BOARD_MENU_USR_MNGMT_TITLE.toString())),
-                CommonEnum.BodyTitles.X_FORM_USER_MANAGEMENT_TITLE.toString()
+                CommonEnum.BodyTitles.X_FORM_USER_MANAGEMENT_TITLE.toString(),
+                xFormDashboard.usrManagementTitle
         );
 
-        common.waitForElementToBeClickable(CommonEnum.PageLoadingTimes.MEDIUM_WAIT_TIME.getValue(), fUserMngmnt.btnAddNewUser);
+        common.waitForElementToBeClickable(CommonEnum.PageLoadingTimes.SHORT_WAIT_TIME.getValue(), fUserMngmnt.btnAddNewUser);
         try {
 
             WebDriverWait waitDriver = new WebDriverWait(driver, 1);

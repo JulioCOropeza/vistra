@@ -11,8 +11,8 @@ public class XFormUserManagement {
     public final By txtConfirmEmail = By.cssSelector("#confirmEmail");
     public final By chkSystemAdminitrator = By.cssSelector("div:nth-child(7) label");
 
-    public final By cmbTenant = By.cssSelector("#tenant-0 > div > div.selectize-input.items.not-full");
-    public final By cmbRole = By.cssSelector("#role-0-0 > div > div.selectize-input.items.not-full");
+    public final By cmbTenant = By.cssSelector("#tenant-0-selectized");
+    public final By cmbRole = By.cssSelector("div.selectize-input.items.not-full > input[type='text']");
 
     public final By btnCreateNewUser = By.cssSelector("div.row.b-top button.btn.btn-primary");
     public final By btnCancelCreateNewUser = By.cssSelector("xform-user-create button.btn.btn-cancel");

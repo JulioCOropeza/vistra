@@ -43,7 +43,7 @@ public class  LogActions {
         common.waitForElementToBeClickable(CommonEnum.PageLoadingTimes.MEDIUM_WAIT_TIME.getValue(),login.signIn);
         driver.findElement(login.signIn).click();
 
-        boolean rightURL = common.isUrlCorrect(CommonEnum.PageLoadingTimes.MEDIUM_WAIT_TIME.getValue(),CommonEnum.PagesURLs.FoundersDashBoardUrl.toString());
+        boolean rightURL = common.isUrlCorrect(CommonEnum.PageLoadingTimes.MEDIUM_WAIT_TIME.getValue(),CommonEnum.PagesURLs.X_FORM_DASH_BOARD_URL.toString());
         Assert.assertTrue(rightURL,"The page wasn't loaded");
     }
 

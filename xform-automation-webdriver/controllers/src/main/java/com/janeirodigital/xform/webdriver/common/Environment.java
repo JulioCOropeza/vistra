@@ -9,4 +9,6 @@ public interface Environment extends Config  {
         String url();
         String urlMiddleOffice();
         String config();
+        String redisServerHost();
+        String redisServerPort();
 }

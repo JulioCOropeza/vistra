@@ -1,6 +1,7 @@
 package com.janeirodigital.xform.webdriver.scripts;
 
-import com.janeirodigital.founders.webdriver.actions.UserManagementActions;
+import com.janeirodigital.xform.webdriver.actions.MainMenuActions;
+import com.janeirodigital.xform.webdriver.actions.UserManagementActions;
 import com.janeirodigital.xform.webdriver.common.Common;
 import com.janeirodigital.xform.webdriver.enums.XmlEnum;
 import com.janeirodigital.xform.webdriver.objectRepository.CasesReaderDataProvider;
@@ -22,6 +23,10 @@ public class Script_2_GeneralUserInterface {
     public Script_2_GeneralUserInterface() {
 
     }
+    public WebDriver getDriver() {
+        return driver;
+    }
+
     @BeforeClass (dependsOnGroups = "parent", groups = "Script_2_GeneralUserInterface")
     public void BeforeClass(ITestContext ctx) {
 
@@ -32,16 +37,23 @@ public class Script_2_GeneralUserInterface {
 
     }
 
-    @Test(dependsOnGroups = "parent", groups = "Script_2_GeneralUserInterface", priority=1, dataProvider = "populateDataProviders")
-    public void testXFormUserManagement(UserManagementTCData tcData) {
-        UserManagementActions userMgmntAct = new UserManagementActions(driver);
-
-        userMgmntAct.addNewUser(tcData);
-
-        logger.info("you have provided FilterByTenant as:: {} ", tcData.getFilterByTenant().toString());
-        logger.info("you have provided FilterByRole as:: {} ", tcData.getFilterByRole().toString());
+    @Test(dependsOnGroups = "parent", groups = "Script_2_GeneralUserInterface", priority=1)
+    public void testXFormReadNavigationFlow() {
+        MainMenuActions menuActions = new MainMenuActions(driver);
+        menuActions.readNavigationFlow();
 
     }
+
+   @Test(dependsOnGroups = "parent", groups = "Script_2_GeneralUserInterface", priority=2, dataProvider = "populateDataProviders")
+    public void testXFormUserManagement(UserManagementTCData tcData) {
+       UserManagementActions userMgmntAct = new UserManagementActions(driver);
+
+       userMgmntAct.addNewUser(tcData);
+
+       logger.info("you have provided FilterByTenant as:: {} ", tcData.getFilterByTenant().toString());
+       logger.info("you have provided FilterByRole as:: {} ", tcData.getFilterByRole().toString());
+
+   }
 
     @DataProvider
     public Object[][] populateDataProviders() {

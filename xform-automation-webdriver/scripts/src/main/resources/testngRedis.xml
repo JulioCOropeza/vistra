@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+
+<suite name="TestSuite" parallel="false" verbose="2">
+    <listeners>
+        <listener class-name="com.janeirodigital.xform.webdriver.listeners.TestListener"/>
+    </listeners>
+
+    <test name="RedisTest">
+        <parameter name="environment" value="dev"/>
+        <groups>
+            <run>
+                <include name="parent"></include>
+            </run>
+        </groups>
+        <classes>
+            <class name="com.janeirodigital.Vistra.webdriver.scripts.VistraScripts" />
+        </classes>
+    </test>
+
+
+</suite>

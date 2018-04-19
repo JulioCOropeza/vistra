@@ -12,7 +12,7 @@
     <phantom_js>../controllers/src/main/resources/phantomjs-2.1.1-windows/bin/phantomjs.exe</phantom_js>
     <phantom_js_linux_64>../controllers/src/main/resources/phantomjs-2.1.1-linux-x86_64/bin/phantomjs</phantom_js_linux_64>
     <parameter_file>../controllers/src/main/resources/ParameterFile.xlsx</parameter_file>
-    <download_chrome_win32_wd>https://chromedriver.storage.googleapis.com/2.33/chromedriver_win32.zip</download_chrome_win32_wd>
+    <download_chrome_win32_wd>https://chromedriver.storage.googleapis.com/2.38/chromedriver_win32.zip</download_chrome_win32_wd>
     <download_chrome_win32_wd_local_path>../controllers/src/main/resources/chromedriver_win32.zip</download_chrome_win32_wd_local_path>
     <download_chrome_linux_32_wd>https://chromedriver.storage.googleapis.com/2.33/chromedriver_linux32.zip</download_chrome_linux_32_wd>
     <download_chrome_linux_32_wd_local_path>../controllers/src/main/resources/chromedriver_linux32.zip</download_chrome_linux_32_wd_local_path>

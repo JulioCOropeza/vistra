@@ -14,6 +14,8 @@ import java.io.FileInputStream;
 import java.io.IOException;
 import java.util.List;
 
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 import org.slf4j.Logger;
@@ -38,9 +40,11 @@ public class Common extends Initial {
     public void OpenBaseURL(String testEnvironment) throws Exception {
         driver.get(testEnvironment + getValueFromConfig(XmlEnum.URL.getTagName()));
     }
+
     public void OpenURL(String testEnvironment) throws Exception {
         driver.get(testEnvironment);
     }
+    
     public void closeBrowser() {
         driver.close();
         driver.quit();
@@ -56,9 +60,38 @@ public class Common extends Initial {
         wait.until(ExpectedConditions.textToBe(selector, textToAppear));
     }
 
+    public void waitForInvisibilityOfElementLocated(int timeOutInSeconds, By selector) {
+        wait = new WebDriverWait(driver, timeOutInSeconds);
+        wait.until(ExpectedConditions.invisibilityOfElementLocated(selector));
+    }
+
+    public void waitForScriptAJAXCalls(By selector) {
+        WebElement element = driver.findElement(selector);
+        Actions actions = new Actions(driver);
+        actions.moveToElement(element).click().build().perform();
+    }
+
+    public void clickUsingJavaScript(By selector) {
+        WebElement ele = driver.findElement(selector);
+        JavascriptExecutor executor = (JavascriptExecutor) driver;
+        executor.executeScript("arguments[0].click();", ele);
+    }
+
     public boolean isUrlCorrect(int timeOutInSeconds, String urlExpected) {
         wait = new WebDriverWait(driver, timeOutInSeconds);
         return wait.until(ExpectedConditions.urlContains(urlExpected));
+    }
+
+
+    /**
+     * This method returns TRUE or FALSE if the Web element is present or not accordingly.
+     * It receives as parameter a string that it's used as the cssSelector and then sets the css
+     * @param locator webelement to be found
+     * @return boolean indicating if the web element is present in the page
+     * **/
+    public boolean elementExists(By locator)
+    {
+        return !driver.findElements(locator).isEmpty();
     }
 
     /**
