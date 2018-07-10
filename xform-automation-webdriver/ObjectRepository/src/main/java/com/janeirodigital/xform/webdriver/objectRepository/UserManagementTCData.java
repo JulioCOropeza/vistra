@@ -2,6 +2,7 @@ package com.janeirodigital.xform.webdriver.objectRepository;
 
 import com.poiji.annotation.ExcelCell;
 import com.poiji.option.PoijiOptions;
+import org.openqa.selenium.WebDriver;
 
 public class UserManagementTCData extends BaseTCData {
     @ExcelCell(0)
@@ -86,13 +87,9 @@ public class UserManagementTCData extends BaseTCData {
         return sJobTitle;
     }
 
-    public String getEmail() {
-        return sEmail;
-    }
+    public String getEmail() { return sEmail; }
 
-    public String getConfirmEmail() {
-        return sConfirmEmail;
-    }
+    public String getConfirmEmail() { return sConfirmEmail; }
 
     public String getCheckSystemAdministrator() {
         return sCheckSystemAdministrator;

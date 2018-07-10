@@ -22,6 +22,5 @@ public class XFormUserManagement {
     public final By txttFilterQuickSearch = By.cssSelector("#filter");
     public final By btntFilterQuickSearch = By.cssSelector("button.input-group-addon");
     public final By btntFilterReset = By.cssSelector("button.btn.btn-cancel.m-top-22");
-
-
+    public final By btnCloseBanner = By.className("banner-close");
 }

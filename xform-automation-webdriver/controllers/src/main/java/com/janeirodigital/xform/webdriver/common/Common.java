@@ -8,12 +8,14 @@ import com.poiji.option.PoijiOptions;
 import org.openqa.selenium.By;
 import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebDriver;
-
 import java.io.File;
 import java.io.FileInputStream;
 import java.io.IOException;
+import java.time.LocalDate;
+import java.time.ZoneId;
+import java.util.Date;
 import java.util.List;
-
+import java.util.Random;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.ui.ExpectedConditions;
@@ -159,4 +161,39 @@ public class Common extends Initial {
         return tempHeader;
     }
 
+    /**
+     * This method is in charge to generate random numbers.
+     * @param iMaxRange
+     * @return int random value between 1 and iMaxRange.
+     */
+
+    public int getRandomValue(int iMaxRange) {
+        Random rand = new Random();
+        int iNumber = rand.nextInt(iMaxRange);
+
+        return iNumber;
+    }
+
+    /**
+     * This method is to create random emails with a number after the "@"
+     * @param sEmail
+     * @param iNumber
+     * @return Random email.
+     */
+    public String emailGenerator(String sEmail, int iNumber ) {
+        String sMail = sEmail;
+        String [] email = sMail.split("@");
+        String sEmail1 = email[0];
+        String sEmail2 = email[1];
+
+        Date date = new Date();
+        LocalDate localDate = date.toInstant().atZone(ZoneId.systemDefault()).toLocalDate();
+        int year  = localDate.getYear();
+        int month = localDate.getMonthValue();
+        int day   = localDate.getDayOfMonth();
+
+        String Email = sEmail1 + "@" + iNumber + "." + year + "." + month + "." + day + "." + sEmail2;
+
+        return Email;
+    }
 }

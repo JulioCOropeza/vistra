@@ -116,4 +116,12 @@ public class CommonEnum {
 		}
 		public int getValue() { return value; }
 	}
+
+	public enum randomRange {
+		MAX_RANGE(100),
+		MIN_RANGE(1);
+		private final int value;
+		randomRange(final int newValue) { value = newValue; }
+		public int getValue() { return value; }
+	}
 }
