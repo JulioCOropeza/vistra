@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+
+<suite name="7_UserManagement" parallel="false" verbose="2">
+    <listeners>
+        <listener class-name="com.janeirodigital.xform.webdriver.listeners.TestListener"/>
+    </listeners>
+    <test name="Script_7_UserManagement_ChromeTest">
+        <parameter name="browser" value="CHROME_LINUX_64"/>
+        <parameter name="environment" value="dev"/>
+        <groups>
+            <run>
+                <include name="parent"></include>
+                <include name="Script_7_UserManagement"></include>
+            </run>
+        </groups>
+        <classes>
+            <class name="com.janeirodigital.xform.webdriver.scripts.Scripts" />
+            <class name="com.janeirodigital.xform.webdriver.scripts.Script_7_UserManagement" />
+        </classes>
+    </test>
+</suite>

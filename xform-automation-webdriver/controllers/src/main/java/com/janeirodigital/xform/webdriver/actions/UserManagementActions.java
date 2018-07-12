@@ -29,10 +29,12 @@ public class UserManagementActions {
 
         xFormDashboard = new XFormDashBoard();
         xFormDashboard.fillMenuHashMap();
-
     }
 
     public void addNewUser(UserManagementTCData tcData) {
+        int iNumber = common.getRandomValue(CommonEnum.randomRange.MAX_RANGE.getValue());
+        String Email = common.emailGenerator(tcData.getEmail(),iNumber);
+        String ConfirmEmail = common.emailGenerator(tcData.getConfirmEmail(),iNumber);
 
         mainMenuActions.openMenuOption(
                 CommonEnum.PageLoadingTimes.SHORT_WAIT_TIME.getValue(),
@@ -42,7 +44,6 @@ public class UserManagementActions {
         );
 
         try {
-
             WebDriverWait waitDriver = new WebDriverWait(driver, 1);
             waitDriver.until(ExpectedConditions.presenceOfElementLocated(xUserMngmnt.btnAddNewUser));
             Thread.sleep(1000);
@@ -56,8 +57,8 @@ public class UserManagementActions {
         driver.findElement(xUserMngmnt.txtFirstName).sendKeys(tcData.getFirstName());
         driver.findElement(xUserMngmnt.txtLastName).sendKeys(tcData.getLastName());
         driver.findElement(xUserMngmnt.txtJobTitle).sendKeys(tcData.getJobTitle());
-        driver.findElement(xUserMngmnt.txtEmail).sendKeys(tcData.getEmail());
-        driver.findElement(xUserMngmnt.txtConfirmEmail).sendKeys(tcData.getConfirmEmail());
+        driver.findElement(xUserMngmnt.txtEmail).sendKeys(Email);
+        driver.findElement(xUserMngmnt.txtConfirmEmail).sendKeys(ConfirmEmail);
         if (Boolean.valueOf(tcData.getCheckSystemAdministrator())) {
             driver.findElement(xUserMngmnt.chkSystemAdminitrator).click();
         }
@@ -68,8 +69,10 @@ public class UserManagementActions {
         common.waitForElementToBeClickable(2, xUserMngmnt.cmbRole);
         driver.findElement(xUserMngmnt.cmbRole).click();
         driver.findElement(xUserMngmnt.cmbRole).sendKeys(tcData.getRole());
-
         driver.findElement(xUserMngmnt.btnCreateNewUser).click();
+
+        common.waitForElementToBeClickable(2, xUserMngmnt.btnCloseBanner);
+        driver.findElement(xUserMngmnt.btnCloseBanner).click();
 
         try {
             common.OpenBaseURL(CommonEnum.PagesURLs.X_FORM_DASH_BOARD_URL.toString());
