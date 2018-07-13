@@ -19,6 +19,7 @@ public class CommonEnum {
 
 	public enum PagesURLs {
 		X_FORM_DASH_BOARD_URL("https://xform-stage.janeirodigital.com/dashboard"),
+		X_FORM_USER_LIST_URL("https://xform-stage.janeirodigital.com/users/list"),
 		FoundersDashBoardUrl ("https://svb-middleoffice-dev.janeirodigital.com/dashboard");
 		private final String name;
 		private PagesURLs(String s) {

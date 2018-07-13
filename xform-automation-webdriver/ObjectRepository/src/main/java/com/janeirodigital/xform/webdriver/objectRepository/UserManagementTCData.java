@@ -31,6 +31,8 @@ public class UserManagementTCData extends BaseTCData {
     private String sRole;
     @ExcelCell(12)
     private String sCheckTenantAdministrator;
+    @ExcelCell(13)
+    private String sJobTitleChange;
 
     //no need getters/setters to map excel cells to fields
 
@@ -50,6 +52,7 @@ public class UserManagementTCData extends BaseTCData {
                 ", sComboAccountTenant='" + getComboAccountTenant() + '\'' +
                 ", sRole='" + getRole() + '\'' +
                 ", sCheckTenantAdministrator='" + getCheckTenantAdministrator() + '\'' +
+                ", sJobTitleChange='" + sJobTitleChange() + '\'' +
                 '}';
     }
 
@@ -105,5 +108,9 @@ public class UserManagementTCData extends BaseTCData {
 
     public String getCheckTenantAdministrator() {
         return sCheckTenantAdministrator;
+    }
+
+    public String sJobTitleChange() {
+        return sJobTitleChange;
     }
 }

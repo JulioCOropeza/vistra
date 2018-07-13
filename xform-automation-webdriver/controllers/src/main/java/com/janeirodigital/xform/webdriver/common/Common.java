@@ -196,4 +196,30 @@ public class Common extends Initial {
 
         return Email;
     }
+
+    /**
+     * This method is in charge to scroll to find an element.
+     * @param selector
+     */
+    public void scrollToFindElement(By selector){
+        WebElement element = driver.findElement(selector);
+        javascript.executeScript("arguments[0].scrollIntoView();", element);
+    }
+
+    /**
+     * This method scroll to the top of the page
+     */
+    public void scrollTop(){
+        javascript.executeScript("window.scrollTo(document.body.scrollHeight,0)");
+    }
+
+    /**
+     * This method is in charge to create a list of web elements based on a selector.
+     * @param selector
+     * @return List of WebElements
+     */
+    public List<WebElement> getListOfElement(By selector){
+        List<WebElement> list = driver.findElements(selector);
+        return list;
+    }
 }

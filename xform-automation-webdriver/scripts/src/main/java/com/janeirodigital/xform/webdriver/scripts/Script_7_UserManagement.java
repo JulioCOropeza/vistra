@@ -36,6 +36,17 @@ public class Script_7_UserManagement {
         userMgmntAct.addNewUser(tcData);
     }
 
+    /**
+     * This Test is in charge to take an user and modify the Job Title.
+     * @param tcData
+     */
+
+    @Test(dependsOnGroups = "parent", groups = {"Script_7_UserManagement"}, priority=2, dataProvider = "populateDataProviders")
+    public void userUpdate(UserManagementTCData tcData) {
+        UserManagementActions userMgmntAct = new UserManagementActions(driver);
+        userMgmntAct.userUpdate(tcData);
+    }
+
     @DataProvider
     public Object[][] populateDataProviders() {
         String ParameterFile = "";
