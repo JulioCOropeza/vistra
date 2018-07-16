@@ -17,11 +17,13 @@ public class Script_7_UserManagement {
     private WebDriver driver;
     private Common common;
     private CasesReaderDataProvider testDataProvider;
+    UserManagementActions userMgmntAct;
 
     @BeforeClass(dependsOnGroups = "parent", groups = {"Script_7_UserManagement"})
     public void BeforeClass(ITestContext ctx) {
         driver = (WebDriver) ctx.getAttribute("driver");
         common = (Common) ctx.getAttribute("common");
+        userMgmntAct = new UserManagementActions(driver);
         logger.info("driver.toString:: {} ", driver.toString());
     }
 
@@ -30,21 +32,29 @@ public class Script_7_UserManagement {
      * @param tcData
      */
 
-    @Test(dependsOnGroups = "parent", groups = {"Script_7_UserManagement"}, priority=1, dataProvider = "populateDataProviders")
+    @Test(dependsOnGroups = "parent", groups = {"Script_7_UserManagement", "userCreate"}, priority=1, dataProvider = "populateDataProviders")
     public void userCreate(UserManagementTCData tcData) {
-        UserManagementActions userMgmntAct = new UserManagementActions(driver);
         userMgmntAct.addNewUser(tcData);
     }
 
     /**
-     * This Test is in charge to take an user and modify the Job Title.
+     * This Test is in charge to take an user and modify the data based on the excel file information.
      * @param tcData
      */
 
-    @Test(dependsOnGroups = "parent", groups = {"Script_7_UserManagement"}, priority=2, dataProvider = "populateDataProviders")
+    @Test(dependsOnGroups = {"parent","userCreate"}, groups = {"Script_7_UserManagement","userUpdate"}, priority=2, dataProvider = "populateDataProviders")
     public void userUpdate(UserManagementTCData tcData) {
-        UserManagementActions userMgmntAct = new UserManagementActions(driver);
         userMgmntAct.userUpdate(tcData);
+    }
+
+    /**
+     * This @Test is in charge to read and verify all the user information.
+     * @param tcData
+     */
+
+    @Test(dependsOnGroups = {"parent", "userUpdate"}, groups = {"Script_7_UserManagement", "userRead"}, priority=3, dataProvider = "populateDataProviders")
+    public void userRead(UserManagementTCData tcData) {
+        userMgmntAct.userRead(tcData);
     }
 
     @DataProvider

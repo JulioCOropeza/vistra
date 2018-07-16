@@ -28,5 +28,6 @@ public class XFormUserManagement {
     public final By btnEditUserInfo = By.cssSelector(".mt-4 .btn-primary");
     public final By txtJobField = By.id("jobTitle");
     public final By btnSaveInfo = By.cssSelector(".btn-primary.mt-md-0");
+    public final By txtUserCurrentData = By.cssSelector(".form-group div span");
 
 }

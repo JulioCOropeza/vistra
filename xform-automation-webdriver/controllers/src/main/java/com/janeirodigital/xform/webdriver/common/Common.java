@@ -192,7 +192,7 @@ public class Common extends Initial {
         int month = localDate.getMonthValue();
         int day   = localDate.getDayOfMonth();
 
-        String Email = sEmail1 + "@" + iNumber + "." + year + "." + month + "." + day + "." + sEmail2;
+        String Email = sEmail1 + "@" + iNumber + year + month + day + "." + sEmail2;
 
         return Email;
     }
@@ -218,8 +218,20 @@ public class Common extends Initial {
      * @param selector
      * @return List of WebElements
      */
+
     public List<WebElement> getListOfElement(By selector){
         List<WebElement> list = driver.findElements(selector);
         return list;
+    }
+
+    /**
+     * This method is in charge to clear the inputs and fill with the data.
+     * @param selector
+     * @param sInputData
+     */
+
+    public void fillInput (By selector, String sInputData){
+        driver.findElement(selector).clear();
+        driver.findElement(selector).sendKeys(sInputData);
     }
 }

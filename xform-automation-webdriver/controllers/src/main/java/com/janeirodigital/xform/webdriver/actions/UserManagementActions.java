@@ -12,6 +12,7 @@ import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
+import org.testng.Assert;
 import java.util.List;
 
 public class UserManagementActions {
@@ -74,7 +75,7 @@ public class UserManagementActions {
         common.scrollTop();
     }
 
-    public void userUpdate(UserManagementTCData tcData) {
+    public void userUpdate (UserManagementTCData tcData) {
         driver.get(CommonEnum.PagesURLs.X_FORM_USER_LIST_URL.toString());
         try {
             WebDriverWait waitDriver = new WebDriverWait(driver, 1);
@@ -83,8 +84,7 @@ public class UserManagementActions {
         } catch (Exception e) {
             logger.error("test has failed locating xUserMngmnt.txtQuickSearch: {} ", e.getMessage());
         }
-        driver.findElement(xUserMngmnt.txtQuickSearch).clear();
-        driver.findElement(xUserMngmnt.txtQuickSearch).sendKeys(tcData.getFirstName());
+        common.fillInput(xUserMngmnt.txtQuickSearch,tcData.getFirstName());
         driver.findElement(xUserMngmnt.btntFilterQuickSearch).click();
         try {
             WebDriverWait waitDriver = new WebDriverWait(driver, 1);
@@ -97,8 +97,43 @@ public class UserManagementActions {
         txtUsersList.get(txtUsersList.size()-1).click();
         common.waitForElementToBeClickable(2, xUserMngmnt.btnEditUserInfo);
         driver.findElement(xUserMngmnt.btnEditUserInfo).click();
-        driver.findElement(xUserMngmnt.txtJobField).clear();
-        driver.findElement(xUserMngmnt.txtJobField).sendKeys(tcData.sJobTitleChange());
+        common.fillInput(xUserMngmnt.txtFirstName, tcData.sFirstNameChange());
+        common.fillInput(xUserMngmnt.txtLastName, tcData.sLastNameChange());
+        common.fillInput(xUserMngmnt.txtJobField,tcData.sJobTitleChange() );
         driver.findElement(xUserMngmnt.btnSaveInfo).click();
+    }
+
+    public void userRead(UserManagementTCData tcData){
+        driver.get(CommonEnum.PagesURLs.X_FORM_USER_LIST_URL.toString());
+        try {
+            WebDriverWait waitDriver = new WebDriverWait(driver, 1);
+            waitDriver.until(ExpectedConditions.presenceOfElementLocated(xUserMngmnt.txtQuickSearch));
+            Thread.sleep(1000);
+        } catch (Exception e) {
+            logger.error("test has failed locating xUserMngmnt.txtQuickSearch: {} ", e.getMessage());
+        }
+        common.fillInput(xUserMngmnt.txtQuickSearch,tcData.sFirstNameChange() );
+        driver.findElement(xUserMngmnt.btntFilterQuickSearch).click();
+        try {
+            WebDriverWait waitDriver = new WebDriverWait(driver, 1);
+            waitDriver.until(ExpectedConditions.presenceOfElementLocated(xUserMngmnt.txtUsersList));
+            Thread.sleep(1000);
+        } catch (Exception e) {
+            logger.error("test has failed locating xUserMngmnt.txtUsersList: {} ", e.getMessage());
+        }
+        List<WebElement> txtUsersList = common.getListOfElement(xUserMngmnt.txtUsersList);
+        txtUsersList.get(txtUsersList.size()-1).click();
+        common.waitForElementToBeClickable(2, xUserMngmnt.btnEditUserInfo);
+        List<WebElement> currentData = common.getListOfElement(xUserMngmnt.txtUserCurrentData);
+
+        String sCurrentMail = currentData.get(2).getAttribute("innerHTML");
+        String [] sExpectedMail = sCurrentMail.split("@");
+        String [] sExpectedDomain = sExpectedMail[1].split("\\.");
+        String sEmailToVerify = sExpectedMail[0] + "@" + sExpectedDomain[1] + ".com";
+
+        Assert.assertEquals(currentData.get(0).getAttribute("innerHTML"),tcData.sFirstNameChange());
+        Assert.assertEquals(currentData.get(1).getAttribute("innerHTML"),tcData.sLastNameChange());
+        Assert.assertEquals(sEmailToVerify,tcData.getEmail());
+        Assert.assertEquals(currentData.get(3).getAttribute("innerHTML"),tcData.sJobTitleChange());
     }
 }
