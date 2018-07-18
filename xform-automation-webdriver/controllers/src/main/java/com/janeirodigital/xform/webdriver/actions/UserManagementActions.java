@@ -8,8 +8,6 @@ import com.janeirodigital.xform.webdriver.objectRepository.XFormUserManagement;
 import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
-import org.openqa.selenium.support.ui.ExpectedConditions;
-import org.openqa.selenium.support.ui.WebDriverWait;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.testng.Assert;
@@ -28,7 +26,6 @@ public class UserManagementActions {
         this.driver = driver;
         xUserMngmnt = new XFormUserManagement();
         mainMenuActions = new MainMenuActions(driver);
-
         xFormDashboard = new XFormDashBoard();
         xFormDashboard.fillMenuHashMap();
     }
@@ -45,14 +42,7 @@ public class UserManagementActions {
                 xFormDashboard.usrManagementTitle
         );
 
-        try {
-            WebDriverWait waitDriver = new WebDriverWait(driver, 1);
-            waitDriver.until(ExpectedConditions.presenceOfElementLocated(xUserMngmnt.btnAddNewUser));
-            Thread.sleep(1000);
-
-        } catch (Exception e) {
-            logger.error("test has failed locating xUserMngmnt.btnAddNewUser: {} ", e.getMessage());
-        }
+        common.waitForPresenceOfElement(1, xUserMngmnt.btnAddNewUser);
         common.scrollTop();
         driver.findElement(xUserMngmnt.btnAddNewUser).click();
         driver.findElement(xUserMngmnt.txtFirstName).click();
@@ -67,7 +57,6 @@ public class UserManagementActions {
 
         driver.findElement(xUserMngmnt.cmbTenant).click();
         driver.findElement(xUserMngmnt.cmbTenant).sendKeys(tcData.getComboAccountTenant()+ Keys.ENTER);
-
         common.waitForElementToBeClickable(2, xUserMngmnt.cmbRole);
         driver.findElement(xUserMngmnt.cmbRole).click();
         driver.findElement(xUserMngmnt.cmbRole).sendKeys(tcData.getRole());
@@ -77,22 +66,10 @@ public class UserManagementActions {
 
     public void userUpdate (UserManagementTCData tcData) {
         driver.get(CommonEnum.PagesURLs.X_FORM_USER_LIST_URL.toString());
-        try {
-            WebDriverWait waitDriver = new WebDriverWait(driver, 1);
-            waitDriver.until(ExpectedConditions.presenceOfElementLocated(xUserMngmnt.txtQuickSearch));
-            Thread.sleep(1000);
-        } catch (Exception e) {
-            logger.error("test has failed locating xUserMngmnt.txtQuickSearch: {} ", e.getMessage());
-        }
+        common.waitForPresenceOfElement(1, xUserMngmnt.txtQuickSearch);
         common.fillInput(xUserMngmnt.txtQuickSearch,tcData.getFirstName());
         driver.findElement(xUserMngmnt.btntFilterQuickSearch).click();
-        try {
-            WebDriverWait waitDriver = new WebDriverWait(driver, 1);
-            waitDriver.until(ExpectedConditions.presenceOfElementLocated(xUserMngmnt.txtUsersList));
-            Thread.sleep(1000);
-        } catch (Exception e) {
-            logger.error("test has failed locating xUserMngmnt.txtUsersList: {} ", e.getMessage());
-        }
+        common.waitForPresenceOfElement(1, xUserMngmnt.txtUsersList);
         List<WebElement> txtUsersList = common.getListOfElement(xUserMngmnt.txtUsersList);
         txtUsersList.get(txtUsersList.size()-1).click();
         common.waitForElementToBeClickable(2, xUserMngmnt.btnEditUserInfo);
@@ -105,22 +82,10 @@ public class UserManagementActions {
 
     public void userRead(UserManagementTCData tcData){
         driver.get(CommonEnum.PagesURLs.X_FORM_USER_LIST_URL.toString());
-        try {
-            WebDriverWait waitDriver = new WebDriverWait(driver, 1);
-            waitDriver.until(ExpectedConditions.presenceOfElementLocated(xUserMngmnt.txtQuickSearch));
-            Thread.sleep(1000);
-        } catch (Exception e) {
-            logger.error("test has failed locating xUserMngmnt.txtQuickSearch: {} ", e.getMessage());
-        }
+        common.waitForPresenceOfElement(1, xUserMngmnt.txtQuickSearch);
         common.fillInput(xUserMngmnt.txtQuickSearch,tcData.sFirstNameChange() );
         driver.findElement(xUserMngmnt.btntFilterQuickSearch).click();
-        try {
-            WebDriverWait waitDriver = new WebDriverWait(driver, 1);
-            waitDriver.until(ExpectedConditions.presenceOfElementLocated(xUserMngmnt.txtUsersList));
-            Thread.sleep(1000);
-        } catch (Exception e) {
-            logger.error("test has failed locating xUserMngmnt.txtUsersList: {} ", e.getMessage());
-        }
+        common.waitForPresenceOfElement(1, xUserMngmnt.txtUsersList);
         List<WebElement> txtUsersList = common.getListOfElement(xUserMngmnt.txtUsersList);
         txtUsersList.get(txtUsersList.size()-1).click();
         common.waitForElementToBeClickable(2, xUserMngmnt.btnEditUserInfo);
@@ -135,5 +100,21 @@ public class UserManagementActions {
         Assert.assertEquals(currentData.get(1).getAttribute("innerHTML"),tcData.sLastNameChange());
         Assert.assertEquals(sEmailToVerify,tcData.getEmail());
         Assert.assertEquals(currentData.get(3).getAttribute("innerHTML"),tcData.sJobTitleChange());
+    }
+
+    public void userDelete(UserManagementTCData tcData){
+        driver.get(CommonEnum.PagesURLs.X_FORM_USER_LIST_URL.toString());
+        common.waitForPresenceOfElement(1, xUserMngmnt.txtQuickSearch);
+        common.fillInput(xUserMngmnt.txtQuickSearch,tcData.sFirstNameChange() );
+        driver.findElement(xUserMngmnt.btntFilterQuickSearch).click();
+        common.waitForPresenceOfElement(1, xUserMngmnt.txtUsersList);
+        List<WebElement> btnDeleteUser = common.getListOfElement(xUserMngmnt.btnDeleteUser);
+        btnDeleteUser.get(btnDeleteUser.size()-1).click();
+        common.waitForElementToBeClickable(1, xUserMngmnt.btnConfirmDelete);
+        driver.findElement(xUserMngmnt.btnConfirmDelete).click();
+        common.waitForPresenceOfElement(1,xUserMngmnt.btntFilterQuickSearch );
+        common.fillInput(xUserMngmnt.txtQuickSearch,tcData.sFirstNameChange() );
+        driver.findElement(xUserMngmnt.btntFilterQuickSearch).click();
+        common.verifyElementDisplayed(xUserMngmnt.txtNoContentMsg);
     }
 }

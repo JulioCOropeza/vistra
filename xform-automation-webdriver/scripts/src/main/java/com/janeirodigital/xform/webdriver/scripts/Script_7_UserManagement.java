@@ -38,7 +38,7 @@ public class Script_7_UserManagement {
     }
 
     /**
-     * This Test is in charge to take an user and modify the data based on the excel file information.
+     * This @Test is in charge to take an user and modify the data based on the excel file information.
      * @param tcData
      */
 
@@ -55,6 +55,16 @@ public class Script_7_UserManagement {
     @Test(dependsOnGroups = {"parent", "userUpdate"}, groups = {"Script_7_UserManagement", "userRead"}, priority=3, dataProvider = "populateDataProviders")
     public void userRead(UserManagementTCData tcData) {
         userMgmntAct.userRead(tcData);
+    }
+
+    /**
+     * This @Test is in charge to delete the user created previously
+     * @param tcData
+     */
+
+    @Test(dependsOnGroups = {"parent", "userRead"}, groups = {"Script_7_UserManagement"}, priority=4, dataProvider = "populateDataProviders")
+    public void userDelete(UserManagementTCData tcData) {
+        userMgmntAct.userDelete(tcData);
     }
 
     @DataProvider

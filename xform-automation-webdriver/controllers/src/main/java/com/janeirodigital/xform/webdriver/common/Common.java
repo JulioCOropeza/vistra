@@ -84,13 +84,13 @@ public class Common extends Initial {
         return wait.until(ExpectedConditions.urlContains(urlExpected));
     }
 
-
     /**
      * This method returns TRUE or FALSE if the Web element is present or not accordingly.
      * It receives as parameter a string that it's used as the cssSelector and then sets the css
      * @param locator webelement to be found
      * @return boolean indicating if the web element is present in the page
      * **/
+
     public boolean elementExists(By locator)
     {
         return !driver.findElements(locator).isEmpty();
@@ -105,6 +105,7 @@ public class Common extends Initial {
      * XformHeader header = new XformHeader();
      * common.blockHoverOfElement(header.notifications);
      * **/
+
     public void blockHoverOfElement (String cssSelector) {
         if (javascript !=null) {
             javascript.executeScript("$('" + cssSelector + "').attr('style','display:inline-block');");
@@ -121,6 +122,7 @@ public class Common extends Initial {
      * @param sSheetName         name of the sheet into the file
      * @return an array
      */
+
     public Object[] readParameterFile(String activeRowIndicator, String sSheetName) throws IOException {
 
 
@@ -136,6 +138,7 @@ public class Common extends Initial {
         }
         return tempHeader;
     }
+
     /**
      * read an excel file looking for a row with a number defined by idRowGet in
      * the first cell
@@ -144,6 +147,7 @@ public class Common extends Initial {
      * @param idRowGet  value to look for in the first column into the xlsx file
      * @return an array of UserManagementTCData objects
      */
+
     public Object[] readParamTestCasesDataFile(String fileName, String idRowGet) {
         PoijiOptions options = PoijiOptions.PoijiOptionsBuilder.settings(1) // settings 1 means does not ignore first row of the excel data
                 .sheetIndex(1) //2nd sheet from .xlsx file
@@ -180,6 +184,7 @@ public class Common extends Initial {
      * @param iNumber
      * @return Random email.
      */
+
     public String emailGenerator(String sEmail, int iNumber ) {
         String sMail = sEmail;
         String [] email = sMail.split("@");
@@ -201,6 +206,7 @@ public class Common extends Initial {
      * This method is in charge to scroll to find an element.
      * @param selector
      */
+
     public void scrollToFindElement(By selector){
         WebElement element = driver.findElement(selector);
         javascript.executeScript("arguments[0].scrollIntoView();", element);
@@ -209,6 +215,7 @@ public class Common extends Initial {
     /**
      * This method scroll to the top of the page
      */
+
     public void scrollTop(){
         javascript.executeScript("window.scrollTo(document.body.scrollHeight,0)");
     }
@@ -233,5 +240,34 @@ public class Common extends Initial {
     public void fillInput (By selector, String sInputData){
         driver.findElement(selector).clear();
         driver.findElement(selector).sendKeys(sInputData);
+    }
+
+    /**
+     * This method allow the driver take an implicit wait to find an element.
+     * @param timeOutInSeconds
+     * @param selector
+     */
+
+    public void waitForPresenceOfElement (int timeOutInSeconds, By selector){
+        try {
+            wait = new WebDriverWait(driver, timeOutInSeconds);
+            wait.until(ExpectedConditions.presenceOfElementLocated(selector));
+            Thread.sleep(1000);
+        } catch (Exception e) {
+            logger.error("Test has failed locating " + selector.toString() + " {}", e.getMessage());
+        }
+    }
+
+    /**
+     * This method verify if the element is present in the page.
+     * @param selector
+     */
+
+    public void verifyElementDisplayed (By selector){
+        try{
+            driver.findElement(selector).isDisplayed();
+        } catch (Exception e){
+            logger.error("Test has failed locating " + selector.toString() + " {}", e.getMessage());
+        }
     }
 }
