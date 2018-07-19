@@ -70,8 +70,7 @@ public class UserManagementActions {
         common.fillInput(xUserMngmnt.txtQuickSearch,tcData.getFirstName());
         driver.findElement(xUserMngmnt.btntFilterQuickSearch).click();
         common.waitForPresenceOfElement(1, xUserMngmnt.txtUsersList);
-        List<WebElement> txtUsersList = common.getListOfElement(xUserMngmnt.txtUsersList);
-        txtUsersList.get(txtUsersList.size()-1).click();
+        common.getListLastElement(xUserMngmnt.txtUsersList).click();
         common.waitForElementToBeClickable(2, xUserMngmnt.btnEditUserInfo);
         driver.findElement(xUserMngmnt.btnEditUserInfo).click();
         common.fillInput(xUserMngmnt.txtFirstName, tcData.sFirstNameChange());
@@ -86,8 +85,7 @@ public class UserManagementActions {
         common.fillInput(xUserMngmnt.txtQuickSearch,tcData.sFirstNameChange() );
         driver.findElement(xUserMngmnt.btntFilterQuickSearch).click();
         common.waitForPresenceOfElement(1, xUserMngmnt.txtUsersList);
-        List<WebElement> txtUsersList = common.getListOfElement(xUserMngmnt.txtUsersList);
-        txtUsersList.get(txtUsersList.size()-1).click();
+        common.getListLastElement(xUserMngmnt.txtUsersList).click();
         common.waitForElementToBeClickable(2, xUserMngmnt.btnEditUserInfo);
         List<WebElement> currentData = common.getListOfElement(xUserMngmnt.txtUserCurrentData);
 
@@ -107,13 +105,12 @@ public class UserManagementActions {
         common.waitForPresenceOfElement(1, xUserMngmnt.txtQuickSearch);
         common.fillInput(xUserMngmnt.txtQuickSearch,tcData.sFirstNameChange() );
         driver.findElement(xUserMngmnt.btntFilterQuickSearch).click();
-        common.waitForPresenceOfElement(1, xUserMngmnt.txtUsersList);
-        List<WebElement> btnDeleteUser = common.getListOfElement(xUserMngmnt.btnDeleteUser);
-        btnDeleteUser.get(btnDeleteUser.size()-1).click();
+        common.waitForPresenceOfElement(2, xUserMngmnt.txtUsersList);
+        common.getListLastElement (xUserMngmnt.btnDeleteUser).click();
         common.waitForElementToBeClickable(1, xUserMngmnt.btnConfirmDelete);
         driver.findElement(xUserMngmnt.btnConfirmDelete).click();
         common.waitForPresenceOfElement(1,xUserMngmnt.btntFilterQuickSearch );
-        common.fillInput(xUserMngmnt.txtQuickSearch,tcData.sFirstNameChange() );
+        common.fillInput(xUserMngmnt.txtQuickSearch, tcData.sFirstNameChange());
         driver.findElement(xUserMngmnt.btntFilterQuickSearch).click();
         common.verifyElementDisplayed(xUserMngmnt.txtNoContentMsg);
     }

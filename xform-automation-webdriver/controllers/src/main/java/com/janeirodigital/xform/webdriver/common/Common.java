@@ -270,4 +270,16 @@ public class Common extends Initial {
             logger.error("Test has failed locating " + selector.toString() + " {}", e.getMessage());
         }
     }
+
+    /**
+     * This method works to get the last child on any list of web elements.
+     * @param selector
+     * @return
+     */
+    
+    public WebElement getListLastElement(By selector){
+        List<WebElement> list = driver.findElements(selector);
+        WebElement element = list.get(list.size()-1);
+        return element;
+    }
 }
