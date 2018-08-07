@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+
+<suite name="2_generalUserInterface" parallel="false" verbose="2">
+    <test name="2_generalUserInterface_ChromeTest">
+        <parameter name="browser" value="CHROME_LINUX_64"/>
+        <parameter name="environment" value="dev"/>
+        <groups>
+            <run>
+                <include name="login"></include>
+                <include name="generalUserInterface"></include>
+                <include name="init"></include>
+            </run>
+        </groups>
+        <classes>
+            <class name="com.janeirodigital.xform.webdriver.scripts.Initializer"/>
+            <class name="com.janeirodigital.xform.webdriver.scripts.AccessAndSecurity" />
+            <class name="com.janeirodigital.xform.webdriver.scripts.GeneralUserInterface" />
+        </classes>
+    </test>
+</suite>

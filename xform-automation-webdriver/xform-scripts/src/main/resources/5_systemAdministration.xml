@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+
+<suite name="5_systemAdministration" parallel="false" verbose="2">
+    <test name="5_systemAdministration_ChromeTest">
+        <parameter name="browser" value="CHROME_LINUX_64"/>
+        <parameter name="environment" value="dev"/>
+        <groups>
+            <run>
+                <include name=" ADD GROUPS HERE "></include>
+            </run>
+        </groups>
+        <classes>
+            <class name=" ADD CLASSES HERE " />
+        </classes>
+    </test>
+</suite>

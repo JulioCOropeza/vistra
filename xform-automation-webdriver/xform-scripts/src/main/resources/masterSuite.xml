@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+
+<suite name="MasterSuite" preserve-order="false" verbose="2">
+    <listeners>
+        <listener class-name="com.janeirodigital.xform.webdriver.listeners.TestListener"/>
+    </listeners>
+    <suite-files>
+        <suite-file path="2_generalUserInterface.xml"></suite-file>
+        <suite-file path="7_userManagement.xml"></suite-file>
+    </suite-files>
+</suite>

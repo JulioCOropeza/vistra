@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+
+<suite name="4_accessAndSecurity" parallel="false" verbose="2">
+    <test name="4_accessAndSecurity_ChromeTest">
+        <parameter name="browser" value="CHROME_LINUX_64"/>
+        <parameter name="environment" value="dev"/>
+        <groups>
+            <run>
+                <include name="init"></include>
+            </run>
+        </groups>
+        <classes>
+            <class name="com.janeirodigital.xform.webdriver.scripts.Initializer"/>
+        </classes>
+    </test>
+</suite>

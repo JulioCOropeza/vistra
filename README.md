@@ -32,9 +32,9 @@ TBD
 ### Setup on MAC 
 These are the steps to run the project on MAC devices. (Chrome Example)
 1. Download the driver for MAC devices [chromedriver](http://chromedriver.chromium.org/)
-2. The driver should be storaged at ../controllers/src/main/resources/
-3. Set the testng.xml to Chrome_Win
-4. In the file Config.xml make the following changes:
+2. The driver should be storaged at ../xform-controllers/src/main/resources/
+3. Set the TestNG xmls to Chrome_Win
+4. In the file config.xml make the following changes:
 
 ###### <google_exe></google_exe>
 ```
@@ -42,11 +42,11 @@ These are the steps to run the project on MAC devices. (Chrome Example)
 ```
 ###### <google_binary></google_binary>
 ```
-<google_binary>../controllers/src/main/resources/chromedriver</google_binary>
+<google_binary>../xform-controllers/src/main/resources/chromedriver</google_binary>
 ```
-5. Then run the tests and they should open chrome 
+5. Then run the tests and they should open chrome
 
-** NOTE: Please keep in mind that this changes should be only in your local if you are using a Mac device. Please DO NOT PUSH these files ("testng.xml" and "Config.xml") to the repository.
+** NOTE: Please keep in mind that this changes should be only in your local if you are using a Mac device. Please DO NOT PUSH these files ("TestNG xmls" and "config.xml") to the repository.
  
 ## Running the tests
 This project used TestNG to run test cases. For references go to:[TestNG](http://testng.org/doc/selenium.html)

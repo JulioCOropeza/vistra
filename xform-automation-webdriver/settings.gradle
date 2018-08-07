@@ -1,6 +1,6 @@
 rootProject.name = 'xform-automation-webdriver'
 
-include 'controllers'
-include 'ObjectRepository'
-include 'scripts'
+include 'xform-controllers'
+include 'xform-object-repository'
+include 'xform-scripts'
 
