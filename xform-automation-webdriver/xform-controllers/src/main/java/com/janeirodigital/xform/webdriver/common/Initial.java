@@ -9,6 +9,7 @@ import org.aeonbits.owner.ConfigFactory;
 import org.apache.commons.compress.archivers.tar.TarArchiveEntry;
 import org.apache.commons.compress.archivers.tar.TarArchiveInputStream;
 import org.apache.commons.compress.compressors.bzip2.BZip2CompressorInputStream;
+import org.apache.commons.compress.compressors.gzip.GzipCompressorInputStream;
 import org.apache.commons.compress.utils.IOUtils;
 import org.openqa.selenium.Dimension;
 import org.openqa.selenium.WebDriver;
@@ -58,7 +59,6 @@ public class Initial {
     public WebDriver getDriver(BrowsersEnum browser) {
         try {
             logger.debug("Driver is starting to be created");
-
             switch (browser) {
                 case CHROME_WIN:
                     driver = getDriverChrome(browser.CHROME_WIN);
@@ -72,8 +72,14 @@ public class Initial {
                 case CHROME_LINUX_64:
                     driver = getDriverChrome(browser.CHROME_LINUX_64);
                     break;
+                case CHROME_MAC_64:
+                    driver = getDriverChrome(browser.CHROME_MAC_64);
+                    break;
                 case FIREFOX_WIN:
-                    driver = getDriverFireFox();
+                    driver = getDriverFireFox(browser.FIREFOX_WIN);
+                    break;
+                case FIREFOX_MAC:
+                    driver = getDriverFireFox(browser.FIREFOX_MAC);
                     break;
                 case EDGE_WIN:
                     driver = getDriverEdge();
@@ -88,16 +94,12 @@ public class Initial {
                     driver = getDriverPhantomJSLinux64();
                     break;
             }
-
             driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
             return driver;
-
         } catch (Exception e) {
             logger.error("The WebDriver was not created: ", e);
             return null;
-
         }
-
     }
 
     /**
@@ -111,13 +113,14 @@ public class Initial {
      * @param sFileOriginalName original file name after decompression
      * @param sFileNewName      name to be set after file decompression, if null the file stay original
      */
-    private void downloadFileFromUrl(String sUrlStr, String sFilePath, String sUnzipPath, Boolean sForced, String sFileOriginalName, String sFileNewName) {
 
+    private void downloadFileFromUrl(String sUrlStr, String sFilePath, String sUnzipPath, Boolean sForced, String sFileOriginalName, String sFileNewName) {
         URL urlObj;
         ReadableByteChannel rbcObj = null;
         FileOutputStream fOutStream = null;
 
-        // Checking If The File Exists At The Specified Location Or Not
+        //Checking If The File Exists At The Specified Location Or Not
+
         Path filePathObj = Paths.get(sFilePath);
         boolean fileExists = Files.exists(filePathObj);
         if (!fileExists || sForced) {
@@ -155,10 +158,8 @@ public class Initial {
         Path rF = Paths.get(sNewName);
         try {
             Files.move(f, rF, StandardCopyOption.REPLACE_EXISTING);
-
             fExecutableFile = new File(sNewName);
             fExecutableFile.setExecutable(true);
-
             logger.info("File was successfully renamed");
         } catch (IOException e) {
             logger.error("Error: Unable to rename file: {}", e.getMessage());
@@ -169,6 +170,7 @@ public class Initial {
         String sBinaryName = null;
         boolean bHeadLess = false;
         boolean bLinux = false;
+        boolean bMac = false;
         String sUrl = null;
         String sLocalPath = null;
         String sUnzipPath = null;
@@ -204,6 +206,13 @@ public class Initial {
                     bHeadLess = true;
                     bLinux = true;
                     break;
+                case CHROME_MAC_64:
+                    sUrl = getValueFromConfig(XmlEnum.DOWNLOAD_CHROME_MAC_64_WD.getTagName());
+                    sLocalPath = getValueFromConfig(XmlEnum.DOWNLOAD_CHROME_MAC_64_WD_LOCAL_PATH.getTagName());
+                    sFileNewName = getValueFromConfig(XmlEnum.DOWNLOAD_UNZIP_WD_LOCAL_PATH.getTagName()) + "/" + getValueFromConfig(XmlEnum.CHROME_MAC_BINARY_NAME.getTagName());
+                    sBinaryName = XmlEnum.GOOGLE_BINARY_MAC.getTagName();
+                    bMac = true;
+                    break;
             }
             sFileOriginalName = getValueFromConfig(XmlEnum.DOWNLOAD_UNZIP_WD_LOCAL_PATH.getTagName()) + "/" + getValueFromConfig(XmlEnum.CHROME_LINUX_ORIGINAL_BINARY_NAME.getTagName());
             sUnzipPath = getValueFromConfig(XmlEnum.DOWNLOAD_UNZIP_WD_LOCAL_PATH.getTagName());
@@ -217,6 +226,9 @@ public class Initial {
                 optionsChrome.addArguments("--headless");
                 optionsChrome.addArguments("--disable-gpu");
                 optionsChrome.addArguments("--no-sandbox");
+                optionsChrome.addArguments("window-size=1280x1024");
+            } else if(bMac){
+                optionsChrome.setBinary(getValueFromConfig(XmlEnum.GOOGLE_EXE_MAC.getTagName()));
                 optionsChrome.addArguments("window-size=1280x1024");
             } else {
                 optionsChrome.setBinary(getValueFromConfig(XmlEnum.GOOGLE_EXE.getTagName()));
@@ -233,11 +245,10 @@ public class Initial {
             logger.error("getDriverChrome has failed - Version: {} ", sBinaryName, e);
             return null;
         }
-
     }
 
-    private WebDriver getDriverFireFox() {
-        DesiredCapabilities capabilities = DesiredCapabilities.firefox();
+    private WebDriver getDriverFireFox(BrowsersEnum browser) {
+        FirefoxOptions capabilities = new FirefoxOptions();
         String sBinaryName = null;
         String sUrl = null;
         String sLocalPath = null;
@@ -247,29 +258,38 @@ public class Initial {
         String sFileNewName = null;
 
         try {
-            sUrl = getValueFromConfig(XmlEnum.DOWNLOAD_FIRE_FOX_WD.getTagName());
-            sLocalPath = getValueFromConfig(XmlEnum.DOWNLOAD_FIRE_FOX_WD_LOCAL_PATH.getTagName());
-            sBinaryName = XmlEnum.FIRE_FOX_BINARY.getTagName();
+            switch (browser){
+                case FIREFOX_WIN:
+                    sUrl = getValueFromConfig(XmlEnum.DOWNLOAD_FIRE_FOX_WD.getTagName());
+                    sLocalPath = getValueFromConfig(XmlEnum.DOWNLOAD_FIRE_FOX_WD_LOCAL_PATH.getTagName());
+                    sFileNewName = getValueFromConfig(XmlEnum.DOWNLOAD_UNZIP_WD_LOCAL_PATH.getTagName()) + "/" + getValueFromConfig(XmlEnum.FIRE_FOX_BINARY_NAME.getTagName());
+                    sFileOriginalName = getValueFromConfig(XmlEnum.DOWNLOAD_UNZIP_WD_LOCAL_PATH.getTagName()) + "/" + getValueFromConfig(XmlEnum.FIRE_FOX_BINARY_NAME.getTagName());
+                    sBinaryName = XmlEnum.FIRE_FOX_BINARY.getTagName();
+                break;
+                case FIREFOX_MAC:
+                    sUrl = getValueFromConfig(XmlEnum.DOWNLOAD_FIRE_FOX_MAC_WD.getTagName());
+                    sLocalPath = getValueFromConfig(XmlEnum.DOWNLOAD_FIRE_FOX_MAC_WD_LOCAL_PATH.getTagName());
+                    sFileNewName = getValueFromConfig(XmlEnum.DOWNLOAD_UNZIP_WD_LOCAL_PATH.getTagName()) + "/" + getValueFromConfig(XmlEnum.FIRE_FOX_MAC_BINARY_NAME.getTagName());
+                    sFileOriginalName = getValueFromConfig(XmlEnum.DOWNLOAD_UNZIP_WD_LOCAL_PATH.getTagName()) + "/" + getValueFromConfig(XmlEnum.FIRE_FOX_MAC_BINARY_NAME.getTagName());
+                    sBinaryName = XmlEnum.FIRE_FOX_BINARY_MAC.getTagName();
+                break;
+            }
             sUnzipPath = getValueFromConfig(XmlEnum.DOWNLOAD_UNZIP_WD_LOCAL_PATH.getTagName());
             bDownLoadForced = Boolean.valueOf(getValueFromConfig(XmlEnum.DOWNLOAD_UNZIP_WD_FORCED.getTagName()));
             downloadFileFromUrl(sUrl, sLocalPath, sUnzipPath, bDownLoadForced, sFileOriginalName, sFileNewName);
 
-            FirefoxOptions options = new FirefoxOptions();
-
-            options.addPreference("log", "{level: trace}");
-
+            capabilities.addPreference("log", "{level: trace}");
             capabilities.setCapability("marionette", true);
-            capabilities.setCapability("moz:firefoxOptions", options);
+            capabilities.setCapability("moz:firefoxOptions", capabilities);
 
             System.setProperty("webdriver.gecko.driver", getValueFromConfig(sBinaryName));
 
-            return new FirefoxDriver();
+            return new FirefoxDriver(capabilities);
 
         } catch (Exception e) {
             logger.error("getDriverFireFox has failed: ", e);
             return null;
         }
-
     }
 
     private WebDriver getDriverEdge() {
@@ -329,7 +349,6 @@ public class Initial {
             logger.error("getDriverPhantomJS has failed: ", e);
             return null;
         }
-
     }
 
     private WebDriver getDriverPhantomJSLinux64() {
@@ -364,6 +383,7 @@ public class Initial {
         }
     }
 
+
     public void setTestEnvironment(Environment testEnvironment) {
         this.testEnvironment = testEnvironment;
     }
@@ -387,33 +407,33 @@ public class Initial {
 
     }
 
-    public void unzip(String sSource, String sDestination, String sPassword, String sFileOriginalName, String sFileNewName) {
+    public void unzip(String sSource, String sDestination, String sPassword, String sFileOriginalName, String sFileNewName) throws IOException {
         String sFileExtension = null;
         sFileExtension = getExtension(sSource);
+
         try {
             if (sFileExtension.equals("bz2")) {
-                unzip_bz2(sSource, sDestination);
+                unzipBz2(sSource, sDestination);
             } else if (sFileExtension.equals("zip")) {
                 ZipFile zipFile = new ZipFile(sSource);
                 if (zipFile.isEncrypted()) {
                     zipFile.setPassword(sPassword);
                 }
                 zipFile.extractAll(sDestination);
-
                 if (sFileNewName != null) {
                     fileRename(sFileOriginalName, sFileNewName);
                 }
+            } else if (sFileExtension.equals(".gz")){
+                File dest = new File(sDestination);
+                decompressTar(sSource,dest);
             }
-
         } catch (ZipException e) {
             logger.error("unzip webdriver process has failed: {} ", e);
         }
-
     }
 
-    private void unzip_bz2(String sSource, String sDestination) {
+    private void unzipBz2(String sSource, String sDestination) {
         try {
-
             FileInputStream fin = new FileInputStream(sSource);
             BufferedInputStream in = new BufferedInputStream(fin);
             FileOutputStream out = new FileOutputStream(sDestination + "/TempDownload.tar");
@@ -429,7 +449,7 @@ public class Initial {
             bzIn.close();
 
             sSource = sDestination + "/TempDownload.tar";
-            decompress_tar(sSource, new File(sDestination));
+            decompressTar(sSource, new File(sDestination));
 
         } catch (IOException e) {
             logger.error("unTAR webdriver process has failed: {} ", e);
@@ -439,8 +459,16 @@ public class Initial {
         }
     }
 
-    public static void decompress_tar(String in, File out) throws IOException {
-        try (TarArchiveInputStream fin = new TarArchiveInputStream(new FileInputStream(in))) {
+    /**
+     * This method is used to decompress .tar.gz files anf give it permits as executors.
+     * @param sSource
+     * @param out
+     * @throws IOException
+     */
+
+    public static void decompressTar(String sSource, File out) throws IOException {
+        try {
+            TarArchiveInputStream fin = new TarArchiveInputStream(new GzipCompressorInputStream(new BufferedInputStream(new FileInputStream(sSource))));
             TarArchiveEntry entry;
             while ((entry = fin.getNextTarEntry()) != null) {
                 if (entry.isDirectory()) {
@@ -452,11 +480,15 @@ public class Initial {
                     parent.mkdirs();
                 }
                 IOUtils.copy(fin, new FileOutputStream(curfile));
+                curfile.setExecutable(true, false);
             }
+        } catch (Exception e) {
+            throw e;
         }
     }
 
     private String getExtension(String sFileName) {
+        System.out.println("La terminal es : "+sFileName);
         if (sFileName.length() == 3) {
             return sFileName;
         } else if (sFileName.length() > 3) {
@@ -475,7 +507,7 @@ public class Initial {
      * @param driver
      */
 
-    public void configInit(ITestContext context, String browser, String environment, WebDriver driver){
+    public void configInit(ITestContext context, String browser, String environment, WebDriver driver) {
         try {
             ConfigFactory.setProperty("env", environment);
             testEnvironment = ConfigFactory.create(Environment.class);
@@ -497,4 +529,3 @@ public class Initial {
         }
     }
 }
-
