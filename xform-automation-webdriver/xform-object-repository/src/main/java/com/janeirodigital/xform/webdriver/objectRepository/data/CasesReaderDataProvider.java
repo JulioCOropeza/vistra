@@ -18,6 +18,13 @@ public class CasesReaderDataProvider {
 
     }
 
+    public Object[][] getDataAccessAndSecurity(String ParameterFile) throws IOException
+    {
+        Object[][] tempData = null;
+        tempData = readTestCasesDataFile(ParameterFile, "1", CommonEnum.XFormDataProviders.XFROM_DP_ACCESS_AND_SECURITY_MANAGEMENT.toString(), AccessAndSecurityFileData.class);
+        return tempData;
+    }
+
     public Object[][] getDataUserManagement(String ParameterFile) throws IOException
     {
         Object[][] tempData = null;
@@ -25,10 +32,10 @@ public class CasesReaderDataProvider {
         return tempData;
     }
 
-    public Object[][] getDataAccessAndSecurity(String ParameterFile) throws IOException
+    public Object[][] getDataTenants(String ParameterFile) throws IOException
     {
         Object[][] tempData = null;
-        tempData = readTestCasesDataFile(ParameterFile, "1", CommonEnum.XFormDataProviders.XFROM_DP_ACCESS_AND_SECURITY_MANAGEMENT.toString(), AccessAndSecurityFileData.class);
+        tempData = readTestCasesDataFile(ParameterFile, "1", CommonEnum.XFormDataProviders.X_FORM_DP_TENANTS_MANAGEMENT.toString(), TenantsFileData.class);
         return tempData;
     }
 

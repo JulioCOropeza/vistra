@@ -6,7 +6,8 @@
         <listener class-name="com.janeirodigital.xform.webdriver.listeners.TestListener"/>
     </listeners>
     <suite-files>
-        <suite-file path="2_generalUserInterface.xml"></suite-file>
-        <suite-file path="7_userManagement.xml"></suite-file>
+        <!--<suite-file path="2_generalUserInterface.xml"></suite-file>-->
+        <!--<suite-file path="6_tenants.xml"></suite-file>-->
+        <!--<suite-file path="7_userManagement.xml"></suite-file>-->
     </suite-files>
 </suite>
