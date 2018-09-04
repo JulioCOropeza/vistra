@@ -20,6 +20,7 @@ import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
+import org.testng.Assert;
 
 
 public class Common extends Initial {
@@ -44,7 +45,7 @@ public class Common extends Initial {
     public void OpenURL(String testEnvironment) throws Exception {
         driver.get(testEnvironment);
     }
-    
+
     public void closeBrowser() {
         driver.close();
         driver.quit();
@@ -126,7 +127,7 @@ public class Common extends Initial {
 
         Object[] tempHeader = null;
         try {
-           tempHeader = readParamTestCasesDataFile(getValueFromConfig(XmlEnum.PARAMETER_FILE.getTagName()), activeRowIndicator);
+            tempHeader = readParamTestCasesDataFile(getValueFromConfig(XmlEnum.PARAMETER_FILE.getTagName()), activeRowIndicator);
         } catch (IOException e) {
             logger.error("Cannot find the Profile Header Configuration File: ", e);
             throw new IOException("Cannot find the Profile Header Configuration File");
@@ -230,7 +231,7 @@ public class Common extends Initial {
     }
 
     /**
-     * This method is in charge to clear the inputs and fill with the data.
+     * This method is in charge to clear the inputs and fill out with the data.
      * @param selector
      * @param sInputData
      */
@@ -274,10 +275,40 @@ public class Common extends Initial {
      * @param selector
      * @return
      */
-    
+
     public WebElement getListLastElement(By selector){
         List<WebElement> list = driver.findElements(selector);
         WebElement element = list.get(list.size()-1);
         return element;
+    }
+
+    /**
+     * This method is in charge to verify if two different copies match.
+     * @param copy
+     * @param expectedCopy
+     */
+
+    public void textCompare(String copy, String expectedCopy){
+        Assert.assertEquals(copy.toLowerCase(),expectedCopy.toLowerCase(),"The original copy ("+ copy +") doesn't match with the expected copy ("+ expectedCopy+")");
+    }
+
+    /**
+     * This method works as a finder and clicker at the same time.
+     * @param selector
+     */
+    public void findAndClick(By selector){
+        waitForPresenceOfElement(3,selector);
+        driver.findElement(selector).click();
+    }
+
+    /**
+     * This method is in charge to get text from web element and verify if two different copies match.
+     * @param element
+     * @param expectedCopy
+     */
+
+    public void textCompareFromElement(WebElement element, String expectedCopy){
+        String copy = element.getText();
+        Assert.assertEquals(copy.toLowerCase(),expectedCopy.toLowerCase(),"The original copy ("+ copy +") doesn't match with the expected copy ("+ expectedCopy+")");
     }
 }

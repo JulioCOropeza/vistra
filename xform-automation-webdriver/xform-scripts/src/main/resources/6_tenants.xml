@@ -1,17 +1,21 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
-
 <suite name="6_tenants" parallel="false" verbose="2">
     <test name="6_tenants_ChromeTest">
         <parameter name="browser" value="CHROME_LINUX_64"/>
         <parameter name="environment" value="dev"/>
         <groups>
             <run>
-                <include name=" ADD GROUPS HERE "></include>
+                <include name="init"></include>
+                <include name="login"></include>
+                <include name="tenantCreate"></include>
+                <include name="tenantOverviewRead"></include>
             </run>
         </groups>
         <classes>
-            <class name=" ADD CLASSES HERE " />
+            <class name="com.janeirodigital.xform.webdriver.scripts.Initializer"/>
+            <class name="com.janeirodigital.xform.webdriver.scripts.AccessAndSecurity"/>
+            <class name="com.janeirodigital.xform.webdriver.scripts.Tenant"/>
         </classes>
     </test>
 </suite>
