@@ -19,4 +19,8 @@ public class TenantsSelectors {
     public final By txtQuickSearch = By.cssSelector("div.col-8 label");
     public final By txtOverviewTitles = By.cssSelector("div label .text-uppercase");
     public final By txtOverviewTitle = By.cssSelector("h3");
+
+    public final By txtLogoAndStyles = By.id("tab-styles");
+    public final By txtStylesTitles = By.cssSelector("p.bold");
+    public final By txtColorManagementTitles = By.cssSelector(".form-group label");
 }

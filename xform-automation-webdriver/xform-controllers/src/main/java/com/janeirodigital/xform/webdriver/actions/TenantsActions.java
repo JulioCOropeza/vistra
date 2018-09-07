@@ -51,4 +51,23 @@ public class TenantsActions {
             common.textCompareFromElement(overviewTableTitles.get(i),overviewTableTitlesExpected[i].toLowerCase());
         }
     }
+
+    public void tenantReadStyles(TenantsFileData tcdata){
+        common.findAndClick(selectors.btnAddTenant);
+        common.verifyElementDisplayed(selectors.txtQuickSearch);
+        common.fillInput(selectors.txtQuickSearchField,tcdata.getsTenantName());
+        common.findAndClick(selectors.btnQuickSearch);
+        common.findAndClick(selectors.btnQuickSearchEdit);
+        common.findAndClick(selectors.txtLogoAndStyles);
+        List<WebElement> styleTitles = common.getListOfElement(selectors.txtStylesTitles);
+        String [] styleTitlesExpected = {};
+        for(int i = 0; i < styleTitlesExpected.length; i++){
+            common.textCompareFromElement(styleTitles.get(i),styleTitlesExpected[i].toLowerCase());
+        }
+        List<WebElement> colorManagementTitles = common.getListOfElement(selectors.txtColorManagementTitles);
+        String [] colorManagementTitlesExpected = {};
+        for(int i = 0; i < colorManagementTitlesExpected.length; i++){
+            common.textCompareFromElement(colorManagementTitles.get(i),colorManagementTitlesExpected[i].toLowerCase());
+        }
+    }
 }
