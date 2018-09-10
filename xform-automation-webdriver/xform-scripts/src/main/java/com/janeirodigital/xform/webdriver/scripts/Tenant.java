@@ -40,6 +40,15 @@ public class Tenant {
     @Test(groups = {"tenantOverviewRead"}, dataProvider = "populateDataProviders", priority=2)
     public void tenantOverviewRead(TenantsFileData tcdata){ actions.tenantOverviewRead(tcdata); }
 
+    /**
+     * TC 6.2.4 Read Logo & Styles for a Tenant
+     * @param tcdata
+     */
+
+    @Test(groups = {"tenantReadStyles"}, dataProvider = "populateDataProviders", priority=3)
+    public void  tenantReadStyles(TenantsFileData tcdata){ actions.tenantReadStyles(tcdata); }
+
+
     @DataProvider
     public Object[][] populateDataProviders() {
         String ParameterFile = "";

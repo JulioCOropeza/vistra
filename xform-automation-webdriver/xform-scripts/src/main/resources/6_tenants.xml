@@ -10,6 +10,7 @@
                 <include name="login"></include>
                 <include name="tenantCreate"></include>
                 <include name="tenantOverviewRead"></include>
+                <include name="tenantReadStyles"></include>
             </run>
         </groups>
         <classes>
