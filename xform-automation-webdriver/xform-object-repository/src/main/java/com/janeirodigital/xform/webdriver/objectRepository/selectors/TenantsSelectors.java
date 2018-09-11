@@ -10,7 +10,6 @@ public class TenantsSelectors {
     public final By txtTenantLocation = By.cssSelector("div.xform-dropdown input");
     public final By txtTenantUrl = By.id("url");
     public final By txtTenantDescription = By.id("description");
-
     public final By txtTenantManagementTitles = By.cssSelector(".metadata div p");
     public final By txtTenantTableTitles = By.tagName("th");
     public final By txtQuickSearchField = By.cssSelector("input.form-control[name='filter']");
@@ -19,8 +18,11 @@ public class TenantsSelectors {
     public final By txtQuickSearch = By.cssSelector("div.col-8 label");
     public final By txtOverviewTitles = By.cssSelector("div label .text-uppercase");
     public final By txtOverviewTitle = By.cssSelector("h3");
-
     public final By txtLogoAndStyles = By.id("tab-styles");
     public final By txtStylesTitles = By.cssSelector("p.bold");
     public final By txtColorManagementTitles = By.cssSelector(".form-group label");
+    public final By txtRoleTitle = By.id("tab-roles");
+    public final By txtRoleTableTitles = By.cssSelector("th");
+    public final By txtRoleListTable = By.cssSelector("td a");
+    public final By btnEditRole = By.cssSelector(".btn.btn-primary");
 }

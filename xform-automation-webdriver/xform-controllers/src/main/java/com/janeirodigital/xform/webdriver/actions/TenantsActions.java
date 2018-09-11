@@ -60,14 +60,31 @@ public class TenantsActions {
         common.findAndClick(selectors.btnQuickSearchEdit);
         common.findAndClick(selectors.txtLogoAndStyles);
         List<WebElement> styleTitles = common.getListOfElement(selectors.txtStylesTitles);
-        String [] styleTitlesExpected = {};
+        String [] styleTitlesExpected = {tcdata.getsCompanyLogoPreviewTitle(),tcdata.getsUploadFileTitle(),tcdata.getsOrTitle(),tcdata.getsColorPreviewTitle()};
         for(int i = 0; i < styleTitlesExpected.length; i++){
             common.textCompareFromElement(styleTitles.get(i),styleTitlesExpected[i].toLowerCase());
         }
         List<WebElement> colorManagementTitles = common.getListOfElement(selectors.txtColorManagementTitles);
-        String [] colorManagementTitlesExpected = {};
+        String [] colorManagementTitlesExpected = {tcdata.getsNavigationBarTitle(),tcdata.getsSubnavigationBarTitle(),tcdata.getsNavigationLinksTitle(),tcdata.getsBackgroundTitle()};
         for(int i = 0; i < colorManagementTitlesExpected.length; i++){
             common.textCompareFromElement(colorManagementTitles.get(i),colorManagementTitlesExpected[i].toLowerCase());
         }
+    }
+
+    public void tenantReadIntoRole(TenantsFileData tcdata){
+        common.findAndClick(selectors.btnAddTenant);
+        common.verifyElementDisplayed(selectors.txtQuickSearch);
+        common.fillInput(selectors.txtQuickSearchField,tcdata.getsTenantName());
+        common.findAndClick(selectors.btnQuickSearch);
+        common.findAndClick(selectors.btnQuickSearchEdit);
+        common.findAndClick(selectors.txtRoleTitle);
+        List<WebElement> roleTableTitles = common.getListOfElement(selectors.txtRoleTableTitles);
+        String [] roleTableTitlesExpected = {tcdata.getsRoleNameTitle(),tcdata.getsTimesAppliedTitle(),tcdata.getsLastEditTitle(),tcdata.getsNoOfPermissionsTitle()};
+        for(int i = 0; i < roleTableTitlesExpected.length; i++){
+            common.textCompareFromElement(roleTableTitles.get(i),roleTableTitlesExpected[i].toLowerCase());
+        }
+        List<WebElement> rolesList = common.getListOfElement(selectors.txtRoleListTable);
+        rolesList.get(1).click();
+        common.verifyElementDisplayed(selectors.btnEditRole);
     }
 }

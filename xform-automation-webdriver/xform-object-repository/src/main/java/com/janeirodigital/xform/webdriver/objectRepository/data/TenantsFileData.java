@@ -69,6 +69,30 @@ public class TenantsFileData extends BaseTCData {
     private String sOverviewTableUser;
     @ExcelCell(31)
     private String sOverviewTableDate;
+    @ExcelCell(32)
+    private String sCompanyLogoPreviewTitle;
+    @ExcelCell(33)
+    private String sUploadFileTitle;
+    @ExcelCell(34)
+    private String sOrTitle;
+    @ExcelCell(35)
+    private String sColorPreviewTitle;
+    @ExcelCell(36)
+    private String sNavigationBarTitle;
+    @ExcelCell(37)
+    private String sSubnavigationBarTitle;
+    @ExcelCell(38)
+    private String sNavigationLinksTitle;
+    @ExcelCell(39)
+    private String sBackgroundTitle;
+    @ExcelCell(40)
+    private String sRoleNameTitle;
+    @ExcelCell(41)
+    private String sTimesAppliedTitle;
+    @ExcelCell(42)
+    private String sLastEditTitle;
+    @ExcelCell(43)
+    private String sNoOfPermissionsTitle;
 
     @Override
     public String toString() {
@@ -105,6 +129,18 @@ public class TenantsFileData extends BaseTCData {
                 ", sOverviewTableDesc='" + getsOverviewTableDesc() + '\'' +
                 ", sOverviewTableUser='" + getsOverviewTableUser() + '\'' +
                 ", sOverviewTableDate='" + getsOverviewTableDate() + '\'' +
+                ", sCompanyLogoPreviewTitle='" + getsCompanyLogoPreviewTitle() + '\'' +
+                ", sUploadFileTitle='" + getsUploadFileTitle() + '\'' +
+                ", sOrTitle='" + getsOrTitle() + '\'' +
+                ", sColorPreviewTitle='" + getsColorPreviewTitle() + '\'' +
+                ", sNavigationBarTitle='" + getsNavigationBarTitle() + '\'' +
+                ", sSubnavigationBarTitle='" + getsSubnavigationBarTitle() + '\'' +
+                ", sNavigationLinksTitle='" + getsNavigationLinksTitle() + '\'' +
+                ", sBackgroundTitle='" + getsBackgroundTitle() + '\'' +
+                ", sRoleNameTitle='" + getsRoleNameTitle() + '\'' +
+                ", sTimesAppliedTitle='" + getsTimesAppliedTitle() + '\'' +
+                ", sLastEditTitle='" + getsLastEditTitle() + '\'' +
+                ", sNoOfPermissionsTitle='" + getsNoOfPermissionsTitle() + '\'' +
                 '}';
     }
 
@@ -178,4 +214,27 @@ public class TenantsFileData extends BaseTCData {
 
     public String getsOverviewTableDate() { return sOverviewTableDate; }
 
+    public String getsCompanyLogoPreviewTitle() { return sCompanyLogoPreviewTitle; }
+
+    public String getsUploadFileTitle() { return sUploadFileTitle; }
+
+    public String getsOrTitle() { return sOrTitle; }
+
+    public String getsColorPreviewTitle() { return sColorPreviewTitle; }
+
+    public String getsNavigationBarTitle() { return sNavigationBarTitle; }
+
+    public String getsSubnavigationBarTitle() { return sSubnavigationBarTitle; }
+
+    public String getsNavigationLinksTitle() { return sNavigationLinksTitle; }
+
+    public String getsBackgroundTitle() { return sBackgroundTitle; }
+
+    public String getsRoleNameTitle() { return sRoleNameTitle; }
+
+    public String getsTimesAppliedTitle() { return sTimesAppliedTitle; }
+
+    public String getsLastEditTitle() { return sLastEditTitle; }
+
+    public String getsNoOfPermissionsTitle() { return sNoOfPermissionsTitle; }
 }

@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
 <suite name="6_tenants" parallel="false" verbose="2">
-    <test name="6_tenants_ChromeTest">
+    <test name="tenantsChromeTest">
         <parameter name="browser" value="CHROME_LINUX_64"/>
         <parameter name="environment" value="dev"/>
         <groups>
@@ -11,6 +11,7 @@
                 <include name="tenantCreate"></include>
                 <include name="tenantOverviewRead"></include>
                 <include name="tenantReadStyles"></include>
+                <include name="tenantReadIntoRole"></include>
             </run>
         </groups>
         <classes>

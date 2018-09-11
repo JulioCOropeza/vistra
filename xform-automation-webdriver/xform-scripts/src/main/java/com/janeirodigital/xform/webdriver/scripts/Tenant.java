@@ -48,6 +48,14 @@ public class Tenant {
     @Test(groups = {"tenantReadStyles"}, dataProvider = "populateDataProviders", priority=3)
     public void  tenantReadStyles(TenantsFileData tcdata){ actions.tenantReadStyles(tcdata); }
 
+    /**
+     * TC 6.2.6 Read detailed info for a specific Role inside a Tenant
+     * @param tcdata
+     */
+
+    @Test(groups = {"tenantReadIntoRole"}, dataProvider = "populateDataProviders", priority=4)
+    public void  tenantReadIntoRole(TenantsFileData tcdata){ actions.tenantReadStyles(tcdata); }
+
 
     @DataProvider
     public Object[][] populateDataProviders() {
