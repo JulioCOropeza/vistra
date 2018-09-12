@@ -22,7 +22,10 @@ public class TenantsSelectors {
     public final By txtStylesTitles = By.cssSelector("p.bold");
     public final By txtColorManagementTitles = By.cssSelector(".form-group label");
     public final By txtRoleTitle = By.id("tab-roles");
-    public final By txtRoleTableTitles = By.cssSelector("th");
+    public final By txtTableTitles = By.cssSelector("th");
     public final By txtRoleListTable = By.cssSelector("td a");
     public final By btnEditRole = By.cssSelector(".btn.btn-primary");
+    public final By txtUserTitle = By.id("tab-users");
+    public final By txtUserListTable = By.cssSelector("td a");
+    public final By txtUserMgmtTitle= By.cssSelector("a.back");
 }

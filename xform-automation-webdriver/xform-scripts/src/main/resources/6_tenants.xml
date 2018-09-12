@@ -12,6 +12,7 @@
                 <include name="tenantOverviewRead"></include>
                 <include name="tenantReadStyles"></include>
                 <include name="tenantReadIntoRole"></include>
+                <include name="tenantReadIntoUser"></include>
             </run>
         </groups>
         <classes>

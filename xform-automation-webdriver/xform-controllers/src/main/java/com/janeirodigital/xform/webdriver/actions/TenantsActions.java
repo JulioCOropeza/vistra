@@ -78,7 +78,7 @@ public class TenantsActions {
         common.findAndClick(selectors.btnQuickSearch);
         common.findAndClick(selectors.btnQuickSearchEdit);
         common.findAndClick(selectors.txtRoleTitle);
-        List<WebElement> roleTableTitles = common.getListOfElement(selectors.txtRoleTableTitles);
+        List<WebElement> roleTableTitles = common.getListOfElement(selectors.txtTableTitles);
         String [] roleTableTitlesExpected = {tcdata.getsRoleNameTitle(),tcdata.getsTimesAppliedTitle(),tcdata.getsLastEditTitle(),tcdata.getsNoOfPermissionsTitle()};
         for(int i = 0; i < roleTableTitlesExpected.length; i++){
             common.textCompareFromElement(roleTableTitles.get(i),roleTableTitlesExpected[i].toLowerCase());
@@ -86,5 +86,22 @@ public class TenantsActions {
         List<WebElement> rolesList = common.getListOfElement(selectors.txtRoleListTable);
         rolesList.get(1).click();
         common.verifyElementDisplayed(selectors.btnEditRole);
+    }
+
+    public void tenantReadIntoUser(TenantsFileData tcdata){
+        common.findAndClick(selectors.btnAddTenant);
+        common.verifyElementDisplayed(selectors.txtQuickSearch);
+        common.fillInput(selectors.txtQuickSearchField,tcdata.getsTenantName());
+        common.findAndClick(selectors.btnQuickSearch);
+        common.findAndClick(selectors.btnQuickSearchEdit);
+        common.findAndClick(selectors.txtUserTitle);
+        List<WebElement> userTableTitles = common.getListOfElement(selectors.txtTableTitles);
+        String [] userTableTitlesExpected = {tcdata.getsFirstNameTitle(),tcdata.getsLastNameTitle(),tcdata.getsEmailTitle(),tcdata.getsTenantAdministratorTitle(),tcdata.getsInactiveTitle(),tcdata.getsActionsTitle()};
+        for(int i = 0; i < userTableTitlesExpected.length; i++){
+            common.textCompareFromElement(userTableTitles.get(i),userTableTitlesExpected[i].toLowerCase());
+        }
+        List<WebElement> userList = common.getListOfElement(selectors.txtUserListTable);
+        userList.get(1).click();
+        common.verifyElementDisplayed(selectors.txtUserMgmtTitle);
     }
 }
