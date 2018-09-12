@@ -93,6 +93,18 @@ public class TenantsFileData extends BaseTCData {
     private String sLastEditTitle;
     @ExcelCell(43)
     private String sNoOfPermissionsTitle;
+    @ExcelCell(44)
+    private String sFirstNameTitle;
+    @ExcelCell(45)
+    private String sLastNameTitle;
+    @ExcelCell(46)
+    private String sEmailTitle;
+    @ExcelCell(47)
+    private String sTenantAdministratorTitle;
+    @ExcelCell(48)
+    private String sInactiveTitle;
+    @ExcelCell(49)
+    private String sActionsTitle;
 
     @Override
     public String toString() {
@@ -141,6 +153,12 @@ public class TenantsFileData extends BaseTCData {
                 ", sTimesAppliedTitle='" + getsTimesAppliedTitle() + '\'' +
                 ", sLastEditTitle='" + getsLastEditTitle() + '\'' +
                 ", sNoOfPermissionsTitle='" + getsNoOfPermissionsTitle() + '\'' +
+                ", sFirstNameTitle='" + getsFirstNameTitle() + '\'' +
+                ", sLastNameTitle='" + getsLastNameTitle() + '\'' +
+                ", sEmailTitle='" + getsEmailTitle() + '\'' +
+                ", sTenantAdministratorTitle='" + getsTenantAdministratorTitle() + '\'' +
+                ", sInactiveTitle='" + getsInactiveTitle() + '\'' +
+                ", sActionsTitle='" + getsActionsTitle() + '\'' +
                 '}';
     }
 
@@ -237,4 +255,16 @@ public class TenantsFileData extends BaseTCData {
     public String getsLastEditTitle() { return sLastEditTitle; }
 
     public String getsNoOfPermissionsTitle() { return sNoOfPermissionsTitle; }
+
+    public String getsFirstNameTitle() { return sFirstNameTitle; }
+
+    public String getsLastNameTitle() { return sLastNameTitle; }
+
+    public String getsEmailTitle() { return sEmailTitle; }
+
+    public String getsTenantAdministratorTitle() { return sTenantAdministratorTitle; }
+
+    public String getsInactiveTitle() { return sInactiveTitle; }
+
+    public String getsActionsTitle() { return sActionsTitle; }
 }
