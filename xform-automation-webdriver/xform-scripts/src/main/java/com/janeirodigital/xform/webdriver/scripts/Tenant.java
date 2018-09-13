@@ -73,12 +73,20 @@ public class Tenant {
     public void tenantDelete(TenantsFileData tcdata){ actions.tenantDelete(tcdata); }
 
     /**
-     * AUTO_TC 6.4.2 Update Tenant to Deactivated
+     * TC 6.4.2 Update Tenant to Deactivated
      * @param tcdata
      */
 
     @Test(groups = {"tenantDeactive"}, dataProvider = "populateDataProviders", priority=7)
     public void tenantDeactive(TenantsFileData tcdata){ actions.tenantDeactiveOrActive(tcdata); }
+
+    /**
+     * TC 6.4.1 Update Tenant to Active
+     * @param tcdata
+     */
+
+    @Test(groups = {"tenantDeactive"}, dataProvider = "populateDataProviders", priority=7)
+    public void tenantActive(TenantsFileData tcdata){ actions.tenantDeactiveOrActive(tcdata); }
 
     @DataProvider
     public Object[][] populateDataProviders() {
