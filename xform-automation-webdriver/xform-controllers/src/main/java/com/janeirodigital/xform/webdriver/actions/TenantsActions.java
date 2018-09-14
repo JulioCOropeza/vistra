@@ -104,4 +104,13 @@ public class TenantsActions {
         userList.get(1).click();
         common.verifyElementDisplayed(selectors.txtUserMgmtTitle);
     }
+
+    public void tenantDelete(TenantsFileData tcdata){
+        common.findAndClick(selectors.btnAddTenant);
+        common.verifyElementDisplayed(selectors.txtQuickSearch);
+        common.fillInput(selectors.txtQuickSearchField,tcdata.getsTenantName());
+        common.findAndClick(selectors.btnDeleteTenant);
+        common.waitForPresenceOfElement(1, selectors.btnDeleteTenantConfirm);
+        common.findAndClick(selectors.btnDeleteTenantConfirm);
+    }
 }

@@ -46,7 +46,7 @@ public class Tenant {
      */
 
     @Test(groups = {"tenantReadStyles"}, dataProvider = "populateDataProviders", priority=3)
-    public void  tenantReadStyles(TenantsFileData tcdata){ actions.tenantReadStyles(tcdata); }
+    public void tenantReadStyles(TenantsFileData tcdata){ actions.tenantReadStyles(tcdata); }
 
     /**
      * TC 6.2.6 Read detailed info for a specific Role inside a Tenant
@@ -54,7 +54,7 @@ public class Tenant {
      */
 
     @Test(groups = {"tenantReadIntoRole"}, dataProvider = "populateDataProviders", priority=4)
-    public void  tenantReadIntoRole(TenantsFileData tcdata){ actions.tenantReadIntoRole(tcdata); }
+    public void tenantReadIntoRole(TenantsFileData tcdata){ actions.tenantReadIntoRole(tcdata); }
 
     /**
      * TC 6.2.7 Read Users listed inside a Tenant
@@ -62,7 +62,15 @@ public class Tenant {
      */
 
     @Test(groups = {"tenantReadIntoUser"}, dataProvider = "populateDataProviders", priority=5)
-    public void  tenantReadIntoUser(TenantsFileData tcdata){ actions.tenantReadIntoUser(tcdata); }
+    public void tenantReadIntoUser(TenantsFileData tcdata){ actions.tenantReadIntoUser(tcdata); }
+
+    /**
+     * TC 6.3.1. Delete Tenants
+     * @param tcdata
+     */
+
+    @Test(groups = {"tenantDelete"}, dataProvider = "populateDataProviders", priority=6)
+    public void tenantDelete(TenantsFileData tcdata){ actions.tenantDelete(tcdata); }
 
 
     @DataProvider

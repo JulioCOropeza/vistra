@@ -28,4 +28,6 @@ public class TenantsSelectors {
     public final By txtUserTitle = By.id("tab-users");
     public final By txtUserListTable = By.cssSelector("td a");
     public final By txtUserMgmtTitle= By.cssSelector("a.back");
+    public final By btnDeleteTenant = By.className("table-action-delete");
+    public final By btnDeleteTenantConfirm = By.cssSelector(".swal2-confirm.btn-danger");
 }
