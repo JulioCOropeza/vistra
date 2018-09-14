@@ -15,6 +15,7 @@
                 <include name="tenantReadIntoUser"></include>
                 <include name="tenantDelete"></include>
                 <include name="tenantDeactive"></include>
+                <include name="tenantEdit"></include>
             </run>
         </groups>
         <classes>

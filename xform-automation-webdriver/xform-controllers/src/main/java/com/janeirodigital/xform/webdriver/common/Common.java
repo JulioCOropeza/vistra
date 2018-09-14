@@ -311,4 +311,22 @@ public class Common extends Initial {
         String copy = element.getText();
         Assert.assertEquals(copy.toLowerCase(),expectedCopy.toLowerCase(),"The original copy ("+ copy +") doesn't match with the expected copy ("+ expectedCopy+")");
     }
+
+    /**
+     * This method is to go to tenant page and find a specific tenant.
+     * @param tcdata
+     * @param btnAddTenant
+     * @param txtQuickSearch
+     * @param txtQuickSearchField
+     * @param btnQuickSearch
+     * @param btnQuickSearchEdit
+     */
+
+    public void goAndFindTenant(String tcdata, By btnAddTenant, By txtQuickSearch, By txtQuickSearchField, By btnQuickSearch, By btnQuickSearchEdit){
+        findAndClick(btnAddTenant);
+        verifyElementDisplayed(txtQuickSearch);
+        fillInput(txtQuickSearchField,tcdata);
+        findAndClick(btnQuickSearch);
+        findAndClick(btnQuickSearchEdit);
+    }
 }
