@@ -101,16 +101,30 @@ public class TenantsActions {
             common.textCompareFromElement(userTableTitles.get(i),userTableTitlesExpected[i].toLowerCase());
         }
         List<WebElement> userList = common.getListOfElement(selectors.txtUserListTable);
-        userList.get(1).click();
+        userList.get(0).click();
         common.verifyElementDisplayed(selectors.txtUserMgmtTitle);
     }
 
     public void tenantDelete(TenantsFileData tcdata){
+//        common.findAndClick(selectors.btnAddTenant);
+//        common.verifyElementDisplayed(selectors.txtQuickSearch);
+//        common.fillInput(selectors.txtQuickSearchField,tcdata.getsTenantName());
+//        common.findAndClick(selectors.btnQuickSearch);
+//        common.waitForPresenceOfElement(1, selectors.btnDeleteTenant);
+//        common.findAndClick(selectors.btnDeleteTenant);
+//        common.waitForPresenceOfElement(1, selectors.btnDeleteTenantConfirm);
+//        common.findAndClick(selectors.btnDeleteTenantConfirm);
+    }
+
+    public void tenantDeactiveOrActive(TenantsFileData tcdata){
         common.findAndClick(selectors.btnAddTenant);
         common.verifyElementDisplayed(selectors.txtQuickSearch);
         common.fillInput(selectors.txtQuickSearchField,tcdata.getsTenantName());
-        common.findAndClick(selectors.btnDeleteTenant);
-        common.waitForPresenceOfElement(1, selectors.btnDeleteTenantConfirm);
-        common.findAndClick(selectors.btnDeleteTenantConfirm);
+        common.findAndClick(selectors.btnQuickSearch);
+        common.findAndClick(selectors.btnQuickSearchEdit);
+        common.waitForPresenceOfElement(1, selectors.btnActiveTenant);
+        common.findAndClick(selectors.btnActiveTenant);
+        common.waitForPresenceOfElement(1, selectors.btnActiveTenantConfirm);
+        common.findAndClick(selectors.btnActiveTenantConfirm);
     }
 }
