@@ -53,11 +53,7 @@ public class TenantsActions {
     }
 
     public void tenantReadStyles(TenantsFileData tcdata){
-        common.findAndClick(selectors.btnAddTenant);
-        common.verifyElementDisplayed(selectors.txtQuickSearch);
-        common.fillInput(selectors.txtQuickSearchField,tcdata.getsTenantName());
-        common.findAndClick(selectors.btnQuickSearch);
-        common.findAndClick(selectors.btnQuickSearchEdit);
+        common.goAndFindTenant(tcdata.getsTenantName(),selectors.btnAddTenant,selectors.txtQuickSearch,selectors.txtQuickSearchField,selectors.btnQuickSearch,selectors.btnQuickSearchEdit);
         common.findAndClick(selectors.txtLogoAndStyles);
         List<WebElement> styleTitles = common.getListOfElement(selectors.txtStylesTitles);
         String [] styleTitlesExpected = {tcdata.getsCompanyLogoPreviewTitle(),tcdata.getsUploadFileTitle(),tcdata.getsOrTitle(),tcdata.getsColorPreviewTitle()};
@@ -72,11 +68,7 @@ public class TenantsActions {
     }
 
     public void tenantReadIntoRole(TenantsFileData tcdata){
-        common.findAndClick(selectors.btnAddTenant);
-        common.verifyElementDisplayed(selectors.txtQuickSearch);
-        common.fillInput(selectors.txtQuickSearchField,tcdata.getsTenantName());
-        common.findAndClick(selectors.btnQuickSearch);
-        common.findAndClick(selectors.btnQuickSearchEdit);
+        common.goAndFindTenant(tcdata.getsTenantName(),selectors.btnAddTenant,selectors.txtQuickSearch,selectors.txtQuickSearchField,selectors.btnQuickSearch,selectors.btnQuickSearchEdit);
         common.findAndClick(selectors.txtRoleTitle);
         List<WebElement> roleTableTitles = common.getListOfElement(selectors.txtTableTitles);
         String [] roleTableTitlesExpected = {tcdata.getsRoleNameTitle(),tcdata.getsTimesAppliedTitle(),tcdata.getsLastEditTitle(),tcdata.getsNoOfPermissionsTitle()};
@@ -89,11 +81,7 @@ public class TenantsActions {
     }
 
     public void tenantReadIntoUser(TenantsFileData tcdata){
-        common.findAndClick(selectors.btnAddTenant);
-        common.verifyElementDisplayed(selectors.txtQuickSearch);
-        common.fillInput(selectors.txtQuickSearchField,tcdata.getsTenantName());
-        common.findAndClick(selectors.btnQuickSearch);
-        common.findAndClick(selectors.btnQuickSearchEdit);
+        common.goAndFindTenant(tcdata.getsTenantName(),selectors.btnAddTenant,selectors.txtQuickSearch,selectors.txtQuickSearchField,selectors.btnQuickSearch,selectors.btnQuickSearchEdit);
         common.findAndClick(selectors.txtUserTitle);
         List<WebElement> userTableTitles = common.getListOfElement(selectors.txtTableTitles);
         String [] userTableTitlesExpected = {tcdata.getsFirstNameTitle(),tcdata.getsLastNameTitle(),tcdata.getsEmailTitle(),tcdata.getsTenantAdministratorTitle(),tcdata.getsInactiveTitle(),tcdata.getsActionsTitle()};
@@ -106,25 +94,28 @@ public class TenantsActions {
     }
 
     public void tenantDelete(TenantsFileData tcdata){
-//        common.findAndClick(selectors.btnAddTenant);
-//        common.verifyElementDisplayed(selectors.txtQuickSearch);
-//        common.fillInput(selectors.txtQuickSearchField,tcdata.getsTenantName());
-//        common.findAndClick(selectors.btnQuickSearch);
-//        common.waitForPresenceOfElement(1, selectors.btnDeleteTenant);
-//        common.findAndClick(selectors.btnDeleteTenant);
-//        common.waitForPresenceOfElement(1, selectors.btnDeleteTenantConfirm);
-//        common.findAndClick(selectors.btnDeleteTenantConfirm);
-    }
-
-    public void tenantDeactiveOrActive(TenantsFileData tcdata){
         common.findAndClick(selectors.btnAddTenant);
         common.verifyElementDisplayed(selectors.txtQuickSearch);
         common.fillInput(selectors.txtQuickSearchField,tcdata.getsTenantName());
         common.findAndClick(selectors.btnQuickSearch);
-        common.findAndClick(selectors.btnQuickSearchEdit);
+        common.waitForPresenceOfElement(1, selectors.btnDeleteTenant);
+        common.findAndClick(selectors.btnDeleteTenant);
+        common.waitForPresenceOfElement(1, selectors.btnDeleteTenantConfirm);
+        common.findAndClick(selectors.btnDeleteTenantConfirm);
+    }
+
+    public void tenantDeactiveOrActive(TenantsFileData tcdata){
+        common.goAndFindTenant(tcdata.getsTenantName(),selectors.btnAddTenant,selectors.txtQuickSearch,selectors.txtQuickSearchField,selectors.btnQuickSearch,selectors.btnQuickSearchEdit);
         common.waitForPresenceOfElement(1, selectors.btnActiveTenant);
         common.findAndClick(selectors.btnActiveTenant);
         common.waitForPresenceOfElement(1, selectors.btnActiveTenantConfirm);
         common.findAndClick(selectors.btnActiveTenantConfirm);
+    }
+
+    public void tenantEdit(TenantsFileData tcdata){
+        common.goAndFindTenant(tcdata.getsTenantName(),selectors.btnAddTenant,selectors.txtQuickSearch,selectors.txtQuickSearchField,selectors.btnQuickSearch,selectors.btnQuickSearchEdit);
+        common.findAndClick(selectors.btnEditTenant);
+        common.fillInput(selectors.txtEditTenantName,tcdata.getsTenantName()+" Edited");
+        common.findAndClick(selectors.btnEditSave);
     }
 }

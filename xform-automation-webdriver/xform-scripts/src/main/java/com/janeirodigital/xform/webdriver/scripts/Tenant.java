@@ -88,6 +88,14 @@ public class Tenant {
     @Test(groups = {"tenantDeactive"}, dataProvider = "populateDataProviders", priority=7)
     public void tenantActive(TenantsFileData tcdata){ actions.tenantDeactiveOrActive(tcdata); }
 
+    /**
+     * TC 6.4.3 Update Tenant Data - Positive
+     * @param tcdata
+     */
+
+    @Test(groups = {"tenantEdit"}, dataProvider = "populateDataProviders", priority=8)
+    public void tenantEdit(TenantsFileData tcdata){ actions.tenantEdit(tcdata); }
+
     @DataProvider
     public Object[][] populateDataProviders() {
         String ParameterFile = "";

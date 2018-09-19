@@ -32,4 +32,7 @@ public class TenantsSelectors {
     public final By btnDeleteTenantConfirm = By.cssSelector(".swal2-confirm.btn-danger");
     public final By btnActiveTenant = By.cssSelector(".btn-outline-danger");
     public final By btnActiveTenantConfirm = By.cssSelector("button.swal2-confirm");
+    public final By btnEditTenant = By.cssSelector(".btn.btn-primary");
+    public final By txtEditTenantName = By.id("name");
+    public final By btnEditSave = By.cssSelector(".mt-3.mt-md-0.btn-primary");
 }
