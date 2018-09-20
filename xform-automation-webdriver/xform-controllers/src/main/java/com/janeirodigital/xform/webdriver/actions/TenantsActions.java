@@ -118,4 +118,12 @@ public class TenantsActions {
         common.fillInput(selectors.txtEditTenantName,tcdata.getsTenantName()+" Edited");
         common.findAndClick(selectors.btnEditSave);
     }
+
+    public void tenantEditError(TenantsFileData tcdata){
+        common.goAndFindTenant(tcdata.getsTenantName(),selectors.btnAddTenant,selectors.txtQuickSearch,selectors.txtQuickSearchField,selectors.btnQuickSearch,selectors.btnQuickSearchEdit);
+        common.findAndClick(selectors.btnEditTenant);
+        common.fillInput(selectors.txtEditTenantName," ");
+        common.findAndClick(selectors.btnEditSave);
+        common.verifyElementDisplayed(selectors.txtEditTenantError);
+    }
 }

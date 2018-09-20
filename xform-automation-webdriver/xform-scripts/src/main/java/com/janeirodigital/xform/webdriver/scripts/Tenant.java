@@ -96,6 +96,14 @@ public class Tenant {
     @Test(groups = {"tenantEdit"}, dataProvider = "populateDataProviders", priority=8)
     public void tenantEdit(TenantsFileData tcdata){ actions.tenantEdit(tcdata); }
 
+    /**
+     * TC 6.4.4 Update Tenant Data - Negative
+     * @param tcdata
+     */
+
+    @Test(groups = {"tenantEditError"}, dataProvider = "populateDataProviders", priority=8)
+    public void tenantEditError(TenantsFileData tcdata){ actions.tenantEditError(tcdata); }
+
     @DataProvider
     public Object[][] populateDataProviders() {
         String ParameterFile = "";
