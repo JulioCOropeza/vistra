@@ -105,6 +105,10 @@ public class TenantsFileData extends BaseTCData {
     private String sInactiveTitle;
     @ExcelCell(49)
     private String sActionsTitle;
+    @ExcelCell(50)
+    private String sLogoPath;
+    @ExcelCell(51)
+    private String sBKColor;
 
     @Override
     public String toString() {
@@ -159,6 +163,8 @@ public class TenantsFileData extends BaseTCData {
                 ", sTenantAdministratorTitle='" + getsTenantAdministratorTitle() + '\'' +
                 ", sInactiveTitle='" + getsInactiveTitle() + '\'' +
                 ", sActionsTitle='" + getsActionsTitle() + '\'' +
+                ", sLogoPath='" + getsLogoPath() + '\'' +
+                ", sBKColor='" + getsBKColor() + '\'' +
                 '}';
     }
 
@@ -267,4 +273,8 @@ public class TenantsFileData extends BaseTCData {
     public String getsInactiveTitle() { return sInactiveTitle; }
 
     public String getsActionsTitle() { return sActionsTitle; }
+
+    public String getsLogoPath() { return sLogoPath; }
+
+    public String getsBKColor() { return sBKColor; }
 }
