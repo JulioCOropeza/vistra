@@ -35,4 +35,5 @@ public class TenantsSelectors {
     public final By btnEditTenant = By.cssSelector(".btn.btn-primary");
     public final By txtEditTenantName = By.id("name");
     public final By btnEditSave = By.cssSelector(".mt-3.mt-md-0.btn-primary");
+    public final By txtEditTenantError = By.cssSelector(".error span");
 }
