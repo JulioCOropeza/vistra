@@ -4,9 +4,8 @@ import com.janeirodigital.xform.webdriver.enums.XmlEnum;
 import com.janeirodigital.xform.webdriver.objectRepository.data.AccessAndSecurityFileData;
 import com.poiji.bind.Poiji;
 import com.poiji.option.PoijiOptions;
-import org.openqa.selenium.By;
-import org.openqa.selenium.JavascriptExecutor;
-import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.*;
+
 import java.io.File;
 import java.io.IOException;
 import java.time.LocalDate;
@@ -14,7 +13,7 @@ import java.time.ZoneId;
 import java.util.Date;
 import java.util.List;
 import java.util.Random;
-import org.openqa.selenium.WebElement;
+
 import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
@@ -328,5 +327,14 @@ public class Common extends Initial {
         fillInput(txtQuickSearchField,tcdata);
         findAndClick(btnQuickSearch);
         findAndClick(btnQuickSearchEdit);
+    }
+
+    /**
+     * This Method works to send an enter to a specific element
+     * @param selector
+     */
+
+    public void sendAnEnter(By selector){
+        driver.findElement(selector).sendKeys(Keys.RETURN);
     }
 }

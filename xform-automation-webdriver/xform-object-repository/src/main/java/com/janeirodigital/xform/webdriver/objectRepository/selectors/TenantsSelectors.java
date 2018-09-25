@@ -39,4 +39,9 @@ public class TenantsSelectors {
     public final By txtLogoPath = By.cssSelector(".url-input");
     public final By txtBKColor  = By.id("navigationColor");
     public final By btnResetStyle = By.cssSelector(".btn.btn-outline-primary");
+    public final By btnCreateNewRole = By.cssSelector(".mt-4 .btn-primary");
+    public final By txtRoleName = By.id("name");
+    public final By txtSearchPermissions = By.cssSelector(".form-group .xform-dropdown input");
+    public final By btnAddPermission = By.cssSelector(".btn-dark.btn");
+    public final By btnCreateRole = By.cssSelector(".mt-3.btn-primary");
 }

@@ -64,20 +64,13 @@ public class Tenant {
     @Test(groups = {"tenantReadIntoUser"}, dataProvider = "populateDataProviders", priority=5)
     public void tenantReadIntoUser(TenantsFileData tcdata){ actions.tenantReadIntoUser(tcdata); }
 
-    /**
-     * TC 6.3.1. Delete Tenants
-     * @param tcdata
-     */
-
-    @Test(groups = {"tenantDelete"}, dataProvider = "populateDataProviders", priority=6)
-    public void tenantDelete(TenantsFileData tcdata){ actions.tenantDelete(tcdata); }
 
     /**
      * TC 6.4.2 Update Tenant to Deactivated
      * @param tcdata
      */
 
-    @Test(groups = {"tenantDeactive"}, dataProvider = "populateDataProviders", priority=7)
+    @Test(groups = {"tenantDeactive"}, dataProvider = "populateDataProviders", priority=6)
     public void tenantDeactive(TenantsFileData tcdata){ actions.tenantDeactiveOrActive(tcdata); }
 
     /**
@@ -105,12 +98,29 @@ public class Tenant {
     public void tenantEditError(TenantsFileData tcdata){ actions.tenantEditError(tcdata); }
 
     /**
-     * TC 6.5.5 Update Logo & Styles of Tenant - Positive
+     * TC 6.4.5 Update Logo & Styles of Tenant - Positive
      * @param tcdata
      */
 
     @Test(groups = {"tenantChangeStyle"}, dataProvider = "populateDataProviders", priority=10)
     public void tenantChangeStyle(TenantsFileData tcdata){ actions.tenantChangeStyle(tcdata); }
+
+    /**
+     * TC 6.4.8 Update Tenant Roles by adding a new one
+     * @param tcdata
+     */
+
+    @Test(groups = {"createNewRole"}, dataProvider = "populateDataProviders", priority=13)
+    public void createNewRole(TenantsFileData tcdata){ actions.createNewRole(tcdata); }
+
+    /**
+     * TC 6.3.1. Delete Tenants
+     * Tenant delete script should be the last script to run
+     * @param tcdata
+     */
+
+    @Test(groups = {"tenantDelete"}, dataProvider = "populateDataProviders", priority=14)
+    public void tenantDelete(TenantsFileData tcdata){ actions.tenantDelete(tcdata); }
 
     @DataProvider
     public Object[][] populateDataProviders() {
