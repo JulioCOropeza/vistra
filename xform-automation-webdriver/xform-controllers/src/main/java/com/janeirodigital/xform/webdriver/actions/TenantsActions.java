@@ -133,4 +133,11 @@ public class TenantsActions {
         common.fillInput(selectors.txtBKColor,tcdata.getsBKColor());
         common.findAndClick(selectors.btnResetStyle);
     }
+
+    public void tenantResetStyles(TenantsFileData tcdata){
+        common.goAndFindTenant(tcdata.getsTenantName(),selectors.btnAddTenant,selectors.txtQuickSearch,selectors.txtQuickSearchField,selectors.btnQuickSearch,selectors.btnQuickSearchEdit);
+        common.findAndClick(selectors.txtLogoAndStyles);
+        common.waitForPresenceOfElement(1,selectors.btnResetStyle);
+        common.findAndClick(selectors.btnResetStyle);
+    }
 }
