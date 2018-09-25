@@ -3,7 +3,6 @@ package com.janeirodigital.xform.webdriver.actions;
 import com.janeirodigital.xform.webdriver.common.Common;
 import com.janeirodigital.xform.webdriver.objectRepository.data.TenantsFileData;
 import com.janeirodigital.xform.webdriver.objectRepository.selectors.TenantsSelectors;
-import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.slf4j.Logger;
@@ -125,5 +124,13 @@ public class TenantsActions {
         common.fillInput(selectors.txtEditTenantName," ");
         common.findAndClick(selectors.btnEditSave);
         common.verifyElementDisplayed(selectors.txtEditTenantError);
+    }
+
+    public void tenantChangeStyle(TenantsFileData tcdata){
+        common.goAndFindTenant(tcdata.getsTenantName(),selectors.btnAddTenant,selectors.txtQuickSearch,selectors.txtQuickSearchField,selectors.btnQuickSearch,selectors.btnQuickSearchEdit);
+        common.findAndClick(selectors.txtLogoAndStyles);
+        common.fillInput(selectors.txtLogoPath,tcdata.getsLogoPath());
+        common.fillInput(selectors.txtBKColor,tcdata.getsBKColor());
+        common.findAndClick(selectors.btnResetStyle);
     }
 }

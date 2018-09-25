@@ -17,6 +17,7 @@
                 <include name="tenantDeactive"></include>
                 <include name="tenantEdit"></include>
                 <include name="tenantEditError"></include>
+                <include name="tenantChangeStyle"></include>
             </run>
         </groups>
         <classes>

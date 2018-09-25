@@ -101,8 +101,16 @@ public class Tenant {
      * @param tcdata
      */
 
-    @Test(groups = {"tenantEditError"}, dataProvider = "populateDataProviders", priority=8)
+    @Test(groups = {"tenantEditError"}, dataProvider = "populateDataProviders", priority=9)
     public void tenantEditError(TenantsFileData tcdata){ actions.tenantEditError(tcdata); }
+
+    /**
+     * TC 6.5.5 Update Logo & Styles of Tenant - Positive
+     * @param tcdata
+     */
+
+    @Test(groups = {"tenantChangeStyle"}, dataProvider = "populateDataProviders", priority=10)
+    public void tenantChangeStyle(TenantsFileData tcdata){ actions.tenantChangeStyle(tcdata); }
 
     @DataProvider
     public Object[][] populateDataProviders() {

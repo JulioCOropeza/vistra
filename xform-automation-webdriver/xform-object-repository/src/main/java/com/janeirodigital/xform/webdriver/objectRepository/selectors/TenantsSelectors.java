@@ -36,4 +36,7 @@ public class TenantsSelectors {
     public final By txtEditTenantName = By.id("name");
     public final By btnEditSave = By.cssSelector(".mt-3.mt-md-0.btn-primary");
     public final By txtEditTenantError = By.cssSelector(".error span");
+    public final By txtLogoPath = By.cssSelector(".url-input");
+    public final By txtBKColor  = By.id("navigationColor");
+    public final By btnResetStyle = By.cssSelector(".btn.btn-outline-primary");
 }
