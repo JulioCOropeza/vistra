@@ -39,4 +39,5 @@ public class TenantsSelectors {
     public final By txtLogoPath = By.cssSelector(".url-input");
     public final By txtBKColor  = By.id("navigationColor");
     public final By btnResetStyle = By.cssSelector(".btn.btn-outline-primary");
+    public final By imgErrorImgIcon = By.cssSelector("img.w-50.img-fluid");
 }

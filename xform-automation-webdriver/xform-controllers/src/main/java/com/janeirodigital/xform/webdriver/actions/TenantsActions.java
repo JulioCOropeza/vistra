@@ -134,6 +134,12 @@ public class TenantsActions {
         common.findAndClick(selectors.btnResetStyle);
     }
 
+    public void tenantChangeStyleError(TenantsFileData tcdata){
+        common.goAndFindTenant(tcdata.getsTenantName(),selectors.btnAddTenant,selectors.txtQuickSearch,selectors.txtQuickSearchField,selectors.btnQuickSearch,selectors.btnQuickSearchEdit);
+        common.findAndClick(selectors.txtLogoAndStyles);
+        common.fillInput(selectors.txtLogoPath," ");
+        common.verifyElementDisplayed(selectors.imgErrorImgIcon);
+      
     public void tenantResetStyles(TenantsFileData tcdata){
         common.goAndFindTenant(tcdata.getsTenantName(),selectors.btnAddTenant,selectors.txtQuickSearch,selectors.txtQuickSearchField,selectors.btnQuickSearch,selectors.btnQuickSearchEdit);
         common.findAndClick(selectors.txtLogoAndStyles);
