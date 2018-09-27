@@ -112,6 +112,13 @@ public class Tenant {
 
     @Test(groups = {"tenantChangeStyleError"}, dataProvider = "populateDataProviders", priority=12)
     public void tenantChangeStyleError(TenantsFileData tcdata){ actions.tenantChangeStyleError(tcdata); }
+  
+     * TC 6.4.7 Update Logo & Styles of Tenant - Reset to Default
+     * @param tcdata
+     */
+
+    @Test(groups = {"tenantResetStyles"}, dataProvider = "populateDataProviders", priority=11)
+    public void tenantResetStyles(TenantsFileData tcdata){ actions.tenantResetStyles(tcdata); }
 
     /**
      * TC 6.3.1. Delete Tenants
