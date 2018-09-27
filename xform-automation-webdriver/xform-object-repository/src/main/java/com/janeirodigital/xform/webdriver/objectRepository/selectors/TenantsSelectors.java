@@ -44,4 +44,5 @@ public class TenantsSelectors {
     public final By txtSearchPermissions = By.cssSelector(".form-group .xform-dropdown input");
     public final By btnAddPermission = By.cssSelector(".btn-dark.btn");
     public final By btnCreateRole = By.cssSelector(".mt-3.btn-primary");
+    public final By imgErrorImgIcon = By.cssSelector("img.w-50.img-fluid");
 }

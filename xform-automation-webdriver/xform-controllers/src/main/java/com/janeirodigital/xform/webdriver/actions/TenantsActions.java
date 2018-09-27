@@ -134,14 +134,27 @@ public class TenantsActions {
         common.findAndClick(selectors.btnResetStyle);
     }
 
-    public void createNewRole(TenantsFileData tcdata){
-        common.goAndFindTenant(tcdata.getsTenantName(),selectors.btnAddTenant,selectors.txtQuickSearch,selectors.txtQuickSearchField,selectors.btnQuickSearch,selectors.btnQuickSearchEdit);
+    public void createNewRole(TenantsFileData tcdata) {
+        common.goAndFindTenant(tcdata.getsTenantName(), selectors.btnAddTenant, selectors.txtQuickSearch, selectors.txtQuickSearchField, selectors.btnQuickSearch, selectors.btnQuickSearchEdit);
         common.findAndClick(selectors.txtRoleTitle);
         common.findAndClick(selectors.btnCreateNewRole);
-        common.fillInput(selectors.txtRoleName,tcdata.getsRoleName());
-        common.fillInput(selectors.txtSearchPermissions,tcdata.getsRolePermission());
+        common.fillInput(selectors.txtRoleName, tcdata.getsRoleName());
+        common.fillInput(selectors.txtSearchPermissions, tcdata.getsRolePermission());
         common.sendAnEnter(selectors.txtSearchPermissions);
         common.findAndClick(selectors.btnAddPermission);
         common.findAndClick(selectors.btnCreateRole);
+    }
+    public void tenantChangeStyleError(TenantsFileData tcdata) {
+        common.goAndFindTenant(tcdata.getsTenantName(), selectors.btnAddTenant, selectors.txtQuickSearch, selectors.txtQuickSearchField, selectors.btnQuickSearch, selectors.btnQuickSearchEdit);
+        common.findAndClick(selectors.txtLogoAndStyles);
+        common.fillInput(selectors.txtLogoPath, " ");
+        common.verifyElementDisplayed(selectors.imgErrorImgIcon);
+    }
+
+    public void tenantResetStyles(TenantsFileData tcdata){
+        common.goAndFindTenant(tcdata.getsTenantName(),selectors.btnAddTenant,selectors.txtQuickSearch,selectors.txtQuickSearchField,selectors.btnQuickSearch,selectors.btnQuickSearchEdit);
+        common.findAndClick(selectors.txtLogoAndStyles);
+        common.waitForPresenceOfElement(1,selectors.btnResetStyle);
+        common.findAndClick(selectors.btnResetStyle);
     }
 }
