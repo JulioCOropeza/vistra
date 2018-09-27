@@ -106,18 +106,27 @@ public class Tenant {
     public void tenantChangeStyle(TenantsFileData tcdata){ actions.tenantChangeStyle(tcdata); }
 
     /**
+     * TC 6.4.8 Update Tenant Roles by adding a new one
+     * @param tcdata
+     */
+
+    @Test(groups = {"createNewRole"}, dataProvider = "populateDataProviders", priority=11)
+    public void createNewRole(TenantsFileData tcdata){ actions.createNewRole(tcdata); }
+
+    /**
      * TC 6.4.6 Update Logo & Styles of Tenant - Negative
      * @param tcdata
      */
 
     @Test(groups = {"tenantChangeStyleError"}, dataProvider = "populateDataProviders", priority=12)
     public void tenantChangeStyleError(TenantsFileData tcdata){ actions.tenantChangeStyleError(tcdata); }
-  
+
+    /**
      * TC 6.4.7 Update Logo & Styles of Tenant - Reset to Default
      * @param tcdata
      */
 
-    @Test(groups = {"tenantResetStyles"}, dataProvider = "populateDataProviders", priority=11)
+    @Test(groups = {"tenantResetStyles"}, dataProvider = "populateDataProviders", priority=13)
     public void tenantResetStyles(TenantsFileData tcdata){ actions.tenantResetStyles(tcdata); }
 
     /**
@@ -126,7 +135,7 @@ public class Tenant {
      * @param tcdata
      */
 
-    @Test(groups = {"tenantDelete"}, dataProvider = "populateDataProviders", priority=13)
+    @Test(groups = {"tenantDelete"}, dataProvider = "populateDataProviders", priority=14)
     public void tenantDelete(TenantsFileData tcdata){ actions.tenantDelete(tcdata); }
 
     @DataProvider

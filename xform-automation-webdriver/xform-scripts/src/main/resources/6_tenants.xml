@@ -18,6 +18,7 @@
                 <include name="tenantEdit"></include>
                 <include name="tenantEditError"></include>
                 <include name="tenantChangeStyle"></include>
+                <include name="createNewRole"></include>
                 <include name="tenantResetStyles"></include>
             </run>
         </groups>
